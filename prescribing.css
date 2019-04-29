@@ -1,0 +1,63 @@
+
+
+h1 {
+    font-size: 1.25rem;
+    color: #151f6d;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1rem;
+    color: #151f6d;
+    font-weight: bold;
+  }
+
+p{
+  font-size: 0.9rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+.wrapper > * {
+  flex: 1 100%;
+}
+
+svg {
+  background: #f1f1f1;
+}
+
+/* We rely on source order for mobile-first approach
+ * in this case:
+ * 1. header
+ * 2. article
+ * 3. aside 1
+ * 4. aside 2
+ * 5. footer
+ */
+
+/* Medium screens */
+@media all and (min-width: 400px) {
+  /* We tell both sidebars to share a row */
+  .aside-1 {
+    flex: 1 auto;
+    max-width: 200px;
+  padding-right: 15px;}
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  /* We invert order of first sidebar and main
+   * And tell the main element to take twice as much width as the other two sidebars
+   */
+  .main {
+    flex: 4 0px;   }
+  .aside-1 {
+    order: 1;
+    max-width: 250px;}
+  .main    { order: 2; }
+  .footer  { order: 3; }
+}

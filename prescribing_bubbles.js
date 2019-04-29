@@ -1,178 +1,60 @@
-// !preview r2d3 data = read.csv("./Javascripts/cod1.csv"), d3_version = 4
 
-// Based on https://bl.ocks.org/mbostock/4063269
+//  https://www.youtube.com/watch?v=lPr60pexvEM
 
-// Initialization
+(function() {
+  var width = 500,
+  height = 500;
 
-//var w = 600;
-//var h = 600;
-    
-//var svg = d3.select("body")
-  //.append("svg")
-  //.attr("width", w)
-  //.attr("height", h);
+  // Force diagrames do not care about margins
 
-svg.attr("font-family", "verdana")
-  .attr("font-size", ".8em")
-  .attr("text-anchor", "middle");
-    
-var svgSize = 1000;
-var pack = d3.pack()
-  .size([svgSize, svgSize])
-  .padding(2.5);
-    
-var format = d3.format(",d"); // create a function to convert a value to numeric with proper formating
-var format_t = d3.format(",c"); // create a function to convert a value to character
+  var svg = d3.select("#chart")
+    .append("svg")
+    .attr("height", height)
+    .attr("width", width)
+    .append("g")
+    .attr("transform", "translate(0,0)")
+    // .attr("font-family", "verdana")
+    // .attr("font-size", ".8em")
+    // .attr("text-anchor", "middle")
 
-var year = d3.max(data, function(d) { return d.year; });
-var sum1 = d3.sum(data, function(d) { return d.value; });
-var area = "West Sussex";
+    var radiusScale = d3.scaleSqrt().domain([1, 657909]).range([4,40]) // Define the min and max of your input (domain), and the output(range) you want
 
-// Colours
-var color = d3.scaleOrdinal()
-	.domain(data)
-	.range(["#8eb145","#a25dce","#52bb55","#c94eb1","#c4aa35","#616bdb","#e28637","#46aed7","#d54637","#50b696","#d44886","#4d7f3e","#cd415f","#8196de","#a9572d","#6563a9","#cca467","#9a4c7b","#826f2c","#d889c3","#cd726e"]);
-//	.range(["#C2464F", "#62A7B9", "#9DCB9C"]);
+    // create a force simulation acting on our circles
+    var simulation = d3.forceSimulation()
+        .force("x", d3.forceX(width / 2).strength(0.05)) // force our circle nodes towards the middle of the width of our svg
+        .force("y", d3.forceY(height / 2).strength(0.05))
+        .force("collide", d3.forceCollide(function(d) {
+          return radiusScale(d.value) + 1;
+        })) // if the radius of the circle matches the radiua of the forceCollide then there will be no overlap between circles
 
-var group = svg.append("g");
+    d3.queue()
+      .defer(d3.csv, "Coastal_2018_prescribing.csv")
+      .await(ready)
 
-r2d3.onResize(function(width, height) {
-  var minSize = Math.min(width, height);
-  var scale = minSize / svgSize;
-  
-group.attr("transform", function(d) {
-  return "" +
-"translate(" + (width - minSize) /2 + "," + (height - minSize) / 2 + ")," +
-"scale(" + scale + "," + scale + ")";
-});
+    function ready (error, datapoints) {
 
-});
+      var circles = svg.selectAll(".artist")
+      .data(datapoints)
+      .enter().append("circle")
+      .attr("class", "artist")
+      .attr("r", function(d) {
+        return radiusScale(d.value) // use the scaled value as a radius
+      })
+      .attr("fill", "lightblue")
+
+      simulation.nodes(datapoints)
+        .on('tick', ticked)
 
 
-// Rendering
-r2d3.onRender(function(data, svg, width, height, options) {
-  var root = d3.hierarchy({children: data})
-    .sum(function(d) { return d.value; })
-    .each(function(d) {
-      if (id = d.data.id) {
-        var id, i = id.lastIndexOf("."); 
-        d.id = id;
-        d.package = id.slice(0, i);
-        d.class = id.slice(i + 1);
-      }
-    });
+        function ticked () {
+          circles
+           .attr("cx", function(d) {
+             return d.x
+           })
+           .attr("cy", function(d){
+             return d.y
+           })
+        }
+    }
 
-var node = group.selectAll(".node")
-    .data(pack(root).leaves())
-    .enter().append("g")
-      .attr("class", "node")
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-node.append("circle")
-      .attr("id", function(d) { return d.id; })
-      .attr("r", function(d) { return d.r; })
-      .style("fill", function(d) { return color(d.package); });
-
-node.append("clipPath")
-      .attr("id", function(d) { return "clip-" + d.id; })
-    .append("use")
-      .attr("xlink:href", function(d) { return "#" + d.id; });
-
-node.append("title")
-  .attr("clip-path", function(d) { return "url(#clip-" + d.id + ")"; })
- .selectAll("tspan")
- .data(function(d) { return d.class.split(/(?=[" "][^" "])/g); }) // This puts a line break before every space
- .enter().append("tspan")
- .attr("x", 0)
- .attr("y", function(d, i, nodes) { return 13 + (i - nodes.length / 2) * 10; })
- .text(function(d) { return d; });
- 
-node.append("text") // This is an if statement that says if the value is less than or equal to 50,000, print "", otherwise print the number
-  .text(function(d) {            // 
-          if (d.value <= 50000) {return ""}  
-          else { return format(d.value)}
-          });             
-  
-r2d3.resize(width, height);
-
-var svgContainertext = d3.select("body")
-  .append("text")
-  .attr("width", (width / 100) *50)
-  .attr("height", height);
-  
-svgContainertext.append("g")  
-  .append("text")
-  .text(function(d) { return "Causes of death; " + area + "; " + year; })
-  .attr("x", (width / 100) * 2)
-  .attr("y", (height / 100) * 5) 
-  .attr("font-family", "sans-serif")
-  .attr("font-size", "20px")
-  .attr("fill", "black");
-  
-svgContainertext.append("g")
-.append("text")
-.text(function(d) { return "This visualisation shows the " + format(sum1) + " deaths in"; })
-.attr("x",(width / 100) * 2)
-.attr("y",(height / 100) * 6)
-.attr("font-family", "sans-serif")
-.attr("font-size", "12px")
-.attr("fill", "#666");
-
-svgContainertext.append("g")
-.append("text")
-.text(function(d) { return area + " by cause of death in " + year; })
-.attr("x",(width / 100) * 2)
-.attr("y",(height / 100) * 8)
-.attr("font-family", "sans-serif")
-.attr("font-size", "12px")
-.attr("fill", "#666");
-
-svgContainertext.append("g")
-.append("text")
-.attr("dy", "0em")
-.text("Hover over a circle to see the cause.")
-//.text("of death") // TO DO wrap text
-.attr("x",(width / 100) * 2)
-.attr("y", (height / 100) * 20)
-.attr("font-family", "sans-serif")
-.attr("font-size", "12px")
-.attr("fill", "#666");
-
-svgContainertext.append("g")
-.append("text")
-.text("The size of the circle represents the number")
-.attr("x",(width / 100) * 2)
-.attr("y", (height / 100) * 40)
-.attr("font-family", "sans-serif")
-.attr("font-size", "12px")
-.attr("fill", "#666"); 
-
-svgContainertext.append("g")
-.append("text")
-.text("of deaths for that cause. Similar causes")
-.attr("x",(width / 100) * 2)
-.attr("y", (height / 100) * 42)
-.attr("font-family", "sans-serif")
-.attr("font-size", "12px")
-.attr("fill", "#666"); 
-
-svgContainertext.append("g")
-.append("text")
-.text("(e.g. cancers), have the same colour.")
-.attr("x",(width / 100) * 2)
-.attr("y", (height / 100) * 44)
-.attr("font-family", "sans-serif")
-.attr("font-size", "12px")
-.attr("fill", "#666"); 
-
-svgContainertext.append("g")
-.append("text")
-.text(function(d) { return "Source: Global Burden of disease; 2016"; })
-.attr("x",(width / 100) * 2)
-.attr("y", (height / 100) * 95)
-.attr("font-family", "sans-serif")
-.attr("font-size", "12px")
-.attr("fill", "#666");
-
-  
-});
+})();

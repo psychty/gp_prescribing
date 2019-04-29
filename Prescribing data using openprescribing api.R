@@ -2,6 +2,7 @@
 
 library(tidyverse)
 library(treemap)
+library(r2d3)
 
 # cite - "OpenPrescribing.net, EBM DataLab, University of Oxford, 2019"
 
@@ -10,7 +11,7 @@ library(treemap)
 # BNF codes ####
 # grab the latest BNF codes datafile here https://apps.nhsbsa.nhs.uk/infosystems/data/showDataSelector.do?reportId=126
 
-BNF <- read_csv("~/R-scripts/20190301_1551434673212_BNF_Code_Information.csv", col_types = cols(.default = col_character()))
+BNF <- read_csv("~/gp_prescribing/20190301_1551434673212_BNF_Code_Information.csv", col_types = cols(.default = col_character()))
 
 BNF_sub_paragraphs <- BNF %>% 
   select(-c(`BNF Presentation Code`, `BNF Presentation`, `BNF Product Code`, `BNF Product`, `BNF Chemical Substance Code`, `BNF Chemical Substance`)) %>% 
@@ -28,7 +29,7 @@ BNF_chapters <- BNF_sections %>%
   select(-c(`BNF Section Code`, `BNF Section`)) %>% 
   unique()
 
-# Retrieve total spending and item55555555+++++666666666666+T-s by CCG or practice on a particular chemical, presentation or BNF section. (Spending is calculated using the actual_cost field in the HSCIC data, items using the total_items field.)
+# Retrieve total spending and items by CCG or practice on a particular chemical, presentation or BNF section. (Spending is calculated using the actual_cost field in the HSCIC data, items using the total_items field.)
 
 # https://ebmdatalab.net/prescribing-data-bnf-codes/
 
@@ -42,8 +43,7 @@ BNF_chapters <- BNF_sections %>%
   # mutate(Code = code_x) %>% 
   # +join(BNF_sections, by = c("Code" = "BNF Section Code")) %>% 
   # group_by(date) %>% 
-  # arran
- / e(desc(quantity)) %>% 
+  # arrange(desc(quantity)) %>% 
   # mutate(Rank = row_number()) %>% 
   # mutate(decile = ntile(quantity, 10)) %>% 
   # mutate(percentile = ntile(quantity, 100))
@@ -123,8 +123,11 @@ Raw_df <- combined_df %>%
   mutate(Month_Year = format(date, "%B-%Y")) %>% 
   mutate(Year = format(date, "%Y"))
 
-Coastal_2018 <- Raw_df %>% 
-  filter(CCG_code == "09G") %>% 
+rm(combined_df, code_x, i, j, org_x)
+
+# CCG prescribing overview - 2018 calendar year ####
+
+CCG_prescribing_2018 <- Raw_df %>% 
   filter(Year == 2018) %>% 
   group_by(Code, CCG_code, CCG) %>% 
   summarise(items = sum(items, na.rm = TRUE),
@@ -133,13 +136,15 @@ Coastal_2018 <- Raw_df %>%
   left_join(BNF_sections, by = c("Code" = "BNF Section Code")) %>% 
   mutate(item_label = paste0(`BNF Section`, "\n",format(as.numeric(items), big.mark = ",")))
 
+Coastal_2018 <- CCG_prescribing_2018 %>% 
+  filter(CCG_code == "09G")
+
 treemap(Coastal_2018,
         index=c("BNF Chapter","item_label"),
         vSize="items",
         type="categorical",
         vColor = "BNF Chapter",
         title = paste0(unique(Coastal_2018$CCG), " prescribing by BNF section; January 2018 to December 2018"),
-      # fontcolor.labels = c("#ffffff", "#000000"),
         fontsize.title = 8,
         fontsize.labels = c(10,7), 
         fontsize.legend = 7, 
@@ -157,16 +162,13 @@ treemap(Coastal_2018,
         palette = c("#df8089","#5db958","#a457c4","#a1b538","#5d6ad1",   "#dc972d","#5d91cc","#d7582c","#54bfab","#cf46a0","#41854c","#d74375","#757a32","#9e7cc5","#c1a854","#d884c1","#9c612a","#9b486b","#e09166","#dc434f"),
         align.labels = list(c("left", "top"),c("centre", "centre")))      
 
-names(Coastal_2018)
-View(GBD_cause_data)
-
 Coastal_2018_js <- Coastal_2018 %>% 
-  mutate(id = paste0(`BNF Chapter`, ".", `BNF Section`)) %>% 
-  rename(value = items) %>% 
+  mutate(label = paste0(`BNF Chapter`, ".", `BNF Section`)) %>% 
   arrange(desc(value))
 
+write.csv(Coastal_2018_js, "~/gp_prescribing/Coastal_2018_prescribing.csv", row.names = FALSE)
 
-r2d3(data = Coastal_2018_js, script = "~/R-scripts/prescribing_bubbles.js")
+r2d3(data = Coastal_2018_js, script = "~/gp_prescribing/prescribing_bubbles.js")
 
 file.edit("./Javascripts/gbd_cause_deaths_bubbles_test.js")
 # Organisation details - https://openprescribing.net/api/1.0/org_details/?

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prescribing overview</title>
+    <link rel="stylesheet" type="text/css" href="prescribing.css">
+
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <div class="header">
+      <h1>GP Practice Prescribing</h1>
+      <p>This visualisation shows the number of items prescribed in 2018 for NHS Coastal West Sussex CCG.</p>
+      <p>This presentation level data is from NHS Digital under the Open Government Licence. Presentation level means data is provided at the level of each individual drug name, form and strength or size. It does not list each individual prescription and doesn't contain any patient identifiable data.</p>
+  </div>
+
+  <article class="main">
+      <h2>Circles</h2>
+      <div id = "chart"> </div>
+  </article>
+
+    <aside class="aside aside-1">
+        <h2>Notes:</h2>
+        <p>A prescription item refers to a single supply of a medicine, dressing or appliance prescribed on a prescription form. If a prescription form includes three medicines it is counted as three prescription items. These figures do not give any indication of the length of treatment or quantity of medicine prescribed.</p>
+        <p>Drugs or appliances are categorised by BNF (British National Formulary)</p>
+        <p>Hover over a circle to see the category of items.</p>
+        <p>The size of the circle represents the number of items prescribed for that category of items. Items are grouped by the broad section of the BNF in which they are classified.</p>
+
+    </aside>
+
+  <footer class="footer">Made by Rich Tyler May 2019</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+  <script src="prescribing_bubbles.js"></script>
+</div>
+
+</body>
+
+</html>
