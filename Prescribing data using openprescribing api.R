@@ -139,12 +139,18 @@ CCG_prescribing_2018 <- Raw_df %>%
 Coastal_2018 <- CCG_prescribing_2018 %>% 
   filter(CCG_code == "09G")
 
+WSx_2018 <- CCG_prescribing_2018 %>% 
+  filter(CCG_code %in% c("09G", "09H", "09X")) %>% 
+  group_by(Code, `BNF Section`) %>% 
+  summarise(items = sum(items, na.rm = TRUE), actual_cost = sum(actual_cost, na.rm = TRUE), `BNF Chapter` = unique(`BNF Chapter`), `BNF Chapter Code` = unique(`BNF Chapter Code`)) %>% 
+  mutate(item_label = paste0(`BNF Section`, "\n",format(as.numeric(items), big.mark = ",")))
+
 treemap(Coastal_2018,
         index=c("BNF Chapter","item_label"),
         vSize="items",
         type="categorical",
         vColor = "BNF Chapter",
-        title = paste0(unique(Coastal_2018$CCG), " prescribing by BNF section; January 2018 to December 2018"),
+       # title = paste0(unique(Coastal_2018$CCG), " prescribing by BNF section; January 2018 to December 2018"),
         fontsize.title = 8,
         fontsize.labels = c(10,7), 
         fontsize.legend = 7, 
@@ -164,13 +170,32 @@ treemap(Coastal_2018,
 
 Coastal_2018_js <- Coastal_2018 %>% 
   mutate(label = paste0(`BNF Chapter`, ".", `BNF Section`)) %>% 
-  arrange(desc(value))
+  rename(BNF_chapter = `BNF Chapter`) %>% 
+  rename(BNF_section = `BNF Section`)
+
+WSx_2018_js <- WSx_2018 %>% 
+  mutate(label = paste0(`BNF Chapter`, ".", `BNF Section`)) %>% 
+  rename(BNF_chapter = `BNF Chapter`) %>% 
+  rename(BNF_section = `BNF Section`) %>% 
+  group_by(BNF_chapter)%>% 
+  mutate(Sections_in_chapter = n()) %>% 
+  mutate(Sections_in_chapter_label = as.character(ifelse(Sections_in_chapter < 10, subset(number_names, Number == Sections_in_chapter, select = "Name"), Sections_in_chapter))) %>% 
+  ungroup()
 
 write.csv(Coastal_2018_js, "~/gp_prescribing/Coastal_2018_prescribing.csv", row.names = FALSE)
 
-r2d3(data = Coastal_2018_js, script = "~/gp_prescribing/prescribing_bubbles.js")
+write.csv(WSx_2018_js, "~/gp_prescribing/WSx_2018_prescribing.csv", row.names = FALSE)
 
-file.edit("./Javascripts/gbd_cause_deaths_bubbles_test.js")
+
+Coastal_2018_js_chapter <- Coastal_2018_js %>% 
+  group_by(BNF_chapter, `BNF Chapter Code`) %>% 
+  summarise(items = sum(items, na.rm = TRUE),
+            actual_cost = sum(actual_cost)) %>% 
+  mutate(Sections_in_chapter = n())
+
+write.csv(Coastal_2018_js_chapter, "~/gp_prescribing/Coastal_2018_prescribing_chapter.csv", row.names = FALSE)
+
+
 # Organisation details - https://openprescribing.net/api/1.0/org_details/?
 
 list_size <- read_csv("https://openprescribing.net/api/1.0/org_details/?org_type=practice&org=09G&keys=total_list_size&format=csv")

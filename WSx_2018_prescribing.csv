@@ -1,0 +1,377 @@
+"Code","BNF_section","items","actual_cost","BNF_chapter","BNF Chapter Code","item_label","label","Sections_in_chapter","Sections_in_chapter_label"
+"0101","Dyspep&Gastro-Oesophageal Reflux Disease",56469,382421.33765,"Gastro-Intestinal System","01","Dyspep&Gastro-Oesophageal Reflux Disease
+56,469","Gastro-Intestinal System.Dyspep&Gastro-Oesophageal Reflux Disease",8,"eight"
+"0102","Antispasmod.&Other Drgs Alt.Gut Motility",53035,849316.94552,"Gastro-Intestinal System","01","Antispasmod.&Other Drgs Alt.Gut Motility
+53,035","Gastro-Intestinal System.Antispasmod.&Other Drgs Alt.Gut Motility",8,"eight"
+"0103","Antisecretory Drugs+Mucosal Protectants",956946,1660114.45944,"Gastro-Intestinal System","01","Antisecretory Drugs+Mucosal Protectants
+956,946","Gastro-Intestinal System.Antisecretory Drugs+Mucosal Protectants",8,"eight"
+"0104","Acute Diarrhoea",26536,88859.80918,"Gastro-Intestinal System","01","Acute Diarrhoea
+26,536","Gastro-Intestinal System.Acute Diarrhoea",8,"eight"
+"0105","Chronic Bowel Disorders",39153,1937141.34821,"Gastro-Intestinal System","01","Chronic Bowel Disorders
+39,153","Gastro-Intestinal System.Chronic Bowel Disorders",8,"eight"
+"0106","Laxatives",281136,1343920.51444,"Gastro-Intestinal System","01","Laxatives
+281,136","Gastro-Intestinal System.Laxatives",8,"eight"
+"0107","Local Prepn for Anal & Rectal Disorders",19387,139455.06474,"Gastro-Intestinal System","01","Local Prepn for Anal & Rectal Disorders
+19,387","Gastro-Intestinal System.Local Prepn for Anal & Rectal Disorders",8,"eight"
+"0109","Drugs Affecting Intestinal Secretions",12586,718355.04836,"Gastro-Intestinal System","01","Drugs Affecting Intestinal Secretions
+12,586","Gastro-Intestinal System.Drugs Affecting Intestinal Secretions",8,"eight"
+"0201","Positive Inotropic Drugs",46308,72816.74569,"Cardiovascular System","02","Positive Inotropic Drugs
+46,308","Cardiovascular System.Positive Inotropic Drugs",11,"11"
+"0202","Diuretics",464454,796295.59782,"Cardiovascular System","02","Diuretics
+464,454","Cardiovascular System.Diuretics",11,"11"
+"0203","Anti-Arrhythmic Drugs",17208,177055.72443,"Cardiovascular System","02","Anti-Arrhythmic Drugs
+17,208","Cardiovascular System.Anti-Arrhythmic Drugs",11,"11"
+"0204","Beta-Adrenoceptor Blocking Drugs",565337,949900.86952,"Cardiovascular System","02","Beta-Adrenoceptor Blocking Drugs
+565,337","Cardiovascular System.Beta-Adrenoceptor Blocking Drugs",11,"11"
+"0205","Hypertension and Heart Failure",1009085,2611429.20974,"Cardiovascular System","02","Hypertension and Heart Failure
+1,009,085","Cardiovascular System.Hypertension and Heart Failure",11,"11"
+"0206","Nit,Calc Block & Other Antianginal Drugs",663729,2740626.25937,"Cardiovascular System","02","Nit,Calc Block & Other Antianginal Drugs
+663,729","Cardiovascular System.Nit,Calc Block & Other Antianginal Drugs",11,"11"
+"0207","Sympathomimetics",965,56943.92114,"Cardiovascular System","02","Sympathomimetics
+965","Cardiovascular System.Sympathomimetics",11,"11"
+"0208","Anticoagulants And Protamine",326268,9237784.13125,"Cardiovascular System","02","Anticoagulants And Protamine
+326,268","Cardiovascular System.Anticoagulants And Protamine",11,"11"
+"0209","Antiplatelet Drugs",467002,882235.92102,"Cardiovascular System","02","Antiplatelet Drugs
+467,002","Cardiovascular System.Antiplatelet Drugs",11,"11"
+"0211","Antifibrinolytic Drugs & Haemostatics",5364,66443.85011,"Cardiovascular System","02","Antifibrinolytic Drugs & Haemostatics
+5,364","Cardiovascular System.Antifibrinolytic Drugs & Haemostatics",11,"11"
+"0212","Lipid-Regulating Drugs",980338,2590196.43756,"Cardiovascular System","02","Lipid-Regulating Drugs
+980,338","Cardiovascular System.Lipid-Regulating Drugs",11,"11"
+"0301","Bronchodilators",392503,4317575.70448,"Respiratory System","03","Bronchodilators
+392,503","Respiratory System.Bronchodilators",8,"eight"
+"0302","Corticosteroids (Respiratory)",283474,9144221.60078,"Respiratory System","03","Corticosteroids (Respiratory)
+283,474","Respiratory System.Corticosteroids (Respiratory)",8,"eight"
+"0303","Cromoglycate,Rel,Leukotriene Antagonists",35829,80138.53308,"Respiratory System","03","Cromoglycate,Rel,Leukotriene Antagonists
+35,829","Respiratory System.Cromoglycate,Rel,Leukotriene Antagonists",8,"eight"
+"0304","Antihist, Hyposensit & Allergic Emergen",185835,848395.38815,"Respiratory System","03","Antihist, Hyposensit & Allergic Emergen
+185,835","Respiratory System.Antihist, Hyposensit & Allergic Emergen",8,"eight"
+"0307","Mucolytics",32621,273149.01364,"Respiratory System","03","Mucolytics
+32,621","Respiratory System.Mucolytics",8,"eight"
+"0308","Aromatic Inhalations",22,46.76494,"Respiratory System","03","Aromatic Inhalations
+22","Respiratory System.Aromatic Inhalations",8,"eight"
+"0309","Cough Preparations",3304,15281.43174,"Respiratory System","03","Cough Preparations
+3,304","Respiratory System.Cough Preparations",8,"eight"
+"0310","Systemic Nasal Decongestants",234,750.58361,"Respiratory System","03","Systemic Nasal Decongestants
+234","Respiratory System.Systemic Nasal Decongestants",8,"eight"
+"0401","Hypnotics And Anxiolytics",216322,954111.43724,"Central Nervous System","04","Hypnotics And Anxiolytics
+216,322","Central Nervous System.Hypnotics And Anxiolytics",11,"11"
+"0402","Drugs Used In Psychoses & Rel.Disorders",150987,2059144.01175,"Central Nervous System","04","Drugs Used In Psychoses & Rel.Disorders
+150,987","Central Nervous System.Drugs Used In Psychoses & Rel.Disorders",11,"11"
+"0403","Antidepressant Drugs",969925,3068240.87411,"Central Nervous System","04","Antidepressant Drugs
+969,925","Central Nervous System.Antidepressant Drugs",11,"11"
+"0404","CNS Stimulants and drugs used for ADHD",20849,807583.37641,"Central Nervous System","04","CNS Stimulants and drugs used for ADHD
+20,849","Central Nervous System.CNS Stimulants and drugs used for ADHD",11,"11"
+"0405","Obesity",2544,53811.50767,"Central Nervous System","04","Obesity
+2,544","Central Nervous System.Obesity",11,"11"
+"0406","Drugs Used In Nausea And Vertigo",85911,679191.2986,"Central Nervous System","04","Drugs Used In Nausea And Vertigo
+85,911","Central Nervous System.Drugs Used In Nausea And Vertigo",11,"11"
+"0407","Analgesics",799242,6582650.12655,"Central Nervous System","04","Analgesics
+799,242","Central Nervous System.Analgesics",11,"11"
+"0408","Antiepileptic Drugs",362804,4876448.71799,"Central Nervous System","04","Antiepileptic Drugs
+362,804","Central Nervous System.Antiepileptic Drugs",11,"11"
+"0409","Drugs Used In Park'ism/Related Disorders",73604,1701159.96328,"Central Nervous System","04","Drugs Used In Park'ism/Related Disorders
+73,604","Central Nervous System.Drugs Used In Park'ism/Related Disorders",11,"11"
+"0410","Drugs Used In Substance Dependence",19070,536734.57367,"Central Nervous System","04","Drugs Used In Substance Dependence
+19,070","Central Nervous System.Drugs Used In Substance Dependence",11,"11"
+"0411","Dementia",79563,566909.35927,"Central Nervous System","04","Dementia
+79,563","Central Nervous System.Dementia",11,"11"
+"0501","Antibacterial Drugs",468560,1914560.83169,"Infections","05","Antibacterial Drugs
+468,560","Infections.Antibacterial Drugs",5,"five"
+"0502","Antifungal Drugs",22878,141183.12346,"Infections","05","Antifungal Drugs
+22,878","Infections.Antifungal Drugs",5,"five"
+"0503","Antiviral Drugs",18917,141120.67065,"Infections","05","Antiviral Drugs
+18,917","Infections.Antiviral Drugs",5,"five"
+"0504","Antiprotozoal Drugs",48094,101335.8809,"Infections","05","Antiprotozoal Drugs
+48,094","Infections.Antiprotozoal Drugs",5,"five"
+"0505","Anthelmintics",1699,3239.32147,"Infections","05","Anthelmintics
+1,699","Infections.Anthelmintics",5,"five"
+"0601","Drugs Used In Diabetes",698400,15891231.28493,"Endocrine System","06","Drugs Used In Diabetes
+698,400","Endocrine System.Drugs Used In Diabetes",7,"seven"
+"0602","Thyroid And Antithyroid Drugs",505925,1860168.51286,"Endocrine System","06","Thyroid And Antithyroid Drugs
+505,925","Endocrine System.Thyroid And Antithyroid Drugs",7,"seven"
+"0603","Corticosteroids (Endocrine)",144802,994519.2817,"Endocrine System","06","Corticosteroids (Endocrine)
+144,802","Endocrine System.Corticosteroids (Endocrine)",7,"seven"
+"0604","Sex Hormones",129279,1496725.933,"Endocrine System","06","Sex Hormones
+129,279","Endocrine System.Sex Hormones",7,"seven"
+"0605","Hypothalamic&Pituitary Hormones&Antioest",5614,674329.1714,"Endocrine System","06","Hypothalamic&Pituitary Hormones&Antioest
+5,614","Endocrine System.Hypothalamic&Pituitary Hormones&Antioest",7,"seven"
+"0606","Drugs Affecting Bone Metabolism",113092,681410.42546,"Endocrine System","06","Drugs Affecting Bone Metabolism
+113,092","Endocrine System.Drugs Affecting Bone Metabolism",7,"seven"
+"0607","Other Endocrine Drugs",1196,88806.25394,"Endocrine System","06","Other Endocrine Drugs
+1,196","Endocrine System.Other Endocrine Drugs",7,"seven"
+"0702","Treatment Of Vaginal & Vulval Conditions",46734,613774.83381,"Obstetrics,Gynae+Urinary Tract Disorders","07","Treatment Of Vaginal & Vulval Conditions
+46,734","Obstetrics,Gynae+Urinary Tract Disorders.Treatment Of Vaginal & Vulval Conditions",3,"three"
+"0703","Contraceptives",129197,1346289.99066,"Obstetrics,Gynae+Urinary Tract Disorders","07","Contraceptives
+129,197","Obstetrics,Gynae+Urinary Tract Disorders.Contraceptives",3,"three"
+"0704","Drugs For Genito-Urinary Disorders",302361,3946036.11143,"Obstetrics,Gynae+Urinary Tract Disorders","07","Drugs For Genito-Urinary Disorders
+302,361","Obstetrics,Gynae+Urinary Tract Disorders.Drugs For Genito-Urinary Disorders",3,"three"
+"0801","Cytotoxic Drugs",1554,84247.44778,"Malignant Disease & Immunosuppression","08","Cytotoxic Drugs
+1,554","Malignant Disease & Immunosuppression.Cytotoxic Drugs",3,"three"
+"0802","Drugs Affecting The Immune Response",17410,384509.64361,"Malignant Disease & Immunosuppression","08","Drugs Affecting The Immune Response
+17,410","Malignant Disease & Immunosuppression.Drugs Affecting The Immune Response",3,"three"
+"0803","Sex Hormones & Antag In Malig Disease",57645,2532238.59553,"Malignant Disease & Immunosuppression","08","Sex Hormones & Antag In Malig Disease
+57,645","Malignant Disease & Immunosuppression.Sex Hormones & Antag In Malig Disease",3,"three"
+"0901","Anaemias + Other Blood Disorders",266816,529070.68386,"Nutrition And Blood","09","Anaemias + Other Blood Disorders
+266,816","Nutrition And Blood.Anaemias + Other Blood Disorders",10,"10"
+"0902","Fluids And Electrolytes",12886,131578.08623,"Nutrition And Blood","09","Fluids And Electrolytes
+12,886","Nutrition And Blood.Fluids And Electrolytes",10,"10"
+"0904","Oral Nutrition",93599,5456118.26408,"Nutrition And Blood","09","Oral Nutrition
+93,599","Nutrition And Blood.Oral Nutrition",10,"10"
+"0905","Minerals",9983,354354.96739,"Nutrition And Blood","09","Minerals
+9,983","Nutrition And Blood.Minerals",10,"10"
+"0906","Vitamins",429160,2339827.03371,"Nutrition And Blood","09","Vitamins
+429,160","Nutrition And Blood.Vitamins",10,"10"
+"0908","Metabolic Disorders",129,80527.64728,"Nutrition And Blood","09","Metabolic Disorders
+129","Nutrition And Blood.Metabolic Disorders",10,"10"
+"0909","Foods",1955,105862.97417,"Nutrition And Blood","09","Foods
+1,955","Nutrition And Blood.Foods",10,"10"
+"0910","Compound Vit/Mineral Formulations",4777,25753.34721,"Nutrition And Blood","09","Compound Vit/Mineral Formulations
+4,777","Nutrition And Blood.Compound Vit/Mineral Formulations",10,"10"
+"0911","Health Supplements",861,38026.15517,"Nutrition And Blood","09","Health Supplements
+861","Nutrition And Blood.Health Supplements",10,"10"
+"0912","Other Health Supplements",179,994.50701,"Nutrition And Blood","09","Other Health Supplements
+179","Nutrition And Blood.Other Health Supplements",10,"10"
+"1001","Drugs Used In Rheumatic Diseases & Gout",314534,1426357.47138,"Musculoskeletal & Joint Diseases","10","Drugs Used In Rheumatic Diseases & Gout
+314,534","Musculoskeletal & Joint Diseases.Drugs Used In Rheumatic Diseases & Gout",3,"three"
+"1002","Drugs Used In Neuromuscular  Disorders",18593,134260.39528,"Musculoskeletal & Joint Diseases","10","Drugs Used In Neuromuscular  Disorders
+18,593","Musculoskeletal & Joint Diseases.Drugs Used In Neuromuscular  Disorders",3,"three"
+"1003","Soft-Tissue Disorders & Topical Pain Rel",82033,428485.62661,"Musculoskeletal & Joint Diseases","10","Soft-Tissue Disorders & Topical Pain Rel
+82,033","Musculoskeletal & Joint Diseases.Soft-Tissue Disorders & Topical Pain Rel",3,"three"
+"1103","Anti-Infective Eye Preparations",23955,127000.80166,"Eye","11","Anti-Infective Eye Preparations
+23,955","Eye.Anti-Infective Eye Preparations",6,"six"
+"1104","Corti'roids & Other Anti-Inflamm.Preps.",31130,247584.48479,"Eye","11","Corti'roids & Other Anti-Inflamm.Preps.
+31,130","Eye.Corti'roids & Other Anti-Inflamm.Preps.",6,"six"
+"1105","Mydriatics And Cycloplegics",967,68355.22896,"Eye","11","Mydriatics And Cycloplegics
+967","Eye.Mydriatics And Cycloplegics",6,"six"
+"1106","Treatment Of Glaucoma",166574,1825897.58178,"Eye","11","Treatment Of Glaucoma
+166,574","Eye.Treatment Of Glaucoma",6,"six"
+"1107","Local Anaesthetics",2,0.94542,"Eye","11","Local Anaesthetics
+2","Eye.Local Anaesthetics",6,"six"
+"1108","Miscellaneous Ophthalmic Preparations",73011,366930.02256,"Eye","11","Miscellaneous Ophthalmic Preparations
+73,011","Eye.Miscellaneous Ophthalmic Preparations",6,"six"
+"1201","Drugs Acting On The Ear",28651,132193.5387,"Ear, Nose And Oropharynx","12","Drugs Acting On The Ear
+28,651","Ear, Nose And Oropharynx.Drugs Acting On The Ear",3,"three"
+"1202","Drugs Acting On The Nose",119802,705267.56111,"Ear, Nose And Oropharynx","12","Drugs Acting On The Nose
+119,802","Ear, Nose And Oropharynx.Drugs Acting On The Nose",3,"three"
+"1203","Drugs Acting On The Oropharynx",11159,74336.63517,"Ear, Nose And Oropharynx","12","Drugs Acting On The Oropharynx
+11,159","Ear, Nose And Oropharynx.Drugs Acting On The Oropharynx",3,"three"
+"1301","Management of Skin Conditions",171,1057.16476,"Skin","13","Management of Skin Conditions
+171","Skin.Management of Skin Conditions",15,"15"
+"1302","Emollient & Barrier Preparations",158382,1024321.89777,"Skin","13","Emollient & Barrier Preparations
+158,382","Skin.Emollient & Barrier Preparations",15,"15"
+"1303","Top Local Anaesthetics & Antipruritics",3869,33762.34464,"Skin","13","Top Local Anaesthetics & Antipruritics
+3,869","Skin.Top Local Anaesthetics & Antipruritics",15,"15"
+"1304","Topical Corticosteroids",159261,692287.23216,"Skin","13","Topical Corticosteroids
+159,261","Skin.Topical Corticosteroids",15,"15"
+"1305","Preparations For Eczema And Psoriasis",18845,742842.61922,"Skin","13","Preparations For Eczema And Psoriasis
+18,845","Skin.Preparations For Eczema And Psoriasis",15,"15"
+"1306","Acne and Rosacea",23761,340037.50223,"Skin","13","Acne and Rosacea
+23,761","Skin.Acne and Rosacea",15,"15"
+"1307","Preparations For Warts And Calluses",2112,19869.01998,"Skin","13","Preparations For Warts And Calluses
+2,112","Skin.Preparations For Warts And Calluses",15,"15"
+"1308","Sunscreens And Camouflagers",8419,269889.11655,"Skin","13","Sunscreens And Camouflagers
+8,419","Skin.Sunscreens And Camouflagers",15,"15"
+"1309","Shampoo&Other Preps For Scalp&Hair Cond",16836,92517.34261,"Skin","13","Shampoo&Other Preps For Scalp&Hair Cond
+16,836","Skin.Shampoo&Other Preps For Scalp&Hair Cond",15,"15"
+"1310","Anti-Infective Skin Preparations",53735,204207.81121,"Skin","13","Anti-Infective Skin Preparations
+53,735","Skin.Anti-Infective Skin Preparations",15,"15"
+"1311","Skin Cleansers,Antiseptics & Desloughing",3432,29322.96097,"Skin","13","Skin Cleansers,Antiseptics & Desloughing
+3,432","Skin.Skin Cleansers,Antiseptics & Desloughing",15,"15"
+"1312","Antiperspirants",593,3059.0009,"Skin","13","Antiperspirants
+593","Skin.Antiperspirants",15,"15"
+"1313","Wound Management Products",195,5492.57441,"Skin","13","Wound Management Products
+195","Skin.Wound Management Products",15,"15"
+"1314","Topical Circulatory Preparations",2118,9597.5408,"Skin","13","Topical Circulatory Preparations
+2,118","Skin.Topical Circulatory Preparations",15,"15"
+"1315","Miscellaneous Topical Preparations",31,719.93314,"Skin","13","Miscellaneous Topical Preparations
+31","Skin.Miscellaneous Topical Preparations",15,"15"
+"1404","Vaccines And Antisera",219279,2016745.78275,"Immunological Products & Vaccines","14","Vaccines And Antisera
+219,279","Immunological Products & Vaccines.Vaccines And Antisera",2,"two"
+"1405","Immunoglobulins",1,157.71601,"Immunological Products & Vaccines","14","Immunoglobulins
+1","Immunological Products & Vaccines.Immunoglobulins",2,"two"
+"1501","General Anaesthesia",5116,38568.58615,"Anaesthesia","15","General Anaesthesia
+5,116","Anaesthesia.General Anaesthesia",2,"two"
+"1502","Local Anaesthesia",26229,294273.26709,"Anaesthesia","15","Local Anaesthesia
+26,229","Anaesthesia.Local Anaesthesia",2,"two"
+"1803","X-Ray Contrast Media",2,178.78181,"Preparations used in Diagnosis","18","X-Ray Contrast Media
+2","Preparations used in Diagnosis.X-Ray Contrast Media",1,"one"
+"1902","Selective Preparations",8946,131768.72648,"Other Drugs And Preparations","19","Selective Preparations
+8,946","Other Drugs And Preparations.Selective Preparations",7,"seven"
+"1904","Single Substances",20,4656.045,"Other Drugs And Preparations","19","Single Substances
+20","Other Drugs And Preparations.Single Substances",7,"seven"
+"1905","Other Preparations",114,1120.51765,"Other Drugs And Preparations","19","Other Preparations
+114","Other Drugs And Preparations.Other Preparations",7,"seven"
+"1906","Acids",105,946.68104,"Other Drugs And Preparations","19","Acids
+105","Other Drugs And Preparations.Acids",7,"seven"
+"1907","Base/Dil/Susp Agents/Stabilisers",9121,292536.27319,"Other Drugs And Preparations","19","Base/Dil/Susp Agents/Stabilisers
+9,121","Other Drugs And Preparations.Base/Dil/Susp Agents/Stabilisers",7,"seven"
+"1913","Cordials/Soft Drinks",43,1500.25318,"Other Drugs And Preparations","19","Cordials/Soft Drinks
+43","Other Drugs And Preparations.Cordials/Soft Drinks",7,"seven"
+"1914","Waters",105,924.13409,"Other Drugs And Preparations","19","Waters
+105","Other Drugs And Preparations.Waters",7,"seven"
+"2001","Absorbent Cottons",28,168.07888,"Dressings","20","Absorbent Cottons
+28","Dressings.Absorbent Cottons",15,"15"
+"2002","Arm Sling/Bandages",16652,371343.8437,"Dressings","20","Arm Sling/Bandages
+16,652","Dressings.Arm Sling/Bandages",15,"15"
+"2003","Wound Management & Other Dressings",102713,2248931.52028,"Dressings","20","Wound Management & Other Dressings
+102,713","Dressings.Wound Management & Other Dressings",15,"15"
+"2004","Gauzes & Gauze Tissue",1705,47243.95915,"Dressings","20","Gauzes & Gauze Tissue
+1,705","Dressings.Gauzes & Gauze Tissue",15,"15"
+"2005","Tracheostomy & Laryngectomy Appliances",1822,139738.15305,"Dressings","20","Tracheostomy & Laryngectomy Appliances
+1,822","Dressings.Tracheostomy & Laryngectomy Appliances",15,"15"
+"2007","Lints",17,702.35504,"Dressings","20","Lints
+17","Dressings.Lints",15,"15"
+"2009","Stockinette",14113,134799.96578,"Dressings","20","Stockinette
+14,113","Dressings.Stockinette",15,"15"
+"2010","Surgical Adhesive Tape",7852,26141.49168,"Dressings","20","Surgical Adhesive Tape
+7,852","Dressings.Surgical Adhesive Tape",15,"15"
+"2011","Surgical Sutures",1984,5162.1401,"Dressings","20","Surgical Sutures
+1,984","Dressings.Surgical Sutures",15,"15"
+"2012","Swabs",4742,21335.34586,"Dressings","20","Swabs
+4,742","Dressings.Swabs",15,"15"
+"2014","Skin Closure Strips, Sterile",1072,1765.41401,"Dressings","20","Skin Closure Strips, Sterile
+1,072","Dressings.Skin Closure Strips, Sterile",15,"15"
+"2015","Skin Adhesive, Sterile",33,372.48079,"Dressings","20","Skin Adhesive, Sterile
+33","Dressings.Skin Adhesive, Sterile",15,"15"
+"2017","Cervical Collar",1,2.42783,"Dressings","20","Cervical Collar
+1","Dressings.Cervical Collar",15,"15"
+"2018","Cellulose Wadding BP 1988",3,14.32873,"Dressings","20","Cellulose Wadding BP 1988
+3","Dressings.Cellulose Wadding BP 1988",15,"15"
+"2020","Silk Garments",165,7138.80973,"Dressings","20","Silk Garments
+165","Dressings.Silk Garments",15,"15"
+"2101","Other Appliances",136315,977282.02723,"Appliances","21","Other Appliances
+136,315","Appliances.Other Appliances",37,"37"
+"2102","Catheters",20073,2243949.15366,"Appliances","21","Catheters
+20,073","Appliances.Catheters",37,"37"
+"2103","Chiropody Appliances",46,284.39178,"Appliances","21","Chiropody Appliances
+46","Appliances.Chiropody Appliances",37,"37"
+"2104","Contraceptive Devices",685,7129.09882,"Appliances","21","Contraceptive Devices
+685","Appliances.Contraceptive Devices",37,"37"
+"2106","Trusses",43,1217.51107,"Appliances","21","Trusses
+43","Appliances.Trusses",37,"37"
+"2107","Elastic Hosiery",10751,186732.04002,"Appliances","21","Elastic Hosiery
+10,751","Appliances.Elastic Hosiery",37,"37"
+"2112","Peak Flow Meters",4710,26501.22287,"Appliances","21","Peak Flow Meters
+4,710","Appliances.Peak Flow Meters",37,"37"
+"2113","Catheter Maintenance Products",2218,70252.93369,"Appliances","21","Catheter Maintenance Products
+2,218","Appliances.Catheter Maintenance Products",37,"37"
+"2114","Lubricant Gels",4877,17273.75821,"Appliances","21","Lubricant Gels
+4,877","Appliances.Lubricant Gels",37,"37"
+"2116","Irrigation Solutions",15107,83308.82349,"Appliances","21","Irrigation Solutions
+15,107","Appliances.Irrigation Solutions",37,"37"
+"2118","Vacuum Pumps for Erectile Dysfunction",234,22289.66249,"Appliances","21","Vacuum Pumps for Erectile Dysfunction
+234","Appliances.Vacuum Pumps for Erectile Dysfunction",37,"37"
+"2119","Oral Film Forming Agents",313,22310.57348,"Appliances","21","Oral Film Forming Agents
+313","Appliances.Oral Film Forming Agents",37,"37"
+"2120","Venous Ulcer Compression System",1825,50770.47103,"Appliances","21","Venous Ulcer Compression System
+1,825","Appliances.Venous Ulcer Compression System",37,"37"
+"2121","Dry Mouth Products",5839,47409.5799,"Appliances","21","Dry Mouth Products
+5,839","Appliances.Dry Mouth Products",37,"37"
+"2122","Emollients",114345,544414.35635,"Appliances","21","Emollients
+114,345","Appliances.Emollients",37,"37"
+"2123","Vaginal Moisturisers",3806,34814.34195,"Appliances","21","Vaginal Moisturisers
+3,806","Appliances.Vaginal Moisturisers",37,"37"
+"2124","Nasal Products",2306,6689.16734,"Appliances","21","Nasal Products
+2,306","Appliances.Nasal Products",37,"37"
+"2125","Vaginal Dilators",37,1033.19926,"Appliances","21","Vaginal Dilators
+37","Appliances.Vaginal Dilators",37,"37"
+"2127","Lymphoedema Garments",3400,214169.26031,"Appliances","21","Lymphoedema Garments
+3,400","Appliances.Lymphoedema Garments",37,"37"
+"2128","Anal Irrigation System",1739,289459.86176,"Appliances","21","Anal Irrigation System
+1,739","Appliances.Anal Irrigation System",37,"37"
+"2129","Plantar Pressure Offloading Device",315,9040.85467,"Appliances","21","Plantar Pressure Offloading Device
+315","Appliances.Plantar Pressure Offloading Device",37,"37"
+"2130","Eye Products",58713,472790.24022,"Appliances","21","Eye Products
+58,713","Appliances.Eye Products",37,"37"
+"2131","Cycloidal Vibration Accessories",1,278.0761,"Appliances","21","Cycloidal Vibration Accessories
+1","Appliances.Cycloidal Vibration Accessories",37,"37"
+"2132","Inhalation Solutions",577,17557.46286,"Appliances","21","Inhalation Solutions
+577","Appliances.Inhalation Solutions",37,"37"
+"2133","Indwelling Pleural Cath Drain System",121,21533.51637,"Appliances","21","Indwelling Pleural Cath Drain System
+121","Appliances.Indwelling Pleural Cath Drain System",37,"37"
+"2134","Vaginal PH Correction Products",92,686.17269,"Appliances","21","Vaginal PH Correction Products
+92","Appliances.Vaginal PH Correction Products",37,"37"
+"2136","Adhesive Dressing Remover Ster Silicone",152,3884.15818,"Appliances","21","Adhesive Dressing Remover Ster Silicone
+152","Appliances.Adhesive Dressing Remover Ster Silicone",37,"37"
+"2137","Pelvic Toning Devices",18,250.76384,"Appliances","21","Pelvic Toning Devices
+18","Appliances.Pelvic Toning Devices",37,"37"
+"2138","Low Friction Products",895,12325.62059,"Appliances","21","Low Friction Products
+895","Appliances.Low Friction Products",37,"37"
+"2140","Bacterial Decolonisation Products",10,39.3552,"Appliances","21","Bacterial Decolonisation Products
+10","Appliances.Bacterial Decolonisation Products",37,"37"
+"2141","Physical Debridement Device",748,39843.29411,"Appliances","21","Physical Debridement Device
+748","Appliances.Physical Debridement Device",37,"37"
+"2142","Jaw Rehabilitation Device",7,355.64604,"Appliances","21","Jaw Rehabilitation Device
+7","Appliances.Jaw Rehabilitation Device",37,"37"
+"2143","Micro-Enema - Sodium Citrate",41,212.38918,"Appliances","21","Micro-Enema - Sodium Citrate
+41","Appliances.Micro-Enema - Sodium Citrate",37,"37"
+"2146","Hernia Support Garments",7,440.32383,"Appliances","21","Hernia Support Garments
+7","Appliances.Hernia Support Garments",37,"37"
+"2147","Dev For Fungal Nail Infections",14,261.00034,"Appliances","21","Dev For Fungal Nail Infections
+14","Appliances.Dev For Fungal Nail Infections",37,"37"
+"2148","Detection Sensor Interstitial Fluid/Gluc",2246,149853.65346,"Appliances","21","Detection Sensor Interstitial Fluid/Gluc
+2,246","Appliances.Detection Sensor Interstitial Fluid/Gluc",37,"37"
+"2149","Pulsed Electromagnetic Stimulator",5,64.79857,"Appliances","21","Pulsed Electromagnetic Stimulator
+5","Appliances.Pulsed Electromagnetic Stimulator",37,"37"
+"2202","Anal Plugs",107,6965.55638,"Incontinence Appliances","22","Anal Plugs
+107","Incontinence Appliances.Anal Plugs",12,"12"
+"2205","Catheter Valves",2391,46596.45849,"Incontinence Appliances","22","Catheter Valves
+2,391","Incontinence Appliances.Catheter Valves",12,"12"
+"2215","Faecal Collectors",16,488.06651,"Incontinence Appliances","22","Faecal Collectors
+16","Incontinence Appliances.Faecal Collectors",12,"12"
+"2220","Incontinence Belts",1,71.85176,"Incontinence Appliances","22","Incontinence Belts
+1","Incontinence Appliances.Incontinence Belts",12,"12"
+"2230","Incontinence Sheaths",3160,203341.40351,"Incontinence Appliances","22","Incontinence Sheaths
+3,160","Incontinence Appliances.Incontinence Sheaths",12,"12"
+"2240","Incontinence Sheath Fixing Strips & Adh",145,2415.48289,"Incontinence Appliances","22","Incontinence Sheath Fixing Strips & Adh
+145","Incontinence Appliances.Incontinence Sheath Fixing Strips & Adh",12,"12"
+"2250","Leg Bags",10769,366534.23766,"Incontinence Appliances","22","Leg Bags
+10,769","Incontinence Appliances.Leg Bags",12,"12"
+"2260","Night Drainage Bags",16560,229656.5688,"Incontinence Appliances","22","Night Drainage Bags
+16,560","Incontinence Appliances.Night Drainage Bags",12,"12"
+"2270","Suspensory Systems",55,1624.03269,"Incontinence Appliances","22","Suspensory Systems
+55","Incontinence Appliances.Suspensory Systems",12,"12"
+"2280","Tubing And Accessories",4939,65711.17927,"Incontinence Appliances","22","Tubing And Accessories
+4,939","Incontinence Appliances.Tubing And Accessories",12,"12"
+"2285","Insert For Female Stress Incont",45,2048.73439,"Incontinence Appliances","22","Insert For Female Stress Incont
+45","Incontinence Appliances.Insert For Female Stress Incont",12,"12"
+"2290","Urinal Systems",168,7476.79906,"Incontinence Appliances","22","Urinal Systems
+168","Incontinence Appliances.Urinal Systems",12,"12"
+"2305","Adhesive Discs/Rings/Pads/Plasters",3840,149850.71131,"Stoma Appliances","23","Adhesive Discs/Rings/Pads/Plasters
+3,840","Stoma Appliances.Adhesive Discs/Rings/Pads/Plasters",19,"19"
+"2310","Adhesive (Pastes/Sprays/Solutions)",18,577.67404,"Stoma Appliances","23","Adhesive (Pastes/Sprays/Solutions)
+18","Stoma Appliances.Adhesive (Pastes/Sprays/Solutions)",19,"19"
+"2315","Adhesive Removers (Sprays/Liquids/Wipes)",14697,317944.58301,"Stoma Appliances","23","Adhesive Removers (Sprays/Liquids/Wipes)
+14,697","Stoma Appliances.Adhesive Removers (Sprays/Liquids/Wipes)",19,"19"
+"2320","Bag Closures",51,486.85669,"Stoma Appliances","23","Bag Closures
+51","Stoma Appliances.Bag Closures",19,"19"
+"2325","Bag Covers",130,4196.92354,"Stoma Appliances","23","Bag Covers
+130","Stoma Appliances.Bag Covers",19,"19"
+"2330","Belts",1276,52195.9508,"Stoma Appliances","23","Belts
+1,276","Stoma Appliances.Belts",19,"19"
+"2335","Colostomy Bags",7469,1497937.97221,"Stoma Appliances","23","Colostomy Bags
+7,469","Stoma Appliances.Colostomy Bags",19,"19"
+"2345","Deodorants",1898,22462.20039,"Stoma Appliances","23","Deodorants
+1,898","Stoma Appliances.Deodorants",19,"19"
+"2346","Discharge Solidifying Agents",643,37251.59271,"Stoma Appliances","23","Discharge Solidifying Agents
+643","Stoma Appliances.Discharge Solidifying Agents",19,"19"
+"2350","Filters/Bridges",83,4661.39305,"Stoma Appliances","23","Filters/Bridges
+83","Stoma Appliances.Filters/Bridges",19,"19"
+"2360","Ileostomy Bags",9277,1308964.68014,"Stoma Appliances","23","Ileostomy Bags
+9,277","Stoma Appliances.Ileostomy Bags",19,"19"
+"2370","Irrigation Washout Appliances",541,18218.27755,"Stoma Appliances","23","Irrigation Washout Appliances
+541","Stoma Appliances.Irrigation Washout Appliances",19,"19"
+"2375","Pressure Plates/Shields",46,1492.16999,"Stoma Appliances","23","Pressure Plates/Shields
+46","Stoma Appliances.Pressure Plates/Shields",19,"19"
+"2380","Skin Fillers And Protectives",57875,699887.5638,"Stoma Appliances","23","Skin Fillers And Protectives
+57,875","Stoma Appliances.Skin Fillers And Protectives",19,"19"
+"2385","Skin Protectors",2309,167277.91688,"Stoma Appliances","23","Skin Protectors
+2,309","Stoma Appliances.Skin Protectors",19,"19"
+"2390","Stoma Caps/Dressings",264,15761.03465,"Stoma Appliances","23","Stoma Caps/Dressings
+264","Stoma Appliances.Stoma Caps/Dressings",19,"19"
+"2392","Tubing & Accessories",63,2878.54043,"Stoma Appliances","23","Tubing & Accessories
+63","Stoma Appliances.Tubing & Accessories",19,"19"
+"2394","Two Piece Ostomy Systems",4039,335031.52544,"Stoma Appliances","23","Two Piece Ostomy Systems
+4,039","Stoma Appliances.Two Piece Ostomy Systems",19,"19"
+"2396","Urostomy Bags",2453,398046.88929,"Stoma Appliances","23","Urostomy Bags
+2,453","Stoma Appliances.Urostomy Bags",19,"19"
