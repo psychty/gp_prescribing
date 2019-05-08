@@ -119,6 +119,7 @@ var circles = svg.selectAll(".bubbles")
         }
     }
 
+
 // This is a function that listens for the event of someone clicking the 'combined_button' button
     d3.select("#combined_button").on('click', function(){
       simulation

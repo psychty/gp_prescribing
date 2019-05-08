@@ -35,10 +35,6 @@ BNF_chapters <- BNF_sections %>%
 
 # spending_by_ccg or spending_by_practice
 
-# spending_acute_diarrhoea_09G <- read_csv(paste0("https://openprescribing.net/api/1.0/spending_by_practice/?code=", "0104", "&org=09G&format=csv"), col_types = cols(actual_cost = col_double(),date = col_date(format = ""),items = col_double(), quantity = col_double(), row_id = col_character(),row_name = col_character())) %>% 
-  # mutate(Code = "0104") %>% 
-  # 5RRRRRRRRTTTTTTTTTTTTTTTTTTTT5join(BNF_sections, by = c("Code" = "BNF Section Code"))
-
 # spending_acute_diarrhoea_all_ccgs <- read_csv(paste0("https://openprescribing.net/api/1.0/spending_by_ccg/?code=", code_x, "&org=&format=csv"), col_types = cols(actual_cost = col_double(),date = col_date(format = ""),items = col_double(), quantity = col_double(), row_id = col_character(),row_name = col_character())) %>% 
   # mutate(Code = code_x) %>% 
   # +join(BNF_sections, by = c("Code" = "BNF Section Code")) %>% 
@@ -186,7 +182,6 @@ write.csv(Coastal_2018_js, "~/gp_prescribing/Coastal_2018_prescribing.csv", row.
 
 write.csv(WSx_2018_js, "~/gp_prescribing/WSx_2018_prescribing.csv", row.names = FALSE)
 
-
 Coastal_2018_js_chapter <- Coastal_2018_js %>% 
   group_by(BNF_chapter, `BNF Chapter Code`) %>% 
   summarise(items = sum(items, na.rm = TRUE),
@@ -195,19 +190,50 @@ Coastal_2018_js_chapter <- Coastal_2018_js %>%
 
 write.csv(Coastal_2018_js_chapter, "~/gp_prescribing/Coastal_2018_prescribing_chapter.csv", row.names = FALSE)
 
-
 # Organisation details - https://openprescribing.net/api/1.0/org_details/?
 
-list_size <- read_csv("https://openprescribing.net/api/1.0/org_details/?org_type=practice&org=09G&keys=total_list_size&format=csv")
+list_size = data.frame(date = character(), row_id = character(), row_name = character(), total_list_size = numeric(), ccg = character())
+
+for(i in 1:length(orgs)){
+
+list_size_df <- read_csv("https://openprescribing.net/api/1.0/org_details/?org_type=practice&org=", orgs[i] ,"&keys=total_list_size&format=csv", col_types = cols(date = col_date(format = ""),  row_id = col_character(),  row_name = col_character(),  total_list_size = col_double())) %>% 
+  mutate(ccg = orgs[i])
+
+list_size <- list_size %>% 
+  bind_rows(list_size_df)
+
+rm(list_size_df)
+}
 
 # You could also include register size from QOF - note that age ranges sometimes differ (e.g. diabetes is 17+ whilst prescribing data will be all ages)
+
+# library(fingertipsR)
+# View(indicators())
+
 # https://digital.nhs.uk/data-and-information/publications/statistical/quality-and-outcomes-framework-achievement-prevalence-and-exceptions-data/2017-18
 
 # NHS recommends some items are not routinely prescribed https://www.england.nhs.uk/wp-content/uploads/2017/11/items-which-should-not-be-routinely-precscribed-in-pc-ccg-guidance.pdf
 
 #Over the counter medicines which should not be routinely prescribed 
-OTC <- read_csv("https://www.nhsbsa.nhs.uk/sites/default/files/2017-07/Dataset.csv") %>% 
-  mutate(Time_period = "2016")
+OTC <- as.data.frame(read_csv("https://www.nhsbsa.nhs.uk/sites/default/files/2017-07/Dataset.csv", col_types = cols(`Prescribing Method` = col_character(), `Legal Category` = col_character(), `BNF Code` = col_character(), `Drug Name` = col_character(),`Pack Size` = col_double(), `Unit of Measure` = col_character()))) %>% 
+  select(`Prescribing Method`, `Legal Category`, `BNF Code`, `Drug Name`, `Pack Size`, `Unit of Measure`) %>% 
+  mutate(Time_period = "2016") %>% 
+  rename(Presentation_code = `BNF Code`)
+
+otc_code_x = OTC$Presentation_code[1]
+
+
+org_gps <- read_csv(paste0("https://openprescribing.net/api/1.0/org_code?q=09G&org_type=practice&format=csv"))
+
+df_x <- read_csv(paste0("https://openprescribing.net/api/1.0/spending_by_practice/?code=", otc_code_x, "&org=", "&format=csv"), col_types = cols(actual_cost = col_double(),date = col_date(format = ""),items = col_double(), quantity = col_double(), row_id = col_character(),row_name = col_character()))
+
+# tryCatch(df_x <- read_csv(paste0("https://openprescribing.net/api/1.0/spending_by_ccg/?code=", code_x, "&org=", org_x,"&format=csv"), col_types = cols(actual_cost = col_double(),date = col_date(format = ""),items = col_double(), quantity = col_double(), row_id = col_character(),row_name = col_character())) %>% 
+         #   mutate(Code = code_x) %>% 
+         #   left_join(BNF_sections, by = c("Code" = "BNF Section Code")) %>% 
+         #   mutate(date = as.character(date)) , 
+         # error = function(e) print(paste0("Code ", code_x, " did not work")))
+
+
 
 Drugs <- read_csv("https://openprescribing.net/api/1.0/bnf_code/?q=seratonin&format=csv")
 

@@ -18,27 +18,16 @@
       <h1>GP Practice Prescribing - West Sussex</h1>
       <p>This visualisation shows the number of items prescribed in 2018 for the three West Sussex CCGs combined.</p>
       <p>This presentation level data is from NHS Digital under the Open Government Licence. Presentation level means data is provided at the level of each individual drug name, form and strength or size. It does not list each individual prescription and doesn't contain any patient identifiable data.</p>
-      <p>Data downloaded for EBN labs OpenPrescribing tool. OpenPrescribing.net, EBM DataLab, University of Oxford, 2019</p>
+      <p>Data downloaded from EBN labs OpenPrescribing tool. OpenPrescribing.net, EBM DataLab, University of Oxford, 2019</p>
   </div>
 
-  <article class="main">
+  <article class = "main">
       <h2>Circles</h2>
 
       <div id = "chart"> </div>
   </article>
 
-    <aside class="aside aside-1">
-        <h2>Notes:</h2>
-        <p>A prescription item refers to a single supply of a medicine, dressing or appliance prescribed on a prescription form. If a prescription form includes three medicines it is counted as three prescription items. These figures do not give any indication of the length of treatment or quantity of medicine prescribed.</p>
-        <p>Drugs or appliances are categorised by BNF (British National Formulary)</p>
-
-        <p>The size of the circle represents the number of items prescribed for that category of items. Items are grouped by the broad section of the BNF in which they are classified.</p>
-
-        <h2>Size key</h2>
-        <div id = "chart_legend"> </div>
-    </aside>
-
-    <aside class = "aside aside-2">
+  <aside class = "aside aside-1">
       <h2>Exploring chapters</h2>
       <p>Use the buttons below to select a BNF chapter and hover over a circle to see the category of items.</p>
       <button id = "combined_button">Reset the bubbles!</button>
@@ -64,18 +53,28 @@
       <button id = "split_button_incontinence">Incontinence Appliances</button>
       <button id = "split_button_stoma">Stoma Appliances</button>
 
+  </aside>
 
-      <!-- Create a div where the graph will take place -->
+  <aside class="aside aside-2">
+      <h2>Notes:</h2>
+      <p>A prescription item refers to a single supply of a medicine, dressing or appliance prescribed on a prescription form. If a prescription form includes three medicines it is counted as three prescription items. These figures do not give any indication of the length of treatment or quantity of medicine prescribed.</p>
+      <p>Drugs or appliances are categorised by BNF (British National Formulary)</p>
 
-      <div id = "chart_tooltip"> </div>
-    </aside>
+      <p>The size of the circle represents the number of items prescribed for that category of items. Items are grouped by the broad section of the BNF in which they are classified.</p>
+
+      <h2>Size key</h2>
+
+  <div id = "chart_legend"> </div>
+  </aside>
 
   <footer class="footer">M4de by Rich Tyler <a href = https://github.com/psychty>github/psychty</a> May 2019</footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
   <script src="prescribing_bubbles.js"></script>
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/d3plus/1.9.8/d3plus.full.min.js"></script>
-  <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+  <!-- <script src="https://d3js.org/d3-queue.v3.min.js"></script> -->
+  <script src="https://d3js.org/d3-drag.v1.min.js"></script>
+
 
 </div>
 
