@@ -1,7 +1,11 @@
 
 //  https://www.youtube.com/watch?v=lPr60pexvEM
-
 // https://archive.nytimes.com/www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html
+
+// These are some global variables, they start life either as blank arrays (e.g. the variables with [];) as these become created/filled by functions to say all the unique items in the dataframe or alternatively as null/undefined in the case of selected_chapter which will later be used to filter or select a chapter of interest. To begin with we dont want any chapter selected which is why it is null
+var chapter_categories = [];
+var chapter_totals = [];
+var selected_chapter = null;
 
 (function() {
   var width = 800,
@@ -16,6 +20,7 @@
     .domain([1, 1010000])
     .range([1,50])
 
+// TODO: get colours on the buttons
   var chapter_key = ["Gastro-Intestinal System","Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae+Urinary Tract Disorders", "Malignant Disease & Immunosuppression", "Nutrition And Blood", "Musculoskeletal & Joint Diseases", "Eye", "Ear, Nose And Oropharynx", "Skin", "Immunological Products & Vaccines", "Anaesthesia", "Preparations used in Diagnosis", "Other Drugs And Preparations", "Dressings", "Appliances", "Incontinence Appliances", "Stoma Appliances"]
 
 // Define a colour pallete for the given chapters (this could be the chapter name or the chapter code)
@@ -42,6 +47,7 @@ var tooltip = d3.select("#chart")
 	    .style("z-index", "10")
 	    .style("visibility", "hidden");
 
+// This creates the function for what to do when someone moves the mouse over a circle (e.g. move the tooltip in relation to the mouse cursor).
 var mousemove = function(d) {
   tooltip
     .html("<p>In 2018, there were <strong>" + format(d.items) + "</strong> items prescribed in the " + d.BNF_section + " BNF section.</p><p>This is part of the <strong>" + d.BNF_chapter + "</strong> BNF chapter.</p>")
@@ -59,7 +65,7 @@ var forceY = d3.forceY(function(d){
 
 // This is a function which tells the circles how close or far away they need to be. If the radius of the circle matches the radius of the forceCollide then there will be no overlap between circles. Adding a + 1 with add a small gap between the circles. Adding a negative (- 1) will add some overlap.
 var forceCollide = d3.forceCollide(function(d) {
-  return radiusScale(d.items) +1
+  return radiusScale(d.items) + 1
 }).iterations(2)
 
 // create a force simulation acting on our circles. this is the default simulation, using the forceX and forceY functions defined above.
@@ -68,19 +74,9 @@ var simulation = d3.forceSimulation()
     .force("y", d3.forceY(height /2).strength(0.04))
     .force("collide", forceCollide)
 
-
 // TODO: Load more than one csv data object and calculate fields from them both to use in tooltips and other text
 
-//     d3.csv("Coastal_2018_prescribing.csv", function(error, csv_data) {
-//  var data = d3.nest()
-//   .key(function(d) { return d.BNF_chapter;})
-//   .rollup(function(d) {
-//    return d3.sum(d, function(g) {return g.items; });
-//   }).entries(csv_data);
-// ...
-// });
-
-// Load data from csv file
+// Load data from csv file - this data becomes globally available, not just as an object to be called
   d3.queue()
     .defer(d3.csv, "WSx_2018_prescribing.csv")
     // .defer(d3.csv, "Coastal_2018_prescribing_chapter.csv")
@@ -104,7 +100,6 @@ var circles = svg.selectAll(".bubbles")
 	    .on("mousemove", mousemove)
 	    .on("mouseout", function(){return tooltip.style("visibility", "hidden");}); // I think this function ammends the visibility of the tooltip object to hidden
 
-// TODO:  Figure out creating a variable based on the button clicked (e.g. the chpter title clicked) and have it appear here also with a line to the circles force centre.
       simulation.nodes(datapoints)
         .on('tick', ticked)
 
@@ -117,84 +112,42 @@ var circles = svg.selectAll(".bubbles")
              return d.y
            })
         }
+
+        chapter_categories = create_chapter_categories(datapoints);
+        chapter_totals = create_chapter_totals(datapoints);
+
+        buildMenu();
     }
 
-
 // This is a function that listens for the event of someone clicking the 'combined_button' button
-    d3.select("#combined_button").on('click', function(){
-      simulation
-        .force("x", forceX)
-        .force("y", forceY)
-        .force("collide", forceCollide)
-        .alphaTarget(0.5)
-        .restart()
-    })
+// We do not currently have a reset button
+// TODO: Create a reset button
+    // d3.select("#combined_button").on('click', function(){
+    //   simulation
+    //     .force("x", forceX)
+    //     .force("y", forceY)
+    //     .force("collide", forceCollide)
+    //     .alphaTarget(0.5)
+    //     .restart()
+    // })
 
-// We can also use a different function which is picked up when an event occurs. In particular this has an if else statement that we will use to split our circles. It currently pulls out the Gastro-intestinal system
+// We can also use a function which is picked up when an event occurs. In particular this has an if else statement that we will use to split our circles. It currently pulls out the value of the selected_chapter (at the beginning this is null) amd then says any circles/datapoints (d) with that BNF_chapter name should be forced towards x = 100 and y = 100, whilst anything else should be pushed to x = 500 and y = the vertical middle
 // https://www.d3-graph-gallery.com/graph/interactivity_button.html
-
-    var forceXSplit = d3.forceX(function(d){
-      if(d.BNF_chapter === 'Gastro-Intestinal System') {
+var forceXSplit = d3.forceX(function(d){
+      if(d.BNF_chapter === selected_chapter) {
         return 100
       } else {
         return 500
       }
     }).strength(0.1) // force our circle nodes towards the middle of the width of our svg
 
-    var forceYSplit = d3.forceY(function(d){
-      if(d.BNF_chapter === 'Gastro-Intestinal System') {
+var forceYSplit = d3.forceY(function(d){
+      if(d.BNF_chapter === selected_chapter) {
         return 100
       } else {
         return height / 2
       }
     }).strength(0.1) // force our circle nodes towards the middle of the width of our svg
-
-// This is a function that listens for the event of someone clicking the 'combined_button' button
-    d3.select("#split_button_gastro").on('click', function(){
-      simulation
-       .velocityDecay(0.2)
-        .force("x", forceXSplit)
-        .force("y", forceYSplit)
-        .force("collide", forceCollide)
-        .alphaTarget(0.25)
-        .restart()
-
-// TODO: text wrapping
-// We want to add some text to the svg once the button is clicked
-// var sum = d3.sum(datapoints, function(d) { return d.items; })
-        var label_x = "Gastro-Intestinal system"
-        var label_x_chapter_sum = "This chapter has sections."
-
-// The order of elements, particularly what goes before and after transition(), duration() and delay() are very important
-        svg
-            .append("text")
-            .attr("x", 300)
-            .attr("y", 50)
-            .style("font-size", "11px")
-            .style("font-weight", "bold")
-            .attr("alignment-baseline","left")
-            .attr("fill", "#f1f1f1")
-            .transition()
-            .duration(1000)
-            .delay(2000)
-            .text(function(d) {
-                return label_x })
-            .attr("fill", "#000000")
-
-          svg
-            .append("text")
-            .attr("x", 350)
-            .attr("y", 65)
-            .style("font-size", "10px")
-            .attr("alignment-baseline","left")
-            .attr("fill", "#f1f1f1")
-            .transition()
-            .duration(1000)
-            .delay(2500)
-            .text(function(d) {
-                return label_x_chapter_sum})
-            .attr("fill", "#000000")
-    })
 
 // Add svg_size_key: circles
     var svg_size_key = d3.select("#chart_legend")
@@ -250,5 +203,93 @@ var circles = svg.selectAll(".bubbles")
         })
         .attr("font-size", 11)
         .attr('alignment-baseline', 'top')
+
+// Loop through array to get distinct chapter names
+function create_chapter_categories (all_datapoints){
+    var cats = []; // Create a variable called cats
+    all_datapoints.forEach(function(item){ // For every datapoint
+      if(cats.indexOf(item.BNF_chapter) === -1) // This says look at the BNF_chapter names currently in the array (at the start there are none). If the current value you are looking at in the data does not appear in the array (signified by === -1) then move to push the value
+      {
+        cats.push(item.BNF_chapter) // push says add the value to the array
+      }
+    })
+    return cats; // Once all datapoints have been examined, the result returned should be an array containing all the unique values of BNF_chapter in the data
+}
+
+function create_chapter_totals (all_datapoints){
+    var cats = []; // Create a variable called cats
+    all_datapoints.forEach(function(item){ // For every datapoint
+      if(cats[item.BNF_chapter] !== undefined) // If the BNF_chapter is defined (e.g. not undefined)
+      {
+        cats[item.BNF_chapter]++; // Add one to the count every time BNF_chapter appears in the data
+      } else {
+        cats[item.BNF_chapter] = 1; // Otherwise, if there are no additional copies of the BNF_chapter, then the count should be one
+      }
+    })
+    return cats; // Once all datapoints have been examined, the result returned should be an array containing the number of times each chapter appears in the data
+
+}
+
+// This function builds a menu by creating a button for every value in the chapter_categories array.
+function buildMenu(){
+  chapter_categories.forEach(function(item){
+    var button = document.createElement("button");
+    button.innerHTML = item;
+    button.className = 'filterButton';
+
+    var div = document.getElementById("chapter_categories");
+    div.appendChild(button); // This appends the button to the div
+
+    button.addEventListener('click', function(e){ // This says listen for which value is clicked, for whatever is clicked, the following actions should take place.
+      selected_chapter = e.target.innerHTML;
+      simulation
+       .velocityDecay(0.2)
+        .force("x", forceXSplit)
+        .force("y", forceYSplit)
+        .force("collide", forceCollide)
+        .alphaTarget(0.25)
+        .restart()
+
+        var label_x = selected_chapter
+        var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter] +" sections."
+
+// We gave this an ID so we can try to remove it
+        var title = svg
+            .attr('id', 'label_title')
+            .append("text")
+            .attr("x", 300)
+            .attr("y", 50)
+            .style("font-size", "11px")
+            .style("font-weight", "bold")
+            .attr("alignment-baseline","left")
+            .attr("fill", "#f1f1f1")
+            .transition()
+            .duration(1000)
+            .delay(2000)
+            .text(function(d) {
+                return label_x })
+            .attr("fill", "#000000");
+
+// TODO: Figure out how the remove the text at the start of the click event so that there is a clean slate for text to appear (otherwise the text always remains even when the next button is clicked).
+// title.remove() this removes the svg. maybe try label_title.remove()
+
+          svg
+          .attr('id', 'label_subtitle')
+            .append("text")
+            .attr("x", 350)
+            .attr("y", 65)
+            .style("font-size", "10px")
+            .attr("alignment-baseline","left")
+            .attr("fill", "#f1f1f1")
+            .transition()
+            .duration(1000)
+            .delay(2500)
+            .text(function(d) {
+                return label_x_chapter_sum})
+            .attr("fill", "#000000")
+
+    })
+  })
+}
 
 })();

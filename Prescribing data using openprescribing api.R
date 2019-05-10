@@ -222,10 +222,14 @@ OTC <- as.data.frame(read_csv("https://www.nhsbsa.nhs.uk/sites/default/files/201
 
 otc_code_x = OTC$Presentation_code[1]
 
+org_gps <- read_csv(paste0("https://openprescribing.net/api/1.0/org_code?org_type=practice&format=csv"), col_types = cols(ccg = col_character(),  code = col_character(),  id = col_character(),  name = col_character(),  postcode = col_character(),  setting = col_double(),  setting_name = col_character(),  type = col_character())) %>% 
+  filter(ccg %in% c("09G", "09H", "09X"))
 
-org_gps <- read_csv(paste0("https://openprescribing.net/api/1.0/org_code?q=09G&org_type=practice&format=csv"))
+org_x <- org_gps$code[1]
 
-df_x <- read_csv(paste0("https://openprescribing.net/api/1.0/spending_by_practice/?code=", otc_code_x, "&org=", "&format=csv"), col_types = cols(actual_cost = col_double(),date = col_date(format = ""),items = col_double(), quantity = col_double(), row_id = col_character(),row_name = col_character()))
+df_x <- read_csv(paste0("https://openprescribing.net/api/1.0/spending_by_practice/?code=", otc_code_x, "&org=",org_x, "&format=csv"), col_types = cols(actual_cost = col_double(),date = col_date(format = ""),items = col_double(), quantity = col_double(), row_id = col_character(),row_name = col_character()))
+
+https://openprescribing.net/api/1.0/bnf_code/?q=0212000AA&exact=true&format=csv
 
 # tryCatch(df_x <- read_csv(paste0("https://openprescribing.net/api/1.0/spending_by_ccg/?code=", code_x, "&org=", org_x,"&format=csv"), col_types = cols(actual_cost = col_double(),date = col_date(format = ""),items = col_double(), quantity = col_double(), row_id = col_character(),row_name = col_character())) %>% 
          #   mutate(Code = code_x) %>% 
