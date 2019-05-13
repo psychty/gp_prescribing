@@ -65,8 +65,13 @@ var forceY = d3.forceY(function(d){
 
 // This is a function which tells the circles how close or far away they need to be. If the radius of the circle matches the radius of the forceCollide then there will be no overlap between circles. Adding a + 1 with add a small gap between the circles. Adding a negative (- 1) will add some overlap.
 var forceCollide = d3.forceCollide(function(d) {
-  return radiusScale(d.items) + 1
+  return radiusScale(d.items) + 1.5
 }).iterations(2)
+
+var forceCollideApart = d3.forceCollide(function(d) {
+  return radiusScale(d.items) + 8
+}).iterations(2)
+
 
 // create a force simulation acting on our circles. this is the default simulation, using the forceX and forceY functions defined above.
 var simulation = d3.forceSimulation()
@@ -103,7 +108,7 @@ var circles = svg.selectAll(".bubbles")
       simulation.nodes(datapoints)
         .on('tick', ticked)
 
-        function ticked () {
+      function ticked () {
           circles
            .attr("cx", function(d) {
              return d.x
@@ -132,81 +137,83 @@ var circles = svg.selectAll(".bubbles")
     // })
 
 // We can also use a function which is picked up when an event occurs. In particular this has an if else statement that we will use to split our circles. It currently pulls out the value of the selected_chapter (at the beginning this is null) amd then says any circles/datapoints (d) with that BNF_chapter name should be forced towards x = 100 and y = 100, whilst anything else should be pushed to x = 500 and y = the vertical middle
-// https://www.d3-graph-gallery.com/graph/interactivity_button.html
+
+// TODO: I wonder if I need to get the circles to come apart to allow the smaller ones to escape and then draw back in?
+
 var forceXSplit = d3.forceX(function(d){
       if(d.BNF_chapter === selected_chapter) {
-        return 100
+        return width / 4
       } else {
-        return 500
+        return width / 2
       }
-    }).strength(0.1) // force our circle nodes towards the middle of the width of our svg
+    }).strength(0.05)
 
 var forceYSplit = d3.forceY(function(d){
       if(d.BNF_chapter === selected_chapter) {
-        return 100
+        return height / 4
       } else {
-        return height / 2
+        return (height / 3)*2
       }
-    }).strength(0.1) // force our circle nodes towards the middle of the width of our svg
+    }).strength(0.05)
 
 // Add svg_size_key: circles
-    var svg_size_key = d3.select("#chart_legend")
+var svg_size_key = d3.select("#chart_legend")
       .append("svg")
         .attr("width", 250)
         .attr("height", 130)
 
-    var valuesToShow = [1000, 50000, 400000, 1000000]
-    var xCircle = 65
-    var xLabel = 150
-    var yCircle = 130
+var valuesToShow = [1000, 50000, 400000, 1000000]
+var xCircle = 65
+var xLabel = 150
+var yCircle = 130
 
-    svg_size_key
+svg_size_key
       .selectAll("legend")
       .data(valuesToShow)
       .enter()
       .append("circle")
-        .attr("cx", xCircle)
-        .attr("cy", function(d) {
+      .attr("cx", xCircle)
+      .attr("cy", function(d) {
           return yCircle - radiusScale(d)
         })
-        .attr("r",
+      .attr("r",
           function(d) { return radiusScale(d)
           })
-        .style("fill", "none")
-        .attr("stroke", "black")
+      .style("fill", "none")
+      .attr("stroke", "black")
 
 // Add svg_size_key: segments
-    svg_size_key
+svg_size_key
       .selectAll("legend")
       .data(valuesToShow)
       .enter()
       .append("line")
-        .attr('x1', function(d){ return xCircle + radiusScale(d) } )
-        .attr('x2', xLabel)
-        .attr('y1', function(d){ return yCircle - radiusScale(d) } )
-        .attr('y2', function(d){ return yCircle - radiusScale(d) } )
-        .attr('stroke', 'black')
-        .style('stroke-dasharray', ('2,2'))
+      .attr('x1', function(d){ return xCircle + radiusScale(d) } )
+      .attr('x2', xLabel)
+      .attr('y1', function(d){ return yCircle - radiusScale(d) } )
+      .attr('y2', function(d){ return yCircle - radiusScale(d) } )
+      .attr('stroke', 'black')
+      .style('stroke-dasharray', ('2,2'))
 
 // Add legend: labels
-    svg_size_key
+svg_size_key
       .selectAll("legend")
       .data(valuesToShow)
       .enter()
       .append("text")
-        .attr('x', xLabel)
-        .attr('y', function(d) {
+      .attr('x', xLabel)
+      .attr('y', function(d) {
           return yCircle - radiusScale(d)
         })
-        .text( function(d) {
+      .text( function(d) {
           return format(d) + " items"
         })
-        .attr("font-size", 11)
-        .attr('alignment-baseline', 'top')
+      .attr("font-size", 11)
+      .attr('alignment-baseline', 'top')
 
 // Loop through array to get distinct chapter names
 function create_chapter_categories (all_datapoints){
-    var cats = []; // Create a variable called cats
+var cats = []; // Create a variable called cats
     all_datapoints.forEach(function(item){ // For every datapoint
       if(cats.indexOf(item.BNF_chapter) === -1) // This says look at the BNF_chapter names currently in the array (at the start there are none). If the current value you are looking at in the data does not appear in the array (signified by === -1) then move to push the value
       {
@@ -217,7 +224,7 @@ function create_chapter_categories (all_datapoints){
 }
 
 function create_chapter_totals (all_datapoints){
-    var cats = []; // Create a variable called cats
+var cats = []; // Create a variable called cats
     all_datapoints.forEach(function(item){ // For every datapoint
       if(cats[item.BNF_chapter] !== undefined) // If the BNF_chapter is defined (e.g. not undefined)
       {
@@ -236,6 +243,11 @@ function buildMenu(){
     var button = document.createElement("button");
     button.innerHTML = item;
     button.className = 'filterButton';
+    // button.setAttribute('background', '#000000');
+    // button.border = function(d){
+    //   return chapterColour(d.BNF_chapter);
+    // }
+    button.color = 'red';
 
     var div = document.getElementById("chapter_categories");
     div.appendChild(button); // This appends the button to the div
@@ -246,15 +258,18 @@ function buildMenu(){
        .velocityDecay(0.2)
         .force("x", forceXSplit)
         .force("y", forceYSplit)
+        // .force("collide", forceCollideApart)
         .force("collide", forceCollide)
         .alphaTarget(0.25)
         .restart()
 
-        var label_x = selected_chapter
-        var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter] +" sections."
+        // d3.selectAll("#label_title").remove()
+
+var label_x = selected_chapter
+var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter] + " sections."
 
 // We gave this an ID so we can try to remove it
-        var title = svg
+          svg
             .attr('id', 'label_title')
             .append("text")
             .attr("x", 300)
@@ -263,6 +278,13 @@ function buildMenu(){
             .style("font-weight", "bold")
             .attr("alignment-baseline","left")
             .attr("fill", "#f1f1f1")
+            // .style("opacity", function(d) {
+            //   if (d == selected_chapter) {
+            //     return "0.0";
+            //   } else {
+            //     return "1.0";
+            //   }
+            // })
             .transition()
             .duration(1000)
             .delay(2000)
@@ -274,7 +296,7 @@ function buildMenu(){
 // title.remove() this removes the svg. maybe try label_title.remove()
 
           svg
-          .attr('id', 'label_subtitle')
+            .attr('id', 'label_subtitle')
             .append("text")
             .attr("x", 350)
             .attr("y", 65)

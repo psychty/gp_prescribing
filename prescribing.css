@@ -75,69 +75,70 @@ button{
 }
 
 
-button#split_button_gastro {
+/* .chapter_gastro {
     border-left: 8px solid #6481c6;
 }
-button#split_button_cardio {
+
+.chapter_cardio {
     border-left: 8px solid #4ac158;
 }
-button#split_button_resp {
+.chapter_resp {
     border-left: 8px solid #c451ba;
 }
-button#split_button_cns {
+.chapter_cns {
     border-left: 8px solid #7ab43d;
 }
-button#split_button_infections {
+.chapter_infections {
     border-left: 8px solid #7963cf;
 }
-button#split_button_endorcrine {
+.chapter_endorcrine {
     border-left: 8px solid #b0b639;
 }
-button#split_button_obs_gynae {
+.chapter_obs_gynae {
     border-left: 8px solid #d94279;
 }
-button#split_button_malignant_immunosup {
+.chapter_malignant_immunosup {
     border-left: 8px solid #468938;
 }
-button#split_button_nutrition_blood {
+.chapter_nutrition_blood {
     border-left: 8px solid #d38cca;
 }
-button#split_button_msk {
+.chapter_msk {
     border-left: 8px solid #d8992e;
 }
-button#split_button_eye {
+.chapter_eye {
     border-left: 8px solid #49b9d3;
 }
-button#split_button_ent {
+.chapter_ent {
     border-left: 8px solid #d24d33;
 }
-button#split_button_skin {
+.chapter_skin {
     border-left: 8px solid #5cc396;
 }
-button#split_button_vaccine {
+.chapter_vaccine {
     border-left: 8px solid #984c80;
 }
-button#split_button_anaesthesia {
+.chapter_anaesthesia {
     border-left: 8px solid #9cb26a;
 }
-button#split_button_diagnosis {
+.chapter_diagnosis {
     border-left: 8px solid #be5b63;
 }
-button#split_button_other {
+.chapter_other {
     border-left: 8px solid #36845f;
 }
-button#split_button_dressing {
+.chapter_dressing {
     border-left: 8px solid #e68f6d;
 }
-button#split_button_appliance {
+.chapter_appliance {
     border-left: 8px solid #6f7128;
 }
-button#split_button_incontinence {
+.chapter_incontinence {
     border-left: 8px solid #9d5f2c;
 }
-button#split_button_stoma {
+.chapter_stoma {
     border-left: 8px solid #c6a059;
-}
+} */
 
 /* We rely on source order for mobile-first approach
  * in this case:

@@ -15,8 +15,8 @@
 <div class="wrapper">
   <div class="header">
       <h1>GP Practice Prescribing - West Sussex</h1>
-      <p>This visualisation shows the number of items prescribed in 2018 for the three West Sussex CCGs combined.</p>
-      <p>This presentation level data is from NHS Digital under the Open Government Licence. Presentation level means data is provided at the level of each individual drug name, form and strength or size. It does not list each individual prescription and doesn't contain any patient identifiable data.</p>
+      <p>Information on the drugs or appliances prescribed by NHS services each month are available from NHS Digital under the Open Government Licence. This visualisation shows the number of items prescribed in 2018 for the three West Sussex CCGs combined.</p>
+      <p>Presentation level means data is provided for each individual drug name, form and strength or size using categories in the British National Formulary (BNF). The data does not tell us about an individual prescription and doesn't contain any patient identifiable data, but it does give an indication on the prescribing patterns among primary care organisations.</p>
       <p>Data downloaded from EBN labs OpenPrescribing tool. OpenPrescribing.net, EBM DataLab, University of Oxford, 2019</p>
   </div>
 
@@ -30,36 +30,12 @@
       <p>Use the buttons below to select a BNF chapter and hover over a circle to see the category of items.</p>
       <div id="chapter_categories">
       </div>
-      <!-- <button id = "combined_button">Reset the bubbles!</button>
-      <button id = "split_button_gastro">Gastro-Intestinal system</button>
-      <button id = "split_button_cardio">Cardiovascular System</button>
-      <button id = "split_button_resp">Respiratory System</button>
-      <button id = "split_button_cns">Central Nervous System</button>
-      <button id = "split_button_infections">Infections</button>
-      <button id = "split_button_endorcrine">Endocrine System</button>
-      <button id = "split_button_obs_gynae">Obstetrics,Gynae+Urinary Tract Disorders</button>
-      <button id = "split_button_malignant_immunosup">Malignant Disease & Immunosuppression</button>
-      <button id = "split_button_nutrition_blood">Nutrition And Blood</button>
-      <button id = "split_button_msk">Musculoskeletal & Joint Diseases</button>
-      <button id = "split_button_eye">Eye</button>
-      <button id = "split_button_ent">Ear, Nose And Oropharynx</button>
-      <button id = "split_button_skin">Skin</button>
-      <button id = "split_button_vaccine">Immunological Products & Vaccines</button>
-      <button id = "split_button_anaesthesia">Anaesthesia</button>
-      <button id = "split_button_diagnosis">Preparations used in Diagnosis</button>
-      <button id = "split_button_other">Other Drugs And Preparations</button>
-      <button id = "split_button_dressing">Dressings</button>
-      <button id = "split_button_appliance">Appliances</button>
-      <button id = "split_button_incontinence">Incontinence Appliances</button>
-      <button id = "split_button_stoma">Stoma Appliances</button> -->
-
+      <!-- <button id = "combined_button">Reset the bubbles!</button> <!-->
   </aside>
 
   <aside class="aside aside-2">
       <h2>Notes:</h2>
-      <p>A prescription item refers to a single supply of a medicine, dressing or appliance prescribed on a prescription form. If a prescription form includes three medicines it is counted as three prescription items. These figures do not give any indication of the length of treatment or quantity of medicine prescribed.</p>
-      <p>Drugs or appliances are categorised by BNF (British National Formulary)</p>
-
+      <p>A prescription item refers to a single supply of a medicine, dressing or appliance prescribed on a prescription form. If a prescription form includes three medicines it is counted as three prescription items.</p><p>However, it should be noted that these figures do not give any indication of the length of treatment or quantity of medicine prescribed.</p>
       <p>The size of the circle represents the number of items prescribed for that category of items. Items are grouped by the broad section of the BNF in which they are classified.</p>
 
       <h2>Size key</h2>
@@ -67,17 +43,12 @@
   <div id = "chart_legend"> </div>
   </aside>
 
-  <footer class="footer">M4de by Rich Tyler <a href = https://github.com/psychty>github/psychty</a> May 2019</footer>
+  <footer class="footer">M4de by Dr Rich Tyler <a href = https://github.com/psychty>github/psychty</a> May 2019</footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
   <script src="prescribing_bubbles.js"></script>
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/d3plus/1.9.8/d3plus.full.min.js"></script>
-  <!-- <script src="https://d3js.org/d3-queue.v3.min.js"></script> -->
-  <script src="https://d3js.org/d3-drag.v1.min.js"></script>
-
 
 </div>
-
 </body>
-
 </html>
