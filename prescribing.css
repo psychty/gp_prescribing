@@ -19,6 +19,20 @@ p{
   font-size: .8rem;
 }
 
+tr {
+  /* background-color: #FF8448; */
+  /* float: left; */
+}
+
+td {
+  /* background-color: #0099FF; */
+}
+table {
+  font-size: .8rem;
+  color: #000000;
+}
+
+
 /* Style for hovering over bubbles */
 .bubbles:hover {
   stroke: black;

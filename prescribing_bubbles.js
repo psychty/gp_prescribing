@@ -247,7 +247,7 @@ function buildMenu(){
     // button.border = function(d){
     //   return chapterColour(d.BNF_chapter);
     // }
-    button.color = 'red';
+    button.borderColor = 'red';
 
     var div = document.getElementById("chapter_categories");
     div.appendChild(button); // This appends the button to the div
