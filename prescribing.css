@@ -21,7 +21,7 @@ p{
 
 tr {
   /* background-color: #FF8448; */
-  /* float: left; */
+  text-align: right;
 }
 
 td {
@@ -79,6 +79,7 @@ button{
   border: none;
   color: #000000;
   background: #ffffff;
+  width: 100%;
   font-family: sans-serif;
   font-size: .75em;
   cursor: pointer;
@@ -86,6 +87,12 @@ button{
   margin: 0 0 3px;
   min-height: 20px;
   border-left: 8px solid #ccc;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+button:hover{
+  background: #ccc;
 }
 
 

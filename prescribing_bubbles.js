@@ -15,10 +15,14 @@ var selected_chapter = null;
 // create a function to convert a value to numeric with proper formating
   var format = d3.format(",d");
 
+  var y_new = d3.scaleOrdinal()
+    .domain(["Gastro-Intestinal System","Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae+Urinary Tract Disorders", "Malignant Disease & Immunosuppression", "Nutrition And Blood", "Musculoskeletal & Joint Diseases"])
+    .range([50, 100, 150, 200, 250, 300, 350, 400, 450, 500])
+
 // Define the min and max of your input (domain), and the output(range) you want
   var radiusScale = d3.scaleSqrt()
     .domain([1, 1010000])
-    .range([1,50])
+    .range([3,53])
 
 // TODO: get colours on the buttons
   var chapter_key = ["Gastro-Intestinal System","Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae+Urinary Tract Disorders", "Malignant Disease & Immunosuppression", "Nutrition And Blood", "Musculoskeletal & Joint Diseases", "Eye", "Ear, Nose And Oropharynx", "Skin", "Immunological Products & Vaccines", "Anaesthesia", "Preparations used in Diagnosis", "Other Drugs And Preparations", "Dressings", "Appliances", "Incontinence Appliances", "Stoma Appliances"]
@@ -58,19 +62,19 @@ var mousemove = function(d) {
 // This creates functions for the force physics applied to the circles to say where to place them given certain events
 // These are the default forces
 var forceX = d3.forceX(function(d){
-  return width / 2}).strength(0.02)
+  return width / 2}).strength(0.2)
 
 var forceY = d3.forceY(function(d){
-  return height / 2}).strength(0.02)
+  return height / 2}).strength(0.2)
 
 // This is a function which tells the circles how close or far away they need to be. If the radius of the circle matches the radius of the forceCollide then there will be no overlap between circles. Adding a + 1 with add a small gap between the circles. Adding a negative (- 1) will add some overlap.
 var forceCollide = d3.forceCollide(function(d) {
   return radiusScale(d.items) + 1.5
-}).iterations(2)
+}).iterations(1)
 
 var forceCollideApart = d3.forceCollide(function(d) {
-  return radiusScale(d.items) + 8
-}).iterations(2)
+  return radiusScale(d.items) + 3
+}).iterations(6)
 
 
 // create a force simulation acting on our circles. this is the default simulation, using the forceX and forceY functions defined above.
@@ -124,18 +128,6 @@ var circles = svg.selectAll(".bubbles")
         buildMenu();
     }
 
-// This is a function that listens for the event of someone clicking the 'combined_button' button
-// We do not currently have a reset button
-// TODO: Create a reset button
-    // d3.select("#combined_button").on('click', function(){
-    //   simulation
-    //     .force("x", forceX)
-    //     .force("y", forceY)
-    //     .force("collide", forceCollide)
-    //     .alphaTarget(0.5)
-    //     .restart()
-    // })
-
 // We can also use a function which is picked up when an event occurs. In particular this has an if else statement that we will use to split our circles. It currently pulls out the value of the selected_chapter (at the beginning this is null) amd then says any circles/datapoints (d) with that BNF_chapter name should be forced towards x = 100 and y = 100, whilst anything else should be pushed to x = 500 and y = the vertical middle
 
 // TODO: I wonder if I need to get the circles to come apart to allow the smaller ones to escape and then draw back in?
@@ -146,27 +138,26 @@ var forceXSplit = d3.forceX(function(d){
       } else {
         return width / 2
       }
-    }).strength(0.05)
+    }).strength(0.25)
 
 var forceYSplit = d3.forceY(function(d){
       if(d.BNF_chapter === selected_chapter) {
         return height / 4
       } else {
-        return (height / 3)*2
+        return (height / 4)*3
       }
-    }).strength(0.05)
+    }).strength(0.25)
 
 // Add svg_size_key: circles
-var svg_size_key = d3.select("#chart_legend")
-      .append("svg")
-        .attr("width", 250)
-        .attr("height", 130)
-
 var valuesToShow = [1000, 50000, 400000, 1000000]
 var xCircle = 65
 var xLabel = 150
 var yCircle = 130
 
+var svg_size_key = d3.select("#chart_legend")
+      .append("svg")
+        .attr("width", 250)
+        .attr("height", 130)
 svg_size_key
       .selectAll("legend")
       .data(valuesToShow)
@@ -239,79 +230,69 @@ var cats = []; // Create a variable called cats
 
 // This function builds a menu by creating a button for every value in the chapter_categories array.
 function buildMenu(){
-  chapter_categories.forEach(function(item){
+  chapter_categories.forEach(function(item, index){ // The index is the position of the loop, which can be used later for the border colour
     var button = document.createElement("button");
     button.innerHTML = item;
     button.className = 'filterButton';
-    // button.setAttribute('background', '#000000');
-    // button.border = function(d){
-    //   return chapterColour(d.BNF_chapter);
-    // }
-    button.borderColor = 'red';
+    button.style.borderColor = chapterColour(index);
 
     var div = document.getElementById("chapter_categories");
     div.appendChild(button); // This appends the button to the div
 
-    button.addEventListener('click', function(e){ // This says listen for which value is clicked, for whatever is clicked, the following actions should take place.
+// This says listen for which value is clicked, for whatever is clicked, the following actions should take place.
+    button.addEventListener('click', function(e){
       selected_chapter = e.target.innerHTML;
       simulation
-       .velocityDecay(0.2)
         .force("x", forceXSplit)
         .force("y", forceYSplit)
-        // .force("collide", forceCollideApart)
-        .force("collide", forceCollide)
-        .alphaTarget(0.25)
+        .force("collide", forceCollideApart)
+        .alphaTarget(0.2)
         .restart()
-
-        // d3.selectAll("#label_title").remove()
 
 var label_x = selected_chapter
 var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter] + " sections."
 
-// We gave this an ID so we can try to remove it
-          svg
-            .attr('id', 'label_title')
-            .append("text")
-            .attr("x", 300)
-            .attr("y", 50)
-            .style("font-size", "11px")
-            .style("font-weight", "bold")
-            .attr("alignment-baseline","left")
-            .attr("fill", "#f1f1f1")
-            // .style("opacity", function(d) {
-            //   if (d == selected_chapter) {
-            //     return "0.0";
-            //   } else {
-            //     return "1.0";
-            //   }
-            // })
-            .transition()
-            .duration(1000)
-            .delay(2000)
-            .text(function(d) {
-                return label_x })
-            .attr("fill", "#000000");
+      svg
+        .attr('id', 'label_title')
+        .append("text")
+        .attr("x", 300)
+        .attr("y", 50)
+        .style("font-size", "11px")
+        .style("font-weight", "bold")
+        .attr("alignment-baseline","left")
+        .attr("fill", "#f1f1f1")
+        .transition()
+        .duration(1000)
+        .delay(2000)
+        .text(function(d) {
+              return label_x })
+        .attr("fill", "#000000");
 
-// TODO: Figure out how the remove the text at the start of the click event so that there is a clean slate for text to appear (otherwise the text always remains even when the next button is clicked).
-// title.remove() this removes the svg. maybe try label_title.remove()
-
-          svg
-            .attr('id', 'label_subtitle')
-            .append("text")
-            .attr("x", 350)
-            .attr("y", 65)
-            .style("font-size", "10px")
-            .attr("alignment-baseline","left")
-            .attr("fill", "#f1f1f1")
-            .transition()
-            .duration(1000)
-            .delay(2500)
-            .text(function(d) {
-                return label_x_chapter_sum})
-            .attr("fill", "#000000")
+    svg
+        .attr('id', 'label_subtitle')
+        .append("text")
+        .attr("x", 350)
+        .attr("y", 65)
+        .style("font-size", "10px")
+        .attr("alignment-baseline","left")
+        .attr("fill", "#f1f1f1")
+        .transition()
+        .duration(1000)
+        .delay(2500)
+        .text(function(d) {
+              return label_x_chapter_sum})
+        .attr("fill", "#000000")
 
     })
   })
 }
+
+// TODO: add a button that positions all the circles like the webpage using y_new
+
+
+
+// TODO: Figure out how the remove the text at the start of the click event so that there is a clean slate for text to appear (otherwise the text always remains even when the next button is clicked).
+// title.remove() this removes the svg. maybe try label_title.remove()
+
 
 })();
