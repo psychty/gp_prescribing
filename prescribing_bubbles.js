@@ -9,23 +9,22 @@ var selected_chapter = null;
 
 (function() {
   var width = 800,
-  height = 800;
+  height = 1000;
   // Force diagrams do not care about margins
 
 // create a function to convert a value to numeric with proper formating
   var format = d3.format(",d");
 
+  var chapter_key = ["Gastro-Intestinal System","Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae+Urinary Tract Disorders", "Malignant Disease & Immunosuppression", "Nutrition And Blood", "Musculoskeletal & Joint Diseases", "Eye", "Ear, Nose And Oropharynx", "Skin", "Immunological Products & Vaccines", "Anaesthesia", "Preparations used in Diagnosis", "Other Drugs And Preparations", "Dressings", "Appliances", "Incontinence Appliances", "Stoma Appliances"]
+
   var y_new = d3.scaleOrdinal()
-    .domain(["Gastro-Intestinal System","Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae+Urinary Tract Disorders", "Malignant Disease & Immunosuppression", "Nutrition And Blood", "Musculoskeletal & Joint Diseases"])
-    .range([50, 100, 150, 200, 250, 300, 350, 400, 450, 500])
+    .domain(chapter_key)
+    .range([50, 100, 150, 200, 250, 300, 350, 400, 450, 500,550,600,650,700,750,800,850,900,950,1000,1050])
 
 // Define the min and max of your input (domain), and the output(range) you want
   var radiusScale = d3.scaleSqrt()
     .domain([1, 1010000])
     .range([3,53])
-
-// TODO: get colours on the buttons
-  var chapter_key = ["Gastro-Intestinal System","Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae+Urinary Tract Disorders", "Malignant Disease & Immunosuppression", "Nutrition And Blood", "Musculoskeletal & Joint Diseases", "Eye", "Ear, Nose And Oropharynx", "Skin", "Immunological Products & Vaccines", "Anaesthesia", "Preparations used in Diagnosis", "Other Drugs And Preparations", "Dressings", "Appliances", "Incontinence Appliances", "Stoma Appliances"]
 
 // Define a colour pallete for the given chapters (this could be the chapter name or the chapter code)
   var chapterColour = d3.scaleOrdinal()
@@ -62,10 +61,10 @@ var mousemove = function(d) {
 // This creates functions for the force physics applied to the circles to say where to place them given certain events
 // These are the default forces
 var forceX = d3.forceX(function(d){
-  return width / 2}).strength(0.2)
+  return 400}).strength(0.2)
 
 var forceY = d3.forceY(function(d){
-  return height / 2}).strength(0.2)
+  return 400}).strength(0.2)
 
 // This is a function which tells the circles how close or far away they need to be. If the radius of the circle matches the radius of the forceCollide then there will be no overlap between circles. Adding a + 1 with add a small gap between the circles. Adding a negative (- 1) will add some overlap.
 var forceCollide = d3.forceCollide(function(d) {
@@ -80,19 +79,22 @@ var forceCollideApart = d3.forceCollide(function(d) {
 // create a force simulation acting on our circles. this is the default simulation, using the forceX and forceY functions defined above.
 var simulation = d3.forceSimulation()
     .force("x", d3.forceX(width /2).strength(0.04))
-    .force("y", d3.forceY(height /2).strength(0.04))
+    .force("y", d3.forceY(400).strength(0.04))
     .force("collide", forceCollide)
 
-// TODO: Load more than one csv data object and calculate fields from them both to use in tooltips and other text
-
 // Load data from csv file - this data becomes globally available, not just as an object to be called
-  d3.queue()
-    .defer(d3.csv, "WSx_2018_prescribing.csv")
-    // .defer(d3.csv, "Coastal_2018_prescribing_chapter.csv")
-    .await(ready)
+d3.queue()
+  .defer(d3.csv, "WSx_2018_prescribing.csv")
+  .await(ready)
 
 // Build the things
 function ready (error, datapoints) {
+
+// var Coastal =  data.filter(function(datapoints){
+//     return d.CCG_code == "09G" })
+
+  console.log(datapoints)
+
 
 // Build the circles
 var circles = svg.selectAll(".bubbles")
@@ -142,9 +144,9 @@ var forceXSplit = d3.forceX(function(d){
 
 var forceYSplit = d3.forceY(function(d){
       if(d.BNF_chapter === selected_chapter) {
-        return height / 4
+        return 200
       } else {
-        return (height / 4)*3
+        return 600
       }
     }).strength(0.25)
 
@@ -281,7 +283,7 @@ var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter]
         .delay(2500)
         .text(function(d) {
               return label_x_chapter_sum})
-        .attr("fill", "#000000")
+        .attr("fill", "#000000");
 
     })
   })

@@ -123,6 +123,8 @@ rm(combined_df, code_x, i, j, org_x)
 
 # CCG prescribing overview - 2018 calendar year ####
 
+View(Raw_df)
+
 CCG_prescribing_2018 <- Raw_df %>% 
   filter(Year == 2018) %>% 
   group_by(Code, CCG_code, CCG) %>% 
@@ -130,7 +132,13 @@ CCG_prescribing_2018 <- Raw_df %>%
             quantity = sum(quantity, na.rm = TRUE),
             actual_cost = sum(actual_cost)) %>% 
   left_join(BNF_sections, by = c("Code" = "BNF Section Code")) %>% 
-  mutate(item_label = paste0(`BNF Section`, "\n",format(as.numeric(items), big.mark = ",")))
+  mutate(item_label = paste0(`BNF Section`, "\n",format(as.numeric(items), big.mark = ","))) %>% 
+  mutate(Year = "2018") %>% 
+  mutate(label = paste0(`BNF Chapter`, ".", `BNF Section`)) %>% 
+  rename(BNF_chapter = `BNF Chapter`) %>% 
+  rename(BNF_section = `BNF Section`)
+
+write.csv(CCG_prescribing_2018, "~/gp_prescribing/CCG_prescribing_2018.csv", row.names = FALSE)
 
 Coastal_2018 <- CCG_prescribing_2018 %>% 
   filter(CCG_code == "09G")
