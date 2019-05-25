@@ -254,9 +254,12 @@ function buildMenu(){
 var label_x = selected_chapter
 var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter] + " sections."
 
+    d3.select('#label_title').remove();
+    d3.select('#label_subtitle').remove();
+
       svg
-        .attr('id', 'label_title')
         .append("text")
+        .attr('id', 'label_title')
         .attr("x", 300)
         .attr("y", 50)
         .style("font-size", "11px")
@@ -271,8 +274,8 @@ var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter]
         .attr("fill", "#000000");
 
     svg
-        .attr('id', 'label_subtitle')
         .append("text")
+        .attr('id', 'label_subtitle')
         .attr("x", 350)
         .attr("y", 65)
         .style("font-size", "10px")
