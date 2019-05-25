@@ -254,6 +254,7 @@ function buildMenu(){
 var label_x = selected_chapter
 var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter] + " sections."
 
+    // Remove any title/subtitle text elements previously rendered
     svg.select('#label_title').remove();
     svg.select('#label_subtitle').remove();
 
