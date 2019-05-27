@@ -1,4 +1,3 @@
-
 //  https://www.youtube.com/watch?v=lPr60pexvEM
 // https://archive.nytimes.com/www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html
 
@@ -89,12 +88,6 @@ d3.queue()
 
 // Build the things
 function ready (error, datapoints) {
-
-// var Coastal =  data.filter(function(datapoints){
-//     return d.CCG_code == "09G" })
-
-  console.log(datapoints)
-
 
 // Build the circles
 var circles = svg.selectAll(".bubbles")
@@ -214,7 +207,7 @@ var cats = []; // Create a variable called cats
       }
     })
     return cats; // Once all datapoints have been examined, the result returned should be an array containing all the unique values of BNF_chapter in the data
-}
+  }
 
 function create_chapter_totals (all_datapoints){
 var cats = []; // Create a variable called cats
@@ -229,6 +222,7 @@ var cats = []; // Create a variable called cats
     return cats; // Once all datapoints have been examined, the result returned should be an array containing the number of times each chapter appears in the data
 
 }
+
 
 // This function builds a menu by creating a button for every value in the chapter_categories array.
 function buildMenu(){
@@ -254,36 +248,51 @@ function buildMenu(){
 var label_x = selected_chapter
 var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter] + " sections."
 
+// Remove any title/subtitle text elements previously rendered
+    svg.select('#label_title')
+    .transition()
+    .duration(1500)
+    .delay(250)
+    .attr("opacity", 0)
+    .remove();
+
+    svg.select('#label_subtitle')
+    .transition()
+    .duration(1500)
+    .delay(500)
+    .attr("opacity", 0)
+    .remove();
+
       svg
-        .attr('id', 'label_title')
-        .append("text")
-        .attr("x", 300)
-        .attr("y", 50)
-        .style("font-size", "11px")
-        .style("font-weight", "bold")
-        .attr("alignment-baseline","left")
-        .attr("fill", "#f1f1f1")
-        .transition()
-        .duration(1000)
-        .delay(2000)
-        .text(function(d) {
-              return label_x })
-        .attr("fill", "#000000");
+      .append("text")
+      .attr('id', 'label_title')
+      .attr("x", 300)
+      .attr("y", 50)
+      .style("font-size", "11px")
+      .style("font-weight", "bold")
+      .attr("alignment-baseline","left")
+      .attr("fill", "#f1f1f1")
+      .transition()
+      .duration(1000)
+      .delay(2000)
+      .text(function(d) {
+            return label_x })
+      .attr("fill", "#000000");
 
     svg
-        .attr('id', 'label_subtitle')
-        .append("text")
-        .attr("x", 350)
-        .attr("y", 65)
-        .style("font-size", "10px")
-        .attr("alignment-baseline","left")
-        .attr("fill", "#f1f1f1")
-        .transition()
-        .duration(1000)
-        .delay(2500)
-        .text(function(d) {
-              return label_x_chapter_sum})
-        .attr("fill", "#000000");
+      .append("text")
+      .attr('id', 'label_subtitle')
+      .attr("x", 350)
+      .attr("y", 65)
+      .style("font-size", "10px")
+      .attr("alignment-baseline","left")
+      .attr("fill", "#f1f1f1")
+      .transition()
+      .duration(1000)
+      .delay(2500)
+      .text(function(d) {
+            return label_x_chapter_sum})
+      .attr("fill", "#000000");
 
     })
   })
