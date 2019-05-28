@@ -14,7 +14,7 @@ var selected_chapter = null;
 // create a function to convert a value to numeric with proper formating
   var format = d3.format(",d");
 
-  var chapter_key = ["Gastro-Intestinal System","Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae+Urinary Tract Disorders", "Malignant Disease & Immunosuppression", "Nutrition And Blood", "Musculoskeletal & Joint Diseases", "Eye", "Ear, Nose And Oropharynx", "Skin", "Immunological Products & Vaccines", "Anaesthesia", "Preparations used in Diagnosis", "Other Drugs And Preparations", "Dressings", "Appliances", "Incontinence Appliances", "Stoma Appliances"]
+  var chapter_key = ["Gastro-Intestinal System","Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae and Urinary Tract Disorders", "Malignant Disease and Immunosuppression", "Nutrition and Blood", "Musculoskeletal and Joint Diseases", "Eye", "Ear, Nose and Oropharynx", "Skin", "Immunological Products and Vaccines", "Anaesthesia", "Preparations used in Diagnosis", "Other Drugs and Preparations", "Dressings", "Appliances", "Incontinence Appliances", "Stoma Appliances"]
 
   var y_new = d3.scaleOrdinal()
     .domain(chapter_key)
@@ -37,7 +37,7 @@ var svg = d3.select("#chart")
     .attr("width", width)
     .append("g")
     .attr("transform", "translate(0,0)")
-    .attr("font-family", "verdana")
+    // .attr("font-family", "verdana")
     .attr("font-size", ".8em")
     .attr("text-anchor", "middle")
 
@@ -223,7 +223,6 @@ var cats = []; // Create a variable called cats
 
 }
 
-
 // This function builds a menu by creating a button for every value in the chapter_categories array.
 function buildMenu(){
   chapter_categories.forEach(function(item, index){ // The index is the position of the loop, which can be used later for the border colour
@@ -247,6 +246,9 @@ function buildMenu(){
 
 var label_x = selected_chapter
 var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter] + " sections."
+var label_x_chapter_total_items_a = "The total number of items"
+var label_x_chapter_total_items_b = "prescribed in this chapter:"
+var label_x_item_value = d3.format(",")(100000)
 
 // Remove any title/subtitle text elements previously rendered
     svg.select('#label_title')
@@ -263,12 +265,33 @@ var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter]
     .attr("opacity", 0)
     .remove();
 
+    svg.select('#label_subtitle_1')
+    .transition()
+    .duration(1500)
+    .delay(600)
+    .attr("opacity", 0)
+    .remove();
+
+    svg.select('#label_subtitle_2')
+    .transition()
+    .duration(1500)
+    .delay(600)
+    .attr("opacity", 0)
+    .remove();
+
+    svg.select('#label_subtitle_3')
+    .transition()
+    .duration(1500)
+    .delay(600)
+    .attr("opacity", 0)
+    .remove();
+
       svg
       .append("text")
       .attr('id', 'label_title')
       .attr("x", 300)
       .attr("y", 50)
-      .style("font-size", "11px")
+      .style("font-size", "1.2rem")
       .style("font-weight", "bold")
       .attr("alignment-baseline","left")
       .attr("fill", "#f1f1f1")
@@ -277,14 +300,14 @@ var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter]
       .delay(2000)
       .text(function(d) {
             return label_x })
-      .attr("fill", "#000000");
+      .attr("fill", "#151f6d");
 
     svg
       .append("text")
       .attr('id', 'label_subtitle')
-      .attr("x", 350)
-      .attr("y", 65)
-      .style("font-size", "10px")
+      .attr("x", 375)
+      .attr("y", 75)
+      .style("font-size", ".8rem")
       .attr("alignment-baseline","left")
       .attr("fill", "#f1f1f1")
       .transition()
@@ -294,16 +317,56 @@ var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter]
             return label_x_chapter_sum})
       .attr("fill", "#000000");
 
+      svg
+        .append("text")
+        .attr('id', 'label_subtitle_1')
+        .attr("x", 435)
+        .attr("y", 100)
+        .style("font-size", ".8rem")
+        .attr("alignment-baseline","left")
+        .attr("fill", "#f1f1f1")
+        .transition()
+        .duration(1000)
+        .delay(2750)
+        .text(function(d) {
+              return label_x_chapter_total_items_a})
+        .attr("fill", "#000000");
+
+        svg
+          .append("text")
+          .attr('id', 'label_subtitle_2')
+          .attr("x", 435)
+          .attr("y", 115)
+          .style("font-size", ".8rem")
+          .attr("alignment-baseline","left")
+          .attr("fill", "#f1f1f1")
+          .transition()
+          .duration(1000)
+          .delay(2750)
+          .text(function(d) {
+                return label_x_chapter_total_items_b})
+          .attr("fill", "#000000");
+
+        svg
+          .append("text")
+          .attr('id', 'label_subtitle_3')
+          .attr("x", 555)
+          .attr("y", 115)
+          .style("font-size", "32px")
+          .style("font-weight", "bold")
+          .attr("alignment-baseline","left")
+          .attr("fill", "#f1f1f1")
+          .transition()
+          .duration(1000)
+          .delay(2750)
+          .text(function(d) {
+                return label_x_item_value})
+          .attr("fill", "#151f6d");
+
     })
   })
 }
 
 // TODO: add a button that positions all the circles like the webpage using y_new
-
-
-
-// TODO: Figure out how the remove the text at the start of the click event so that there is a clean slate for text to appear (otherwise the text always remains even when the next button is clicked).
-// title.remove() this removes the svg. maybe try label_title.remove()
-
 
 })();

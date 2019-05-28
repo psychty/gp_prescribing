@@ -99,44 +99,44 @@
 113,092","Endocrine System.Drugs Affecting Bone Metabolism",7,"seven"
 "0607","Other Endocrine Drugs",1196,88806.25394,"Endocrine System","06","Other Endocrine Drugs
 1,196","Endocrine System.Other Endocrine Drugs",7,"seven"
-"0702","Treatment Of Vaginal & Vulval Conditions",46734,613774.83381,"Obstetrics,Gynae+Urinary Tract Disorders","07","Treatment Of Vaginal & Vulval Conditions
-46,734","Obstetrics,Gynae+Urinary Tract Disorders.Treatment Of Vaginal & Vulval Conditions",3,"three"
-"0703","Contraceptives",129197,1346289.99066,"Obstetrics,Gynae+Urinary Tract Disorders","07","Contraceptives
-129,197","Obstetrics,Gynae+Urinary Tract Disorders.Contraceptives",3,"three"
-"0704","Drugs For Genito-Urinary Disorders",302361,3946036.11143,"Obstetrics,Gynae+Urinary Tract Disorders","07","Drugs For Genito-Urinary Disorders
-302,361","Obstetrics,Gynae+Urinary Tract Disorders.Drugs For Genito-Urinary Disorders",3,"three"
-"0801","Cytotoxic Drugs",1554,84247.44778,"Malignant Disease & Immunosuppression","08","Cytotoxic Drugs
-1,554","Malignant Disease & Immunosuppression.Cytotoxic Drugs",3,"three"
-"0802","Drugs Affecting The Immune Response",17410,384509.64361,"Malignant Disease & Immunosuppression","08","Drugs Affecting The Immune Response
-17,410","Malignant Disease & Immunosuppression.Drugs Affecting The Immune Response",3,"three"
-"0803","Sex Hormones & Antag In Malig Disease",57645,2532238.59553,"Malignant Disease & Immunosuppression","08","Sex Hormones & Antag In Malig Disease
-57,645","Malignant Disease & Immunosuppression.Sex Hormones & Antag In Malig Disease",3,"three"
-"0901","Anaemias + Other Blood Disorders",266816,529070.68386,"Nutrition And Blood","09","Anaemias + Other Blood Disorders
-266,816","Nutrition And Blood.Anaemias + Other Blood Disorders",10,"10"
-"0902","Fluids And Electrolytes",12886,131578.08623,"Nutrition And Blood","09","Fluids And Electrolytes
-12,886","Nutrition And Blood.Fluids And Electrolytes",10,"10"
-"0904","Oral Nutrition",93599,5456118.26408,"Nutrition And Blood","09","Oral Nutrition
-93,599","Nutrition And Blood.Oral Nutrition",10,"10"
-"0905","Minerals",9983,354354.96739,"Nutrition And Blood","09","Minerals
-9,983","Nutrition And Blood.Minerals",10,"10"
-"0906","Vitamins",429160,2339827.03371,"Nutrition And Blood","09","Vitamins
-429,160","Nutrition And Blood.Vitamins",10,"10"
-"0908","Metabolic Disorders",129,80527.64728,"Nutrition And Blood","09","Metabolic Disorders
-129","Nutrition And Blood.Metabolic Disorders",10,"10"
-"0909","Foods",1955,105862.97417,"Nutrition And Blood","09","Foods
-1,955","Nutrition And Blood.Foods",10,"10"
-"0910","Compound Vit/Mineral Formulations",4777,25753.34721,"Nutrition And Blood","09","Compound Vit/Mineral Formulations
-4,777","Nutrition And Blood.Compound Vit/Mineral Formulations",10,"10"
-"0911","Health Supplements",861,38026.15517,"Nutrition And Blood","09","Health Supplements
-861","Nutrition And Blood.Health Supplements",10,"10"
-"0912","Other Health Supplements",179,994.50701,"Nutrition And Blood","09","Other Health Supplements
-179","Nutrition And Blood.Other Health Supplements",10,"10"
-"1001","Drugs Used In Rheumatic Diseases & Gout",314534,1426357.47138,"Musculoskeletal & Joint Diseases","10","Drugs Used In Rheumatic Diseases & Gout
-314,534","Musculoskeletal & Joint Diseases.Drugs Used In Rheumatic Diseases & Gout",3,"three"
-"1002","Drugs Used In Neuromuscular  Disorders",18593,134260.39528,"Musculoskeletal & Joint Diseases","10","Drugs Used In Neuromuscular  Disorders
-18,593","Musculoskeletal & Joint Diseases.Drugs Used In Neuromuscular  Disorders",3,"three"
-"1003","Soft-Tissue Disorders & Topical Pain Rel",82033,428485.62661,"Musculoskeletal & Joint Diseases","10","Soft-Tissue Disorders & Topical Pain Rel
-82,033","Musculoskeletal & Joint Diseases.Soft-Tissue Disorders & Topical Pain Rel",3,"three"
+"0702","Treatment Of Vaginal & Vulval Conditions",46734,613774.83381,"Obstetrics,Gynae and Urinary Tract Disorders","07","Treatment Of Vaginal & Vulval Conditions
+46,734","Obstetrics,Gynae and Urinary Tract Disorders.Treatment Of Vaginal & Vulval Conditions",3,"three"
+"0703","Contraceptives",129197,1346289.99066,"Obstetrics,Gynae and Urinary Tract Disorders","07","Contraceptives
+129,197","Obstetrics,Gynae and Urinary Tract Disorders.Contraceptives",3,"three"
+"0704","Drugs For Genito-Urinary Disorders",302361,3946036.11143,"Obstetrics,Gynae and Urinary Tract Disorders","07","Drugs For Genito-Urinary Disorders
+302,361","Obstetrics,Gynae and Urinary Tract Disorders.Drugs For Genito-Urinary Disorders",3,"three"
+"0801","Cytotoxic Drugs",1554,84247.44778,"Malignant Disease and Immunosuppression","08","Cytotoxic Drugs
+1,554","Malignant Disease and Immunosuppression.Cytotoxic Drugs",3,"three"
+"0802","Drugs Affecting The Immune Response",17410,384509.64361,"Malignant Disease and Immunosuppression","08","Drugs Affecting The Immune Response
+17,410","Malignant Disease and Immunosuppression.Drugs Affecting The Immune Response",3,"three"
+"0803","Sex Hormones & Antag In Malig Disease",57645,2532238.59553,"Malignant Disease and Immunosuppression","08","Sex Hormones & Antag In Malig Disease
+57,645","Malignant Disease and Immunosuppression.Sex Hormones & Antag In Malig Disease",3,"three"
+"0901","Anaemias + Other Blood Disorders",266816,529070.68386,"Nutrition and Blood","09","Anaemias + Other Blood Disorders
+266,816","Nutrition and Blood.Anaemias + Other Blood Disorders",10,"10"
+"0902","Fluids And Electrolytes",12886,131578.08623,"Nutrition and Blood","09","Fluids And Electrolytes
+12,886","Nutrition and Blood.Fluids And Electrolytes",10,"10"
+"0904","Oral Nutrition",93599,5456118.26408,"Nutrition and Blood","09","Oral Nutrition
+93,599","Nutrition and Blood.Oral Nutrition",10,"10"
+"0905","Minerals",9983,354354.96739,"Nutrition and Blood","09","Minerals
+9,983","Nutrition and Blood.Minerals",10,"10"
+"0906","Vitamins",429160,2339827.03371,"Nutrition and Blood","09","Vitamins
+429,160","Nutrition and Blood.Vitamins",10,"10"
+"0908","Metabolic Disorders",129,80527.64728,"Nutrition and Blood","09","Metabolic Disorders
+129","Nutrition and Blood.Metabolic Disorders",10,"10"
+"0909","Foods",1955,105862.97417,"Nutrition and Blood","09","Foods
+1,955","Nutrition and Blood.Foods",10,"10"
+"0910","Compound Vit/Mineral Formulations",4777,25753.34721,"Nutrition and Blood","09","Compound Vit/Mineral Formulations
+4,777","Nutrition and Blood.Compound Vit/Mineral Formulations",10,"10"
+"0911","Health Supplements",861,38026.15517,"Nutrition and Blood","09","Health Supplements
+861","Nutrition and Blood.Health Supplements",10,"10"
+"0912","Other Health Supplements",179,994.50701,"Nutrition and Blood","09","Other Health Supplements
+179","Nutrition and Blood.Other Health Supplements",10,"10"
+"1001","Drugs Used In Rheumatic Diseases & Gout",314534,1426357.47138,"Musculoskeletal and Joint Diseases","10","Drugs Used In Rheumatic Diseases & Gout
+314,534","Musculoskeletal and Joint Diseases.Drugs Used In Rheumatic Diseases & Gout",3,"three"
+"1002","Drugs Used In Neuromuscular  Disorders",18593,134260.39528,"Musculoskeletal and Joint Diseases","10","Drugs Used In Neuromuscular  Disorders
+18,593","Musculoskeletal and Joint Diseases.Drugs Used In Neuromuscular  Disorders",3,"three"
+"1003","Soft-Tissue Disorders & Topical Pain Rel",82033,428485.62661,"Musculoskeletal and Joint Diseases","10","Soft-Tissue Disorders & Topical Pain Rel
+82,033","Musculoskeletal and Joint Diseases.Soft-Tissue Disorders & Topical Pain Rel",3,"three"
 "1103","Anti-Infective Eye Preparations",23955,127000.80166,"Eye","11","Anti-Infective Eye Preparations
 23,955","Eye.Anti-Infective Eye Preparations",6,"six"
 "1104","Corti'roids & Other Anti-Inflamm.Preps.",31130,247584.48479,"Eye","11","Corti'roids & Other Anti-Inflamm.Preps.
@@ -149,12 +149,12 @@
 2","Eye.Local Anaesthetics",6,"six"
 "1108","Miscellaneous Ophthalmic Preparations",73011,366930.02256,"Eye","11","Miscellaneous Ophthalmic Preparations
 73,011","Eye.Miscellaneous Ophthalmic Preparations",6,"six"
-"1201","Drugs Acting On The Ear",28651,132193.5387,"Ear, Nose And Oropharynx","12","Drugs Acting On The Ear
-28,651","Ear, Nose And Oropharynx.Drugs Acting On The Ear",3,"three"
-"1202","Drugs Acting On The Nose",119802,705267.56111,"Ear, Nose And Oropharynx","12","Drugs Acting On The Nose
-119,802","Ear, Nose And Oropharynx.Drugs Acting On The Nose",3,"three"
-"1203","Drugs Acting On The Oropharynx",11159,74336.63517,"Ear, Nose And Oropharynx","12","Drugs Acting On The Oropharynx
-11,159","Ear, Nose And Oropharynx.Drugs Acting On The Oropharynx",3,"three"
+"1201","Drugs Acting On The Ear",28651,132193.5387,"Ear, Nose and Oropharynx","12","Drugs Acting On The Ear
+28,651","Ear, Nose and Oropharynx.Drugs Acting On The Ear",3,"three"
+"1202","Drugs Acting On The Nose",119802,705267.56111,"Ear, Nose and Oropharynx","12","Drugs Acting On The Nose
+119,802","Ear, Nose and Oropharynx.Drugs Acting On The Nose",3,"three"
+"1203","Drugs Acting On The Oropharynx",11159,74336.63517,"Ear, Nose and Oropharynx","12","Drugs Acting On The Oropharynx
+11,159","Ear, Nose and Oropharynx.Drugs Acting On The Oropharynx",3,"three"
 "1301","Management of Skin Conditions",171,1057.16476,"Skin","13","Management of Skin Conditions
 171","Skin.Management of Skin Conditions",15,"15"
 "1302","Emollient & Barrier Preparations",158382,1024321.89777,"Skin","13","Emollient & Barrier Preparations
@@ -185,30 +185,30 @@
 2,118","Skin.Topical Circulatory Preparations",15,"15"
 "1315","Miscellaneous Topical Preparations",31,719.93314,"Skin","13","Miscellaneous Topical Preparations
 31","Skin.Miscellaneous Topical Preparations",15,"15"
-"1404","Vaccines And Antisera",219279,2016745.78275,"Immunological Products & Vaccines","14","Vaccines And Antisera
-219,279","Immunological Products & Vaccines.Vaccines And Antisera",2,"two"
-"1405","Immunoglobulins",1,157.71601,"Immunological Products & Vaccines","14","Immunoglobulins
-1","Immunological Products & Vaccines.Immunoglobulins",2,"two"
+"1404","Vaccines And Antisera",219279,2016745.78275,"Immunological Products and Vaccines","14","Vaccines And Antisera
+219,279","Immunological Products and Vaccines.Vaccines And Antisera",2,"two"
+"1405","Immunoglobulins",1,157.71601,"Immunological Products and Vaccines","14","Immunoglobulins
+1","Immunological Products and Vaccines.Immunoglobulins",2,"two"
 "1501","General Anaesthesia",5116,38568.58615,"Anaesthesia","15","General Anaesthesia
 5,116","Anaesthesia.General Anaesthesia",2,"two"
 "1502","Local Anaesthesia",26229,294273.26709,"Anaesthesia","15","Local Anaesthesia
 26,229","Anaesthesia.Local Anaesthesia",2,"two"
 "1803","X-Ray Contrast Media",2,178.78181,"Preparations used in Diagnosis","18","X-Ray Contrast Media
 2","Preparations used in Diagnosis.X-Ray Contrast Media",1,"one"
-"1902","Selective Preparations",8946,131768.72648,"Other Drugs And Preparations","19","Selective Preparations
-8,946","Other Drugs And Preparations.Selective Preparations",7,"seven"
-"1904","Single Substances",20,4656.045,"Other Drugs And Preparations","19","Single Substances
-20","Other Drugs And Preparations.Single Substances",7,"seven"
-"1905","Other Preparations",114,1120.51765,"Other Drugs And Preparations","19","Other Preparations
-114","Other Drugs And Preparations.Other Preparations",7,"seven"
-"1906","Acids",105,946.68104,"Other Drugs And Preparations","19","Acids
-105","Other Drugs And Preparations.Acids",7,"seven"
-"1907","Base/Dil/Susp Agents/Stabilisers",9121,292536.27319,"Other Drugs And Preparations","19","Base/Dil/Susp Agents/Stabilisers
-9,121","Other Drugs And Preparations.Base/Dil/Susp Agents/Stabilisers",7,"seven"
-"1913","Cordials/Soft Drinks",43,1500.25318,"Other Drugs And Preparations","19","Cordials/Soft Drinks
-43","Other Drugs And Preparations.Cordials/Soft Drinks",7,"seven"
-"1914","Waters",105,924.13409,"Other Drugs And Preparations","19","Waters
-105","Other Drugs And Preparations.Waters",7,"seven"
+"1902","Selective Preparations",8946,131768.72648,"Other Drugs and Preparations","19","Selective Preparations
+8,946","Other Drugs and Preparations.Selective Preparations",7,"seven"
+"1904","Single Substances",20,4656.045,"Other Drugs and Preparations","19","Single Substances
+20","Other Drugs and Preparations.Single Substances",7,"seven"
+"1905","Other Preparations",114,1120.51765,"Other Drugs and Preparations","19","Other Preparations
+114","Other Drugs and Preparations.Other Preparations",7,"seven"
+"1906","Acids",105,946.68104,"Other Drugs and Preparations","19","Acids
+105","Other Drugs and Preparations.Acids",7,"seven"
+"1907","Base/Dil/Susp Agents/Stabilisers",9121,292536.27319,"Other Drugs and Preparations","19","Base/Dil/Susp Agents/Stabilisers
+9,121","Other Drugs and Preparations.Base/Dil/Susp Agents/Stabilisers",7,"seven"
+"1913","Cordials/Soft Drinks",43,1500.25318,"Other Drugs and Preparations","19","Cordials/Soft Drinks
+43","Other Drugs and Preparations.Cordials/Soft Drinks",7,"seven"
+"1914","Waters",105,924.13409,"Other Drugs and Preparations","19","Waters
+105","Other Drugs and Preparations.Waters",7,"seven"
 "2001","Absorbent Cottons",28,168.07888,"Dressings","20","Absorbent Cottons
 28","Dressings.Absorbent Cottons",15,"15"
 "2002","Arm Sling/Bandages",16652,371343.8437,"Dressings","20","Arm Sling/Bandages

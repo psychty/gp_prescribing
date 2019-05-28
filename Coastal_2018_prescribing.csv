@@ -1,369 +1,369 @@
-"Code","CCG_code","CCG","items","quantity","actual_cost","BNF_chapter","BNF Chapter Code","BNF_section","item_label","label"
+"Code","CCG_code","CCG","items","quantity","actual_cost","BNF_chapter","BNF Chapter Code","BNF_section","item_label","Year","label"
 "0101","09G","NHS Coastal West Sussex CCG",35314,16249677,237180.38232,"Gastro-Intestinal System","01","Dyspep&Gastro-Oesophageal Reflux Disease","Dyspep&Gastro-Oesophageal Reflux Disease
-35,314","Gastro-Intestinal System.Dyspep&Gastro-Oesophageal Reflux Disease"
+35,314","2018","Gastro-Intestinal System.Dyspep&Gastro-Oesophageal Reflux Disease"
 "0102","09G","NHS Coastal West Sussex CCG",35952,3193481,531235.59959,"Gastro-Intestinal System","01","Antispasmod.&Other Drgs Alt.Gut Motility","Antispasmod.&Other Drgs Alt.Gut Motility
-35,952","Gastro-Intestinal System.Antispasmod.&Other Drgs Alt.Gut Motility"
+35,952","2018","Gastro-Intestinal System.Antispasmod.&Other Drgs Alt.Gut Motility"
 "0103","09G","NHS Coastal West Sussex CCG",641717,27225758,1050907.43143,"Gastro-Intestinal System","01","Antisecretory Drugs+Mucosal Protectants","Antisecretory Drugs+Mucosal Protectants
-641,717","Gastro-Intestinal System.Antisecretory Drugs+Mucosal Protectants"
+641,717","2018","Gastro-Intestinal System.Antisecretory Drugs+Mucosal Protectants"
 "0104","09G","NHS Coastal West Sussex CCG",17159,1351439,46705.41027,"Gastro-Intestinal System","01","Acute Diarrhoea","Acute Diarrhoea
-17,159","Gastro-Intestinal System.Acute Diarrhoea"
+17,159","2018","Gastro-Intestinal System.Acute Diarrhoea"
 "0105","09G","NHS Coastal West Sussex CCG",24582,3472106,1205652.92795,"Gastro-Intestinal System","01","Chronic Bowel Disorders","Chronic Bowel Disorders
-24,582","Gastro-Intestinal System.Chronic Bowel Disorders"
+24,582","2018","Gastro-Intestinal System.Chronic Bowel Disorders"
 "0106","09G","NHS Coastal West Sussex CCG",182748,27362789,843689.32863,"Gastro-Intestinal System","01","Laxatives","Laxatives
-182,748","Gastro-Intestinal System.Laxatives"
+182,748","2018","Gastro-Intestinal System.Laxatives"
 "0107","09G","NHS Coastal West Sussex CCG",12507,334327,85825.49229,"Gastro-Intestinal System","01","Local Prepn for Anal & Rectal Disorders","Local Prepn for Anal & Rectal Disorders
-12,507","Gastro-Intestinal System.Local Prepn for Anal & Rectal Disorders"
+12,507","2018","Gastro-Intestinal System.Local Prepn for Anal & Rectal Disorders"
 "0109","09G","NHS Coastal West Sussex CCG",8874,2062965,509245.01426,"Gastro-Intestinal System","01","Drugs Affecting Intestinal Secretions","Drugs Affecting Intestinal Secretions
-8,874","Gastro-Intestinal System.Drugs Affecting Intestinal Secretions"
+8,874","2018","Gastro-Intestinal System.Drugs Affecting Intestinal Secretions"
 "0201","09G","NHS Coastal West Sussex CCG",30458,860690,45375.978,"Cardiovascular System","02","Positive Inotropic Drugs","Positive Inotropic Drugs
-30,458","Cardiovascular System.Positive Inotropic Drugs"
+30,458","2018","Cardiovascular System.Positive Inotropic Drugs"
 "0202","09G","NHS Coastal West Sussex CCG",313785,11610403,519467.13615,"Cardiovascular System","02","Diuretics","Diuretics
-313,785","Cardiovascular System.Diuretics"
+313,785","2018","Cardiovascular System.Diuretics"
 "0203","09G","NHS Coastal West Sussex CCG",12743,665828,129771.35052,"Cardiovascular System","02","Anti-Arrhythmic Drugs","Anti-Arrhythmic Drugs
-12,743","Cardiovascular System.Anti-Arrhythmic Drugs"
+12,743","2018","Cardiovascular System.Anti-Arrhythmic Drugs"
 "0204","09G","NHS Coastal West Sussex CCG",378500,15709475,618655.90859,"Cardiovascular System","02","Beta-Adrenoceptor Blocking Drugs","Beta-Adrenoceptor Blocking Drugs
-378,500","Cardiovascular System.Beta-Adrenoceptor Blocking Drugs"
+378,500","2018","Cardiovascular System.Beta-Adrenoceptor Blocking Drugs"
 "0205","09G","NHS Coastal West Sussex CCG",657909,26707021,1602086.46416,"Cardiovascular System","02","Hypertension and Heart Failure","Hypertension and Heart Failure
-657,909","Cardiovascular System.Hypertension and Heart Failure"
+657,909","2018","Cardiovascular System.Hypertension and Heart Failure"
 "0206","09G","NHS Coastal West Sussex CCG",440068,17484463,1930733.8159,"Cardiovascular System","02","Nit,Calc Block & Other Antianginal Drugs","Nit,Calc Block & Other Antianginal Drugs
-440,068","Cardiovascular System.Nit,Calc Block & Other Antianginal Drugs"
+440,068","2018","Cardiovascular System.Nit,Calc Block & Other Antianginal Drugs"
 "0207","09G","NHS Coastal West Sussex CCG",319,27944,17160.16432,"Cardiovascular System","02","Sympathomimetics","Sympathomimetics
-319","Cardiovascular System.Sympathomimetics"
+319","2018","Cardiovascular System.Sympathomimetics"
 "0208","09G","NHS Coastal West Sussex CCG",224789,10561849,6116502.78974,"Cardiovascular System","02","Anticoagulants And Protamine","Anticoagulants And Protamine
-224,789","Cardiovascular System.Anticoagulants And Protamine"
+224,789","2018","Cardiovascular System.Anticoagulants And Protamine"
 "0209","09G","NHS Coastal West Sussex CCG",317851,11051184,624970.56297,"Cardiovascular System","02","Antiplatelet Drugs","Antiplatelet Drugs
-317,851","Cardiovascular System.Antiplatelet Drugs"
+317,851","2018","Cardiovascular System.Antiplatelet Drugs"
 "0211","09G","NHS Coastal West Sussex CCG",3117,205657,39275.97488,"Cardiovascular System","02","Antifibrinolytic Drugs & Haemostatics","Antifibrinolytic Drugs & Haemostatics
-3,117","Cardiovascular System.Antifibrinolytic Drugs & Haemostatics"
+3,117","2018","Cardiovascular System.Antifibrinolytic Drugs & Haemostatics"
 "0212","09G","NHS Coastal West Sussex CCG",654028,24115042,1626866.51343,"Cardiovascular System","02","Lipid-Regulating Drugs","Lipid-Regulating Drugs
-654,028","Cardiovascular System.Lipid-Regulating Drugs"
+654,028","2018","Cardiovascular System.Lipid-Regulating Drugs"
 "0301","09G","NHS Coastal West Sussex CCG",252358,2083522,2876936.31461,"Respiratory System","03","Bronchodilators","Bronchodilators
-252,358","Respiratory System.Bronchodilators"
+252,358","2018","Respiratory System.Bronchodilators"
 "0302","09G","NHS Coastal West Sussex CCG",173143,242352,5607643.78502,"Respiratory System","03","Corticosteroids (Respiratory)","Corticosteroids (Respiratory)
-173,143","Respiratory System.Corticosteroids (Respiratory)"
+173,143","2018","Respiratory System.Corticosteroids (Respiratory)"
 "0303","09G","NHS Coastal West Sussex CCG",22987,780724,48119.88771,"Respiratory System","03","Cromoglycate,Rel,Leukotriene Antagonists","Cromoglycate,Rel,Leukotriene Antagonists
-22,987","Respiratory System.Cromoglycate,Rel,Leukotriene Antagonists"
+22,987","2018","Respiratory System.Cromoglycate,Rel,Leukotriene Antagonists"
 "0304","09G","NHS Coastal West Sussex CCG",115781,5350297,476952.70369,"Respiratory System","03","Antihist, Hyposensit & Allergic Emergen","Antihist, Hyposensit & Allergic Emergen
-115,781","Respiratory System.Antihist, Hyposensit & Allergic Emergen"
+115,781","2018","Respiratory System.Antihist, Hyposensit & Allergic Emergen"
 "0307","09G","NHS Coastal West Sussex CCG",22670,3102033,158126.83809,"Respiratory System","03","Mucolytics","Mucolytics
-22,670","Respiratory System.Mucolytics"
+22,670","2018","Respiratory System.Mucolytics"
 "0308","09G","NHS Coastal West Sussex CCG",22,2600,46.76494,"Respiratory System","03","Aromatic Inhalations","Aromatic Inhalations
-22","Respiratory System.Aromatic Inhalations"
+22","2018","Respiratory System.Aromatic Inhalations"
 "0309","09G","NHS Coastal West Sussex CCG",2007,523197,13196.11734,"Respiratory System","03","Cough Preparations","Cough Preparations
-2,007","Respiratory System.Cough Preparations"
+2,007","2018","Respiratory System.Cough Preparations"
 "0310","09G","NHS Coastal West Sussex CCG",155,8262,475.69557,"Respiratory System","03","Systemic Nasal Decongestants","Systemic Nasal Decongestants
-155","Respiratory System.Systemic Nasal Decongestants"
+155","2018","Respiratory System.Systemic Nasal Decongestants"
 "0401","09G","NHS Coastal West Sussex CCG",136000,4022881,618766.91633,"Central Nervous System","04","Hypnotics And Anxiolytics","Hypnotics And Anxiolytics
-136,000","Central Nervous System.Hypnotics And Anxiolytics"
+136,000","2018","Central Nervous System.Hypnotics And Anxiolytics"
 "0402","09G","NHS Coastal West Sussex CCG",104865,4016450,1452046.25473,"Central Nervous System","04","Drugs Used In Psychoses & Rel.Disorders","Drugs Used In Psychoses & Rel.Disorders
-104,865","Central Nervous System.Drugs Used In Psychoses & Rel.Disorders"
+104,865","2018","Central Nervous System.Drugs Used In Psychoses & Rel.Disorders"
 "0403","09G","NHS Coastal West Sussex CCG",652726,26649302,1990420.53114,"Central Nervous System","04","Antidepressant Drugs","Antidepressant Drugs
-652,726","Central Nervous System.Antidepressant Drugs"
+652,726","2018","Central Nervous System.Antidepressant Drugs"
 "0404","09G","NHS Coastal West Sussex CCG",11501,491560,440205.16393,"Central Nervous System","04","CNS Stimulants and drugs used for ADHD","CNS Stimulants and drugs used for ADHD
-11,501","Central Nervous System.CNS Stimulants and drugs used for ADHD"
+11,501","2018","Central Nervous System.CNS Stimulants and drugs used for ADHD"
 "0405","09G","NHS Coastal West Sussex CCG",1526,147000,32948.8391,"Central Nervous System","04","Obesity","Obesity
-1,526","Central Nervous System.Obesity"
+1,526","2018","Central Nervous System.Obesity"
 "0406","09G","NHS Coastal West Sussex CCG",56252,3866048,437906.92069,"Central Nervous System","04","Drugs Used In Nausea And Vertigo","Drugs Used In Nausea And Vertigo
-56,252","Central Nervous System.Drugs Used In Nausea And Vertigo"
+56,252","2018","Central Nervous System.Drugs Used In Nausea And Vertigo"
 "0407","09G","NHS Coastal West Sussex CCG",528055,60277324,4467769.75566,"Central Nervous System","04","Analgesics","Analgesics
-528,055","Central Nervous System.Analgesics"
+528,055","2018","Central Nervous System.Analgesics"
 "0408","09G","NHS Coastal West Sussex CCG",228383,20301960,2779134.09037,"Central Nervous System","04","Antiepileptic Drugs","Antiepileptic Drugs
-228,383","Central Nervous System.Antiepileptic Drugs"
+228,383","2018","Central Nervous System.Antiepileptic Drugs"
 "0409","09G","NHS Coastal West Sussex CCG",47364,4042224,1010712.49847,"Central Nervous System","04","Drugs Used In Park'ism/Related Disorders","Drugs Used In Park'ism/Related Disorders
-47,364","Central Nervous System.Drugs Used In Park'ism/Related Disorders"
+47,364","2018","Central Nervous System.Drugs Used In Park'ism/Related Disorders"
 "0410","09G","NHS Coastal West Sussex CCG",12316,718812,350403.39452,"Central Nervous System","04","Drugs Used In Substance Dependence","Drugs Used In Substance Dependence
-12,316","Central Nervous System.Drugs Used In Substance Dependence"
+12,316","2018","Central Nervous System.Drugs Used In Substance Dependence"
 "0411","09G","NHS Coastal West Sussex CCG",53370,1306908,352141.19445,"Central Nervous System","04","Dementia","Dementia
-53,370","Central Nervous System.Dementia"
+53,370","2018","Central Nervous System.Dementia"
 "0501","09G","NHS Coastal West Sussex CCG",292565,11100184,1177186.42944,"Infections","05","Antibacterial Drugs","Antibacterial Drugs
-292,565","Infections.Antibacterial Drugs"
+292,565","2018","Infections.Antibacterial Drugs"
 "0502","09G","NHS Coastal West Sussex CCG",13870,400775,77129.18077,"Infections","05","Antifungal Drugs","Antifungal Drugs
-13,870","Infections.Antifungal Drugs"
+13,870","2018","Infections.Antifungal Drugs"
 "0503","09G","NHS Coastal West Sussex CCG",11928,581931,110136.29844,"Infections","05","Antiviral Drugs","Antiviral Drugs
-11,928","Infections.Antiviral Drugs"
+11,928","2018","Infections.Antiviral Drugs"
 "0504","09G","NHS Coastal West Sussex CCG",32572,1018264,67046.41886,"Infections","05","Antiprotozoal Drugs","Antiprotozoal Drugs
-32,572","Infections.Antiprotozoal Drugs"
+32,572","2018","Infections.Antiprotozoal Drugs"
 "0505","09G","NHS Coastal West Sussex CCG",955,21059,1959.72771,"Infections","05","Anthelmintics","Anthelmintics
-955","Infections.Anthelmintics"
+955","2018","Infections.Anthelmintics"
 "0601","09G","NHS Coastal West Sussex CCG",437821,30204735,9884856.55755,"Endocrine System","06","Drugs Used In Diabetes","Drugs Used In Diabetes
-437,821","Endocrine System.Drugs Used In Diabetes"
+437,821","2018","Endocrine System.Drugs Used In Diabetes"
 "0602","09G","NHS Coastal West Sussex CCG",291247,12012048,1191629.05205,"Endocrine System","06","Thyroid And Antithyroid Drugs","Thyroid And Antithyroid Drugs
-291,247","Endocrine System.Thyroid And Antithyroid Drugs"
+291,247","2018","Endocrine System.Thyroid And Antithyroid Drugs"
 "0603","09G","NHS Coastal West Sussex CCG",101078,5728827,638759.31328,"Endocrine System","06","Corticosteroids (Endocrine)","Corticosteroids (Endocrine)
-101,078","Endocrine System.Corticosteroids (Endocrine)"
+101,078","2018","Endocrine System.Corticosteroids (Endocrine)"
 "0604","09G","NHS Coastal West Sussex CCG",83507,4167855,917261.72264,"Endocrine System","06","Sex Hormones","Sex Hormones
-83,507","Endocrine System.Sex Hormones"
+83,507","2018","Endocrine System.Sex Hormones"
 "0605","09G","NHS Coastal West Sussex CCG",3398,164799,382151.38759,"Endocrine System","06","Hypothalamic&Pituitary Hormones&Antioest","Hypothalamic&Pituitary Hormones&Antioest
-3,398","Endocrine System.Hypothalamic&Pituitary Hormones&Antioest"
+3,398","2018","Endocrine System.Hypothalamic&Pituitary Hormones&Antioest"
 "0606","09G","NHS Coastal West Sussex CCG",70409,355273,372605.97707,"Endocrine System","06","Drugs Affecting Bone Metabolism","Drugs Affecting Bone Metabolism
-70,409","Endocrine System.Drugs Affecting Bone Metabolism"
+70,409","2018","Endocrine System.Drugs Affecting Bone Metabolism"
 "0607","09G","NHS Coastal West Sussex CCG",665,14151,40399.62306,"Endocrine System","06","Other Endocrine Drugs","Other Endocrine Drugs
-665","Endocrine System.Other Endocrine Drugs"
-"0702","09G","NHS Coastal West Sussex CCG",32921,954626,430287.87313,"Obstetrics,Gynae+Urinary Tract Disorders","07","Treatment Of Vaginal & Vulval Conditions","Treatment Of Vaginal & Vulval Conditions
-32,921","Obstetrics,Gynae+Urinary Tract Disorders.Treatment Of Vaginal & Vulval Conditions"
-"0703","09G","NHS Coastal West Sussex CCG",73310,6780436,788906.41189,"Obstetrics,Gynae+Urinary Tract Disorders","07","Contraceptives","Contraceptives
-73,310","Obstetrics,Gynae+Urinary Tract Disorders.Contraceptives"
-"0704","09G","NHS Coastal West Sussex CCG",201193,6372375,2480351.43224,"Obstetrics,Gynae+Urinary Tract Disorders","07","Drugs For Genito-Urinary Disorders","Drugs For Genito-Urinary Disorders
-201,193","Obstetrics,Gynae+Urinary Tract Disorders.Drugs For Genito-Urinary Disorders"
-"0801","09G","NHS Coastal West Sussex CCG",734,29617,42931.17805,"Malignant Disease & Immunosuppression","08","Cytotoxic Drugs","Cytotoxic Drugs
-734","Malignant Disease & Immunosuppression.Cytotoxic Drugs"
-"0802","09G","NHS Coastal West Sussex CCG",9103,661282,195906.88278,"Malignant Disease & Immunosuppression","08","Drugs Affecting The Immune Response","Drugs Affecting The Immune Response
-9,103","Malignant Disease & Immunosuppression.Drugs Affecting The Immune Response"
-"0803","09G","NHS Coastal West Sussex CCG",38186,1076568,1744886.5629,"Malignant Disease & Immunosuppression","08","Sex Hormones & Antag In Malig Disease","Sex Hormones & Antag In Malig Disease
-38,186","Malignant Disease & Immunosuppression.Sex Hormones & Antag In Malig Disease"
-"0901","09G","NHS Coastal West Sussex CCG",160165,5915816,279184.29061,"Nutrition And Blood","09","Anaemias + Other Blood Disorders","Anaemias + Other Blood Disorders
-160,165","Nutrition And Blood.Anaemias + Other Blood Disorders"
-"0902","09G","NHS Coastal West Sussex CCG",7880,997969,68865.68142,"Nutrition And Blood","09","Fluids And Electrolytes","Fluids And Electrolytes
-7,880","Nutrition And Blood.Fluids And Electrolytes"
-"0904","09G","NHS Coastal West Sussex CCG",56558,199666999,3086665.56185,"Nutrition And Blood","09","Oral Nutrition","Oral Nutrition
-56,558","Nutrition And Blood.Oral Nutrition"
-"0905","09G","NHS Coastal West Sussex CCG",6423,557339,246982.23927,"Nutrition And Blood","09","Minerals","Minerals
-6,423","Nutrition And Blood.Minerals"
-"0906","09G","NHS Coastal West Sussex CCG",272256,14827014,1414802.7127,"Nutrition And Blood","09","Vitamins","Vitamins
-272,256","Nutrition And Blood.Vitamins"
-"0908","09G","NHS Coastal West Sussex CCG",58,5344,9474.14365,"Nutrition And Blood","09","Metabolic Disorders","Metabolic Disorders
-58","Nutrition And Blood.Metabolic Disorders"
-"0909","09G","NHS Coastal West Sussex CCG",1355,4100880,81514.47637,"Nutrition And Blood","09","Foods","Foods
-1,355","Nutrition And Blood.Foods"
-"0910","09G","NHS Coastal West Sussex CCG",3398,124089,16967.74521,"Nutrition And Blood","09","Compound Vit/Mineral Formulations","Compound Vit/Mineral Formulations
-3,398","Nutrition And Blood.Compound Vit/Mineral Formulations"
-"0911","09G","NHS Coastal West Sussex CCG",528,50048,25665.86853,"Nutrition And Blood","09","Health Supplements","Health Supplements
-528","Nutrition And Blood.Health Supplements"
-"0912","09G","NHS Coastal West Sussex CCG",127,8993,641.0664,"Nutrition And Blood","09","Other Health Supplements","Other Health Supplements
-127","Nutrition And Blood.Other Health Supplements"
-"1001","09G","NHS Coastal West Sussex CCG",208734,10322071,882046.57024,"Musculoskeletal & Joint Diseases","10","Drugs Used In Rheumatic Diseases & Gout","Drugs Used In Rheumatic Diseases & Gout
-208,734","Musculoskeletal & Joint Diseases.Drugs Used In Rheumatic Diseases & Gout"
-"1002","09G","NHS Coastal West Sussex CCG",10794,2078973,73104.19921,"Musculoskeletal & Joint Diseases","10","Drugs Used In Neuromuscular  Disorders","Drugs Used In Neuromuscular  Disorders
-10,794","Musculoskeletal & Joint Diseases.Drugs Used In Neuromuscular  Disorders"
-"1003","09G","NHS Coastal West Sussex CCG",49336,5066368,242276.71187,"Musculoskeletal & Joint Diseases","10","Soft-Tissue Disorders & Topical Pain Rel","Soft-Tissue Disorders & Topical Pain Rel
-49,336","Musculoskeletal & Joint Diseases.Soft-Tissue Disorders & Topical Pain Rel"
+665","2018","Endocrine System.Other Endocrine Drugs"
+"0702","09G","NHS Coastal West Sussex CCG",32921,954626,430287.87313,"Obstetrics,Gynae and Urinary Tract Disorders","07","Treatment Of Vaginal & Vulval Conditions","Treatment Of Vaginal & Vulval Conditions
+32,921","2018","Obstetrics,Gynae and Urinary Tract Disorders.Treatment Of Vaginal & Vulval Conditions"
+"0703","09G","NHS Coastal West Sussex CCG",73310,6780436,788906.41189,"Obstetrics,Gynae and Urinary Tract Disorders","07","Contraceptives","Contraceptives
+73,310","2018","Obstetrics,Gynae and Urinary Tract Disorders.Contraceptives"
+"0704","09G","NHS Coastal West Sussex CCG",201193,6372375,2480351.43224,"Obstetrics,Gynae and Urinary Tract Disorders","07","Drugs For Genito-Urinary Disorders","Drugs For Genito-Urinary Disorders
+201,193","2018","Obstetrics,Gynae and Urinary Tract Disorders.Drugs For Genito-Urinary Disorders"
+"0801","09G","NHS Coastal West Sussex CCG",734,29617,42931.17805,"Malignant Disease and Immunosuppression","08","Cytotoxic Drugs","Cytotoxic Drugs
+734","2018","Malignant Disease and Immunosuppression.Cytotoxic Drugs"
+"0802","09G","NHS Coastal West Sussex CCG",9103,661282,195906.88278,"Malignant Disease and Immunosuppression","08","Drugs Affecting The Immune Response","Drugs Affecting The Immune Response
+9,103","2018","Malignant Disease and Immunosuppression.Drugs Affecting The Immune Response"
+"0803","09G","NHS Coastal West Sussex CCG",38186,1076568,1744886.5629,"Malignant Disease and Immunosuppression","08","Sex Hormones & Antag In Malig Disease","Sex Hormones & Antag In Malig Disease
+38,186","2018","Malignant Disease and Immunosuppression.Sex Hormones & Antag In Malig Disease"
+"0901","09G","NHS Coastal West Sussex CCG",160165,5915816,279184.29061,"Nutrition and Blood","09","Anaemias + Other Blood Disorders","Anaemias + Other Blood Disorders
+160,165","2018","Nutrition and Blood.Anaemias + Other Blood Disorders"
+"0902","09G","NHS Coastal West Sussex CCG",7880,997969,68865.68142,"Nutrition and Blood","09","Fluids And Electrolytes","Fluids And Electrolytes
+7,880","2018","Nutrition and Blood.Fluids And Electrolytes"
+"0904","09G","NHS Coastal West Sussex CCG",56558,199666999,3086665.56185,"Nutrition and Blood","09","Oral Nutrition","Oral Nutrition
+56,558","2018","Nutrition and Blood.Oral Nutrition"
+"0905","09G","NHS Coastal West Sussex CCG",6423,557339,246982.23927,"Nutrition and Blood","09","Minerals","Minerals
+6,423","2018","Nutrition and Blood.Minerals"
+"0906","09G","NHS Coastal West Sussex CCG",272256,14827014,1414802.7127,"Nutrition and Blood","09","Vitamins","Vitamins
+272,256","2018","Nutrition and Blood.Vitamins"
+"0908","09G","NHS Coastal West Sussex CCG",58,5344,9474.14365,"Nutrition and Blood","09","Metabolic Disorders","Metabolic Disorders
+58","2018","Nutrition and Blood.Metabolic Disorders"
+"0909","09G","NHS Coastal West Sussex CCG",1355,4100880,81514.47637,"Nutrition and Blood","09","Foods","Foods
+1,355","2018","Nutrition and Blood.Foods"
+"0910","09G","NHS Coastal West Sussex CCG",3398,124089,16967.74521,"Nutrition and Blood","09","Compound Vit/Mineral Formulations","Compound Vit/Mineral Formulations
+3,398","2018","Nutrition and Blood.Compound Vit/Mineral Formulations"
+"0911","09G","NHS Coastal West Sussex CCG",528,50048,25665.86853,"Nutrition and Blood","09","Health Supplements","Health Supplements
+528","2018","Nutrition and Blood.Health Supplements"
+"0912","09G","NHS Coastal West Sussex CCG",127,8993,641.0664,"Nutrition and Blood","09","Other Health Supplements","Other Health Supplements
+127","2018","Nutrition and Blood.Other Health Supplements"
+"1001","09G","NHS Coastal West Sussex CCG",208734,10322071,882046.57024,"Musculoskeletal and Joint Diseases","10","Drugs Used In Rheumatic Diseases & Gout","Drugs Used In Rheumatic Diseases & Gout
+208,734","2018","Musculoskeletal and Joint Diseases.Drugs Used In Rheumatic Diseases & Gout"
+"1002","09G","NHS Coastal West Sussex CCG",10794,2078973,73104.19921,"Musculoskeletal and Joint Diseases","10","Drugs Used In Neuromuscular  Disorders","Drugs Used In Neuromuscular  Disorders
+10,794","2018","Musculoskeletal and Joint Diseases.Drugs Used In Neuromuscular  Disorders"
+"1003","09G","NHS Coastal West Sussex CCG",49336,5066368,242276.71187,"Musculoskeletal and Joint Diseases","10","Soft-Tissue Disorders & Topical Pain Rel","Soft-Tissue Disorders & Topical Pain Rel
+49,336","2018","Musculoskeletal and Joint Diseases.Soft-Tissue Disorders & Topical Pain Rel"
 "1103","09G","NHS Coastal West Sussex CCG",14782,117945,84106.46197,"Eye","11","Anti-Infective Eye Preparations","Anti-Infective Eye Preparations
-14,782","Eye.Anti-Infective Eye Preparations"
+14,782","2018","Eye.Anti-Infective Eye Preparations"
 "1104","09G","NHS Coastal West Sussex CCG",17416,234150,130567.97817,"Eye","11","Corti'roids & Other Anti-Inflamm.Preps.","Corti'roids & Other Anti-Inflamm.Preps.
-17,416","Eye.Corti'roids & Other Anti-Inflamm.Preps."
+17,416","2018","Eye.Corti'roids & Other Anti-Inflamm.Preps."
 "1105","09G","NHS Coastal West Sussex CCG",511,7697,34848.82314,"Eye","11","Mydriatics And Cycloplegics","Mydriatics And Cycloplegics
-511","Eye.Mydriatics And Cycloplegics"
+511","2018","Eye.Mydriatics And Cycloplegics"
 "1106","09G","NHS Coastal West Sussex CCG",111334,1230324,1205940.30337,"Eye","11","Treatment Of Glaucoma","Treatment Of Glaucoma
-111,334","Eye.Treatment Of Glaucoma"
+111,334","2018","Eye.Treatment Of Glaucoma"
 "1107","09G","NHS Coastal West Sussex CCG",1,1,0.47271,"Eye","11","Local Anaesthetics","Local Anaesthetics
-1","Eye.Local Anaesthetics"
+1","2018","Eye.Local Anaesthetics"
 "1108","09G","NHS Coastal West Sussex CCG",49637,1112535,229327.58534,"Eye","11","Miscellaneous Ophthalmic Preparations","Miscellaneous Ophthalmic Preparations
-49,637","Eye.Miscellaneous Ophthalmic Preparations"
-"1201","09G","NHS Coastal West Sussex CCG",18019,46685,80845.91599,"Ear, Nose And Oropharynx","12","Drugs Acting On The Ear","Drugs Acting On The Ear
-18,019","Ear, Nose And Oropharynx.Drugs Acting On The Ear"
-"1202","09G","NHS Coastal West Sussex CCG",68083,268147,411402.93331,"Ear, Nose And Oropharynx","12","Drugs Acting On The Nose","Drugs Acting On The Nose
-68,083","Ear, Nose And Oropharynx.Drugs Acting On The Nose"
-"1203","09G","NHS Coastal West Sussex CCG",6794,1169121,45027.29623,"Ear, Nose And Oropharynx","12","Drugs Acting On The Oropharynx","Drugs Acting On The Oropharynx
-6,794","Ear, Nose And Oropharynx.Drugs Acting On The Oropharynx"
+49,637","2018","Eye.Miscellaneous Ophthalmic Preparations"
+"1201","09G","NHS Coastal West Sussex CCG",18019,46685,80845.91599,"Ear, Nose and Oropharynx","12","Drugs Acting On The Ear","Drugs Acting On The Ear
+18,019","2018","Ear, Nose and Oropharynx.Drugs Acting On The Ear"
+"1202","09G","NHS Coastal West Sussex CCG",68083,268147,411402.93331,"Ear, Nose and Oropharynx","12","Drugs Acting On The Nose","Drugs Acting On The Nose
+68,083","2018","Ear, Nose and Oropharynx.Drugs Acting On The Nose"
+"1203","09G","NHS Coastal West Sussex CCG",6794,1169121,45027.29623,"Ear, Nose and Oropharynx","12","Drugs Acting On The Oropharynx","Drugs Acting On The Oropharynx
+6,794","2018","Ear, Nose and Oropharynx.Drugs Acting On The Oropharynx"
 "1301","09G","NHS Coastal West Sussex CCG",50,24180,199.89548,"Skin","13","Management of Skin Conditions","Management of Skin Conditions
-50","Skin.Management of Skin Conditions"
+50","2018","Skin.Management of Skin Conditions"
 "1302","09G","NHS Coastal West Sussex CCG",99744,48323588,630160.81556,"Skin","13","Emollient & Barrier Preparations","Emollient & Barrier Preparations
-99,744","Skin.Emollient & Barrier Preparations"
+99,744","2018","Skin.Emollient & Barrier Preparations"
 "1303","09G","NHS Coastal West Sussex CCG",2517,579305,20300.14618,"Skin","13","Top Local Anaesthetics & Antipruritics","Top Local Anaesthetics & Antipruritics
-2,517","Skin.Top Local Anaesthetics & Antipruritics"
+2,517","2018","Skin.Top Local Anaesthetics & Antipruritics"
 "1304","09G","NHS Coastal West Sussex CCG",94449,4793726,415563.46591,"Skin","13","Topical Corticosteroids","Topical Corticosteroids
-94,449","Skin.Topical Corticosteroids"
+94,449","2018","Skin.Topical Corticosteroids"
 "1305","09G","NHS Coastal West Sussex CCG",11516,1126258,442463.19783,"Skin","13","Preparations For Eczema And Psoriasis","Preparations For Eczema And Psoriasis
-11,516","Skin.Preparations For Eczema And Psoriasis"
+11,516","2018","Skin.Preparations For Eczema And Psoriasis"
 "1306","09G","NHS Coastal West Sussex CCG",12873,587566,189448.64123,"Skin","13","Acne and Rosacea","Acne and Rosacea
-12,873","Skin.Acne and Rosacea"
+12,873","2018","Skin.Acne and Rosacea"
 "1307","09G","NHS Coastal West Sussex CCG",1025,11002,11449.46793,"Skin","13","Preparations For Warts And Calluses","Preparations For Warts And Calluses
-1,025","Skin.Preparations For Warts And Calluses"
+1,025","2018","Skin.Preparations For Warts And Calluses"
 "1308","09G","NHS Coastal West Sussex CCG",5893,371320,191071.52221,"Skin","13","Sunscreens And Camouflagers","Sunscreens And Camouflagers
-5,893","Skin.Sunscreens And Camouflagers"
+5,893","2018","Skin.Sunscreens And Camouflagers"
 "1309","09G","NHS Coastal West Sussex CCG",10564,2229835,59998.86012,"Skin","13","Shampoo&Other Preps For Scalp&Hair Cond","Shampoo&Other Preps For Scalp&Hair Cond
-10,564","Skin.Shampoo&Other Preps For Scalp&Hair Cond"
+10,564","2018","Skin.Shampoo&Other Preps For Scalp&Hair Cond"
 "1310","09G","NHS Coastal West Sussex CCG",32865,879572,125418.18573,"Skin","13","Anti-Infective Skin Preparations","Anti-Infective Skin Preparations
-32,865","Skin.Anti-Infective Skin Preparations"
+32,865","2018","Skin.Anti-Infective Skin Preparations"
 "1311","09G","NHS Coastal West Sussex CCG",2295,868125,18903.48014,"Skin","13","Skin Cleansers,Antiseptics & Desloughing","Skin Cleansers,Antiseptics & Desloughing
-2,295","Skin.Skin Cleansers,Antiseptics & Desloughing"
+2,295","2018","Skin.Skin Cleansers,Antiseptics & Desloughing"
 "1312","09G","NHS Coastal West Sussex CCG",350,21132,1361.12555,"Skin","13","Antiperspirants","Antiperspirants
-350","Skin.Antiperspirants"
+350","2018","Skin.Antiperspirants"
 "1313","09G","NHS Coastal West Sussex CCG",165,1527,4919.1246,"Skin","13","Wound Management Products","Wound Management Products
-165","Skin.Wound Management Products"
+165","2018","Skin.Wound Management Products"
 "1314","09G","NHS Coastal West Sussex CCG",1461,84050,6240.68036,"Skin","13","Topical Circulatory Preparations","Topical Circulatory Preparations
-1,461","Skin.Topical Circulatory Preparations"
+1,461","2018","Skin.Topical Circulatory Preparations"
 "1315","09G","NHS Coastal West Sussex CCG",13,3130,342.58314,"Skin","13","Miscellaneous Topical Preparations","Miscellaneous Topical Preparations
-13","Skin.Miscellaneous Topical Preparations"
-"1404","09G","NHS Coastal West Sussex CCG",139157,139279,1282322.23864,"Immunological Products & Vaccines","14","Vaccines And Antisera","Vaccines And Antisera
-139,157","Immunological Products & Vaccines.Vaccines And Antisera"
-"1405","09G","NHS Coastal West Sussex CCG",1,1,157.71601,"Immunological Products & Vaccines","14","Immunoglobulins","Immunoglobulins
-1","Immunological Products & Vaccines.Immunoglobulins"
+13","2018","Skin.Miscellaneous Topical Preparations"
+"1404","09G","NHS Coastal West Sussex CCG",139157,139279,1282322.23864,"Immunological Products and Vaccines","14","Vaccines And Antisera","Vaccines And Antisera
+139,157","2018","Immunological Products and Vaccines.Vaccines And Antisera"
+"1405","09G","NHS Coastal West Sussex CCG",1,1,157.71601,"Immunological Products and Vaccines","14","Immunoglobulins","Immunoglobulins
+1","2018","Immunological Products and Vaccines.Immunoglobulins"
 "1501","09G","NHS Coastal West Sussex CCG",3247,27142,18502.20421,"Anaesthesia","15","General Anaesthesia","General Anaesthesia
-3,247","Anaesthesia.General Anaesthesia"
+3,247","2018","Anaesthesia.General Anaesthesia"
 "1502","09G","NHS Coastal West Sussex CCG",17132,221423,198500.73893,"Anaesthesia","15","Local Anaesthesia","Local Anaesthesia
-17,132","Anaesthesia.Local Anaesthesia"
-"1902","09G","NHS Coastal West Sussex CCG",4950,2070804,74593.35768,"Other Drugs And Preparations","19","Selective Preparations","Selective Preparations
-4,950","Other Drugs And Preparations.Selective Preparations"
-"1904","09G","NHS Coastal West Sussex CCG",14,9581,91.33159,"Other Drugs And Preparations","19","Single Substances","Single Substances
-14","Other Drugs And Preparations.Single Substances"
-"1905","09G","NHS Coastal West Sussex CCG",104,3352,983.47767,"Other Drugs And Preparations","19","Other Preparations","Other Preparations
-104","Other Drugs And Preparations.Other Preparations"
-"1906","09G","NHS Coastal West Sussex CCG",74,10870,297.93756,"Other Drugs And Preparations","19","Acids","Acids
-74","Other Drugs And Preparations.Acids"
-"1907","09G","NHS Coastal West Sussex CCG",5014,3335397,151568.68883,"Other Drugs And Preparations","19","Base/Dil/Susp Agents/Stabilisers","Base/Dil/Susp Agents/Stabilisers
-5,014","Other Drugs And Preparations.Base/Dil/Susp Agents/Stabilisers"
-"1913","09G","NHS Coastal West Sussex CCG",40,234954,1450.11998,"Other Drugs And Preparations","19","Cordials/Soft Drinks","Cordials/Soft Drinks
-40","Other Drugs And Preparations.Cordials/Soft Drinks"
-"1914","09G","NHS Coastal West Sussex CCG",63,479104,742.31036,"Other Drugs And Preparations","19","Waters","Waters
-63","Other Drugs And Preparations.Waters"
+17,132","2018","Anaesthesia.Local Anaesthesia"
+"1902","09G","NHS Coastal West Sussex CCG",4950,2070804,74593.35768,"Other Drugs and Preparations","19","Selective Preparations","Selective Preparations
+4,950","2018","Other Drugs and Preparations.Selective Preparations"
+"1904","09G","NHS Coastal West Sussex CCG",14,9581,91.33159,"Other Drugs and Preparations","19","Single Substances","Single Substances
+14","2018","Other Drugs and Preparations.Single Substances"
+"1905","09G","NHS Coastal West Sussex CCG",104,3352,983.47767,"Other Drugs and Preparations","19","Other Preparations","Other Preparations
+104","2018","Other Drugs and Preparations.Other Preparations"
+"1906","09G","NHS Coastal West Sussex CCG",74,10870,297.93756,"Other Drugs and Preparations","19","Acids","Acids
+74","2018","Other Drugs and Preparations.Acids"
+"1907","09G","NHS Coastal West Sussex CCG",5014,3335397,151568.68883,"Other Drugs and Preparations","19","Base/Dil/Susp Agents/Stabilisers","Base/Dil/Susp Agents/Stabilisers
+5,014","2018","Other Drugs and Preparations.Base/Dil/Susp Agents/Stabilisers"
+"1913","09G","NHS Coastal West Sussex CCG",40,234954,1450.11998,"Other Drugs and Preparations","19","Cordials/Soft Drinks","Cordials/Soft Drinks
+40","2018","Other Drugs and Preparations.Cordials/Soft Drinks"
+"1914","09G","NHS Coastal West Sussex CCG",63,479104,742.31036,"Other Drugs and Preparations","19","Waters","Waters
+63","2018","Other Drugs and Preparations.Waters"
 "2001","09G","NHS Coastal West Sussex CCG",19,9700,109.82644,"Dressings","20","Absorbent Cottons","Absorbent Cottons
-19","Dressings.Absorbent Cottons"
+19","2018","Dressings.Absorbent Cottons"
 "2002","09G","NHS Coastal West Sussex CCG",15886,220150,351597.95171,"Dressings","20","Arm Sling/Bandages","Arm Sling/Bandages
-15,886","Dressings.Arm Sling/Bandages"
+15,886","2018","Dressings.Arm Sling/Bandages"
 "2003","09G","NHS Coastal West Sussex CCG",94033,1381138,1953899.991,"Dressings","20","Wound Management & Other Dressings","Wound Management & Other Dressings
-94,033","Dressings.Wound Management & Other Dressings"
+94,033","2018","Dressings.Wound Management & Other Dressings"
 "2004","09G","NHS Coastal West Sussex CCG",1575,38246,43818.79396,"Dressings","20","Gauzes & Gauze Tissue","Gauzes & Gauze Tissue
-1,575","Dressings.Gauzes & Gauze Tissue"
+1,575","2018","Dressings.Gauzes & Gauze Tissue"
 "2005","09G","NHS Coastal West Sussex CCG",1304,71201,106173.70934,"Dressings","20","Tracheostomy & Laryngectomy Appliances","Tracheostomy & Laryngectomy Appliances
-1,304","Dressings.Tracheostomy & Laryngectomy Appliances"
+1,304","2018","Dressings.Tracheostomy & Laryngectomy Appliances"
 "2007","09G","NHS Coastal West Sussex CCG",17,30500,702.35504,"Dressings","20","Lints","Lints
-17","Dressings.Lints"
+17","2018","Dressings.Lints"
 "2009","09G","NHS Coastal West Sussex CCG",12806,29322,122279.90446,"Dressings","20","Stockinette","Stockinette
-12,806","Dressings.Stockinette"
+12,806","2018","Dressings.Stockinette"
 "2010","09G","NHS Coastal West Sussex CCG",6983,17169,21739.91524,"Dressings","20","Surgical Adhesive Tape","Surgical Adhesive Tape
-6,983","Dressings.Surgical Adhesive Tape"
+6,983","2018","Dressings.Surgical Adhesive Tape"
 "2011","09G","NHS Coastal West Sussex CCG",1070,2007,2628.50708,"Dressings","20","Surgical Sutures","Surgical Sutures
-1,070","Dressings.Surgical Sutures"
+1,070","2018","Dressings.Surgical Sutures"
 "2012","09G","NHS Coastal West Sussex CCG",3703,595255,16435.25284,"Dressings","20","Swabs","Swabs
-3,703","Dressings.Swabs"
+3,703","2018","Dressings.Swabs"
 "2014","09G","NHS Coastal West Sussex CCG",882,6693,1478.07298,"Dressings","20","Skin Closure Strips, Sterile","Skin Closure Strips, Sterile
-882","Dressings.Skin Closure Strips, Sterile"
+882","2018","Dressings.Skin Closure Strips, Sterile"
 "2015","09G","NHS Coastal West Sussex CCG",33,67,372.48079,"Dressings","20","Skin Adhesive, Sterile","Skin Adhesive, Sterile
-33","Dressings.Skin Adhesive, Sterile"
+33","2018","Dressings.Skin Adhesive, Sterile"
 "2020","09G","NHS Coastal West Sussex CCG",139,463,6308.75782,"Dressings","20","Silk Garments","Silk Garments
-139","Dressings.Silk Garments"
+139","2018","Dressings.Silk Garments"
 "2101","09G","NHS Coastal West Sussex CCG",85452,7648071,636218.22536,"Appliances","21","Other Appliances","Other Appliances
-85,452","Appliances.Other Appliances"
+85,452","2018","Appliances.Other Appliances"
 "2102","09G","NHS Coastal West Sussex CCG",12681,45062,1372897.46379,"Appliances","21","Catheters","Catheters
-12,681","Appliances.Catheters"
+12,681","2018","Appliances.Catheters"
 "2103","09G","NHS Coastal West Sussex CCG",16,41,79.41459,"Appliances","21","Chiropody Appliances","Chiropody Appliances
-16","Appliances.Chiropody Appliances"
+16","2018","Appliances.Chiropody Appliances"
 "2104","09G","NHS Coastal West Sussex CCG",348,350,3537.4357,"Appliances","21","Contraceptive Devices","Contraceptive Devices
-348","Appliances.Contraceptive Devices"
+348","2018","Appliances.Contraceptive Devices"
 "2106","09G","NHS Coastal West Sussex CCG",34,34,956.50134,"Appliances","21","Trusses","Trusses
-34","Appliances.Trusses"
+34","2018","Appliances.Trusses"
 "2107","09G","NHS Coastal West Sussex CCG",7698,21317,134114.08622,"Appliances","21","Elastic Hosiery","Elastic Hosiery
-7,698","Appliances.Elastic Hosiery"
+7,698","2018","Appliances.Elastic Hosiery"
 "2112","09G","NHS Coastal West Sussex CCG",2919,2928,15946.81856,"Appliances","21","Peak Flow Meters","Peak Flow Meters
-2,919","Appliances.Peak Flow Meters"
+2,919","2018","Appliances.Peak Flow Meters"
 "2113","09G","NHS Coastal West Sussex CCG",1299,11194,39279.74472,"Appliances","21","Catheter Maintenance Products","Catheter Maintenance Products
-1,299","Appliances.Catheter Maintenance Products"
+1,299","2018","Appliances.Catheter Maintenance Products"
 "2114","09G","NHS Coastal West Sussex CCG",3070,184845,10314.54699,"Appliances","21","Lubricant Gels","Lubricant Gels
-3,070","Appliances.Lubricant Gels"
+3,070","2018","Appliances.Lubricant Gels"
 "2116","09G","NHS Coastal West Sussex CCG",14097,200758,74300.72705,"Appliances","21","Irrigation Solutions","Irrigation Solutions
-14,097","Appliances.Irrigation Solutions"
+14,097","2018","Appliances.Irrigation Solutions"
 "2118","09G","NHS Coastal West Sussex CCG",122,332,10234.81735,"Appliances","21","Vacuum Pumps for Erectile Dysfunction","Vacuum Pumps for Erectile Dysfunction
-122","Appliances.Vacuum Pumps for Erectile Dysfunction"
+122","2018","Appliances.Vacuum Pumps for Erectile Dysfunction"
 "2119","09G","NHS Coastal West Sussex CCG",188,15301,15826.28816,"Appliances","21","Oral Film Forming Agents","Oral Film Forming Agents
-188","Appliances.Oral Film Forming Agents"
+188","2018","Appliances.Oral Film Forming Agents"
 "2120","09G","NHS Coastal West Sussex CCG",1325,2077,38392.70799,"Appliances","21","Venous Ulcer Compression System","Venous Ulcer Compression System
-1,325","Appliances.Venous Ulcer Compression System"
+1,325","2018","Appliances.Venous Ulcer Compression System"
 "2121","09G","NHS Coastal West Sussex CCG",3904,313727,34367.19683,"Appliances","21","Dry Mouth Products","Dry Mouth Products
-3,904","Appliances.Dry Mouth Products"
+3,904","2018","Appliances.Dry Mouth Products"
 "2122","09G","NHS Coastal West Sussex CCG",73284,17007041,337809.91633,"Appliances","21","Emollients","Emollients
-73,284","Appliances.Emollients"
+73,284","2018","Appliances.Emollients"
 "2123","09G","NHS Coastal West Sussex CCG",3300,10231,30045.07651,"Appliances","21","Vaginal Moisturisers","Vaginal Moisturisers
-3,300","Appliances.Vaginal Moisturisers"
+3,300","2018","Appliances.Vaginal Moisturisers"
 "2124","09G","NHS Coastal West Sussex CCG",1109,1714,3579.94484,"Appliances","21","Nasal Products","Nasal Products
-1,109","Appliances.Nasal Products"
+1,109","2018","Appliances.Nasal Products"
 "2125","09G","NHS Coastal West Sussex CCG",22,25,702.0955,"Appliances","21","Vaginal Dilators","Vaginal Dilators
-22","Appliances.Vaginal Dilators"
+22","2018","Appliances.Vaginal Dilators"
 "2127","09G","NHS Coastal West Sussex CCG",2862,6486,182981.05632,"Appliances","21","Lymphoedema Garments","Lymphoedema Garments
-2,862","Appliances.Lymphoedema Garments"
+2,862","2018","Appliances.Lymphoedema Garments"
 "2128","09G","NHS Coastal West Sussex CCG",915,1775,150920.85701,"Appliances","21","Anal Irrigation System","Anal Irrigation System
-915","Appliances.Anal Irrigation System"
+915","2018","Appliances.Anal Irrigation System"
 "2129","09G","NHS Coastal West Sussex CCG",243,405,7186.61292,"Appliances","21","Plantar Pressure Offloading Device","Plantar Pressure Offloading Device
-243","Appliances.Plantar Pressure Offloading Device"
+243","2018","Appliances.Plantar Pressure Offloading Device"
 "2130","09G","NHS Coastal West Sussex CCG",34449,278220,271904.10731,"Appliances","21","Eye Products","Eye Products
-34,449","Appliances.Eye Products"
+34,449","2018","Appliances.Eye Products"
 "2131","09G","NHS Coastal West Sussex CCG",1,60,278.0761,"Appliances","21","Cycloidal Vibration Accessories","Cycloidal Vibration Accessories
-1","Appliances.Cycloidal Vibration Accessories"
+1","2018","Appliances.Cycloidal Vibration Accessories"
 "2132","09G","NHS Coastal West Sussex CCG",360,23919,11745.03672,"Appliances","21","Inhalation Solutions","Inhalation Solutions
-360","Appliances.Inhalation Solutions"
+360","2018","Appliances.Inhalation Solutions"
 "2133","09G","NHS Coastal West Sussex CCG",65,549,12058.11384,"Appliances","21","Indwelling Pleural Cath Drain System","Indwelling Pleural Cath Drain System
-65","Appliances.Indwelling Pleural Cath Drain System"
+65","2018","Appliances.Indwelling Pleural Cath Drain System"
 "2134","09G","NHS Coastal West Sussex CCG",64,488,374.14893,"Appliances","21","Vaginal PH Correction Products","Vaginal PH Correction Products
-64","Appliances.Vaginal PH Correction Products"
+64","2018","Appliances.Vaginal PH Correction Products"
 "2136","09G","NHS Coastal West Sussex CCG",88,1748,2448.53357,"Appliances","21","Adhesive Dressing Remover Ster Silicone","Adhesive Dressing Remover Ster Silicone
-88","Appliances.Adhesive Dressing Remover Ster Silicone"
+88","2018","Appliances.Adhesive Dressing Remover Ster Silicone"
 "2137","09G","NHS Coastal West Sussex CCG",14,14,195.04917,"Appliances","21","Pelvic Toning Devices","Pelvic Toning Devices
-14","Appliances.Pelvic Toning Devices"
+14","2018","Appliances.Pelvic Toning Devices"
 "2138","09G","NHS Coastal West Sussex CCG",594,1623,9353.5255,"Appliances","21","Low Friction Products","Low Friction Products
-594","Appliances.Low Friction Products"
+594","2018","Appliances.Low Friction Products"
 "2140","09G","NHS Coastal West Sussex CCG",1,30,4.82025,"Appliances","21","Bacterial Decolonisation Products","Bacterial Decolonisation Products
-1","Appliances.Bacterial Decolonisation Products"
+1","2018","Appliances.Bacterial Decolonisation Products"
 "2141","09G","NHS Coastal West Sussex CCG",672,6450,34736.25254,"Appliances","21","Physical Debridement Device","Physical Debridement Device
-672","Appliances.Physical Debridement Device"
+672","2018","Appliances.Physical Debridement Device"
 "2142","09G","NHS Coastal West Sussex CCG",2,5,218.31708,"Appliances","21","Jaw Rehabilitation Device","Jaw Rehabilitation Device
-2","Appliances.Jaw Rehabilitation Device"
+2","2018","Appliances.Jaw Rehabilitation Device"
 "2143","09G","NHS Coastal West Sussex CCG",15,280,114.00533,"Appliances","21","Micro-Enema - Sodium Citrate","Micro-Enema - Sodium Citrate
-15","Appliances.Micro-Enema - Sodium Citrate"
+15","2018","Appliances.Micro-Enema - Sodium Citrate"
 "2146","09G","NHS Coastal West Sussex CCG",4,9,304.75646,"Appliances","21","Hernia Support Garments","Hernia Support Garments
-4","Appliances.Hernia Support Garments"
+4","2018","Appliances.Hernia Support Garments"
 "2147","09G","NHS Coastal West Sussex CCG",11,11,191.40283,"Appliances","21","Dev For Fungal Nail Infections","Dev For Fungal Nail Infections
-11","Appliances.Dev For Fungal Nail Infections"
+11","2018","Appliances.Dev For Fungal Nail Infections"
 "2148","09G","NHS Coastal West Sussex CCG",2121,4367,141863.1491,"Appliances","21","Detection Sensor Interstitial Fluid/Gluc","Detection Sensor Interstitial Fluid/Gluc
-2,121","Appliances.Detection Sensor Interstitial Fluid/Gluc"
+2,121","2018","Appliances.Detection Sensor Interstitial Fluid/Gluc"
 "2149","09G","NHS Coastal West Sussex CCG",5,5,64.79857,"Appliances","21","Pulsed Electromagnetic Stimulator","Pulsed Electromagnetic Stimulator
-5","Appliances.Pulsed Electromagnetic Stimulator"
+5","2018","Appliances.Pulsed Electromagnetic Stimulator"
 "2202","09G","NHS Coastal West Sussex CCG",67,2190,4590.60169,"Incontinence Appliances","22","Anal Plugs","Anal Plugs
-67","Incontinence Appliances.Anal Plugs"
+67","2018","Incontinence Appliances.Anal Plugs"
 "2205","09G","NHS Coastal West Sussex CCG",1469,11725,28385.50412,"Incontinence Appliances","22","Catheter Valves","Catheter Valves
-1,469","Incontinence Appliances.Catheter Valves"
+1,469","2018","Incontinence Appliances.Catheter Valves"
 "2215","09G","NHS Coastal West Sussex CCG",13,185,401.15707,"Incontinence Appliances","22","Faecal Collectors","Faecal Collectors
-13","Incontinence Appliances.Faecal Collectors"
+13","2018","Incontinence Appliances.Faecal Collectors"
 "2230","09G","NHS Coastal West Sussex CCG",1904,74072,117828.89692,"Incontinence Appliances","22","Incontinence Sheaths","Incontinence Sheaths
-1,904","Incontinence Appliances.Incontinence Sheaths"
+1,904","2018","Incontinence Appliances.Incontinence Sheaths"
 "2240","09G","NHS Coastal West Sussex CCG",89,2241,1633.81947,"Incontinence Appliances","22","Incontinence Sheath Fixing Strips & Adh","Incontinence Sheath Fixing Strips & Adh
-89","Incontinence Appliances.Incontinence Sheath Fixing Strips & Adh"
+89","2018","Incontinence Appliances.Incontinence Sheath Fixing Strips & Adh"
 "2250","09G","NHS Coastal West Sussex CCG",6956,86015,237578.15464,"Incontinence Appliances","22","Leg Bags","Leg Bags
-6,956","Incontinence Appliances.Leg Bags"
+6,956","2018","Incontinence Appliances.Leg Bags"
 "2260","09G","NHS Coastal West Sussex CCG",10690,263747,147366.91984,"Incontinence Appliances","22","Night Drainage Bags","Night Drainage Bags
-10,690","Incontinence Appliances.Night Drainage Bags"
+10,690","2018","Incontinence Appliances.Night Drainage Bags"
 "2270","09G","NHS Coastal West Sussex CCG",30,116,892.01297,"Incontinence Appliances","22","Suspensory Systems","Suspensory Systems
-30","Incontinence Appliances.Suspensory Systems"
+30","2018","Incontinence Appliances.Suspensory Systems"
 "2280","09G","NHS Coastal West Sussex CCG",3159,19584,41284.93465,"Incontinence Appliances","22","Tubing And Accessories","Tubing And Accessories
-3,159","Incontinence Appliances.Tubing And Accessories"
+3,159","2018","Incontinence Appliances.Tubing And Accessories"
 "2285","09G","NHS Coastal West Sussex CCG",20,20,887.06864,"Incontinence Appliances","22","Insert For Female Stress Incont","Insert For Female Stress Incont
-20","Incontinence Appliances.Insert For Female Stress Incont"
+20","2018","Incontinence Appliances.Insert For Female Stress Incont"
 "2290","09G","NHS Coastal West Sussex CCG",122,553,4224.15165,"Incontinence Appliances","22","Urinal Systems","Urinal Systems
-122","Incontinence Appliances.Urinal Systems"
+122","2018","Incontinence Appliances.Urinal Systems"
 "2305","09G","NHS Coastal West Sussex CCG",2422,176511,95830.32497,"Stoma Appliances","23","Adhesive Discs/Rings/Pads/Plasters","Adhesive Discs/Rings/Pads/Plasters
-2,422","Stoma Appliances.Adhesive Discs/Rings/Pads/Plasters"
+2,422","2018","Stoma Appliances.Adhesive Discs/Rings/Pads/Plasters"
 "2310","09G","NHS Coastal West Sussex CCG",12,33,488.28099,"Stoma Appliances","23","Adhesive (Pastes/Sprays/Solutions)","Adhesive (Pastes/Sprays/Solutions)
-12","Stoma Appliances.Adhesive (Pastes/Sprays/Solutions)"
+12","2018","Stoma Appliances.Adhesive (Pastes/Sprays/Solutions)"
 "2315","09G","NHS Coastal West Sussex CCG",9418,237973,195682.23171,"Stoma Appliances","23","Adhesive Removers (Sprays/Liquids/Wipes)","Adhesive Removers (Sprays/Liquids/Wipes)
-9,418","Stoma Appliances.Adhesive Removers (Sprays/Liquids/Wipes)"
+9,418","2018","Stoma Appliances.Adhesive Removers (Sprays/Liquids/Wipes)"
 "2320","09G","NHS Coastal West Sussex CCG",43,990,391.39205,"Stoma Appliances","23","Bag Closures","Bag Closures
-43","Stoma Appliances.Bag Closures"
+43","2018","Stoma Appliances.Bag Closures"
 "2325","09G","NHS Coastal West Sussex CCG",90,401,3091.12659,"Stoma Appliances","23","Bag Covers","Bag Covers
-90","Stoma Appliances.Bag Covers"
+90","2018","Stoma Appliances.Bag Covers"
 "2330","09G","NHS Coastal West Sussex CCG",871,1491,31514.87229,"Stoma Appliances","23","Belts","Belts
-871","Stoma Appliances.Belts"
+871","2018","Stoma Appliances.Belts"
 "2335","09G","NHS Coastal West Sussex CCG",5654,407616,1125232.11882,"Stoma Appliances","23","Colostomy Bags","Colostomy Bags
-5,654","Stoma Appliances.Colostomy Bags"
+5,654","2018","Stoma Appliances.Colostomy Bags"
 "2345","09G","NHS Coastal West Sussex CCG",1291,31246,15185.65886,"Stoma Appliances","23","Deodorants","Deodorants
-1,291","Stoma Appliances.Deodorants"
+1,291","2018","Stoma Appliances.Deodorants"
 "2346","09G","NHS Coastal West Sussex CCG",437,60949,22446.25024,"Stoma Appliances","23","Discharge Solidifying Agents","Discharge Solidifying Agents
-437","Stoma Appliances.Discharge Solidifying Agents"
+437","2018","Stoma Appliances.Discharge Solidifying Agents"
 "2350","09G","NHS Coastal West Sussex CCG",67,5760,4125.10825,"Stoma Appliances","23","Filters/Bridges","Filters/Bridges
-67","Stoma Appliances.Filters/Bridges"
+67","2018","Stoma Appliances.Filters/Bridges"
 "2360","09G","NHS Coastal West Sussex CCG",5714,232177,806898.43547,"Stoma Appliances","23","Ileostomy Bags","Ileostomy Bags
-5,714","Stoma Appliances.Ileostomy Bags"
+5,714","2018","Stoma Appliances.Ileostomy Bags"
 "2370","09G","NHS Coastal West Sussex CCG",372,6458,12604.82471,"Stoma Appliances","23","Irrigation Washout Appliances","Irrigation Washout Appliances
-372","Stoma Appliances.Irrigation Washout Appliances"
+372","2018","Stoma Appliances.Irrigation Washout Appliances"
 "2375","09G","NHS Coastal West Sussex CCG",32,172,1201.07983,"Stoma Appliances","23","Pressure Plates/Shields","Pressure Plates/Shields
-32","Stoma Appliances.Pressure Plates/Shields"
+32","2018","Stoma Appliances.Pressure Plates/Shields"
 "2380","09G","NHS Coastal West Sussex CCG",36702,204478,463953.17035,"Stoma Appliances","23","Skin Fillers And Protectives","Skin Fillers And Protectives
-36,702","Stoma Appliances.Skin Fillers And Protectives"
+36,702","2018","Stoma Appliances.Skin Fillers And Protectives"
 "2385","09G","NHS Coastal West Sussex CCG",1320,52722,95680.941,"Stoma Appliances","23","Skin Protectors","Skin Protectors
-1,320","Stoma Appliances.Skin Protectors"
+1,320","2018","Stoma Appliances.Skin Protectors"
 "2390","09G","NHS Coastal West Sussex CCG",209,9260,11660.0638,"Stoma Appliances","23","Stoma Caps/Dressings","Stoma Caps/Dressings
-209","Stoma Appliances.Stoma Caps/Dressings"
+209","2018","Stoma Appliances.Stoma Caps/Dressings"
 "2392","09G","NHS Coastal West Sussex CCG",35,680,1498.51855,"Stoma Appliances","23","Tubing & Accessories","Tubing & Accessories
-35","Stoma Appliances.Tubing & Accessories"
+35","2018","Stoma Appliances.Tubing & Accessories"
 "2394","09G","NHS Coastal West Sussex CCG",2567,97883,216001.55713,"Stoma Appliances","23","Two Piece Ostomy Systems","Two Piece Ostomy Systems
-2,567","Stoma Appliances.Two Piece Ostomy Systems"
+2,567","2018","Stoma Appliances.Two Piece Ostomy Systems"
 "2396","09G","NHS Coastal West Sussex CCG",1668,49871,260072.79976,"Stoma Appliances","23","Urostomy Bags","Urostomy Bags
-1,668","Stoma Appliances.Urostomy Bags"
+1,668","2018","Stoma Appliances.Urostomy Bags"
