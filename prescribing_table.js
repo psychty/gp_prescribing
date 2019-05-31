@@ -76,7 +76,7 @@ var tablebody = table.append("tbody");
 cells = rows.selectAll("td")
   // each row has data associated; we get it and enter it for the cells.
     .data(function(d,i) {
-      console.log(d,i);
+      // console.log(d,i);
     return d; })
     .enter()
     .append("td")

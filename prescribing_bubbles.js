@@ -9,16 +9,23 @@ var selected_chapter = null;
 (function() {
   var width = 800,
   height = 1000;
-  // Force diagrams do not care about margins
-
-// create a function to convert a value to numeric with proper formating
-  var format = d3.format(",d");
 
   var chapter_key = ["Gastro-Intestinal System","Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae and Urinary Tract Disorders", "Malignant Disease and Immunosuppression", "Nutrition and Blood", "Musculoskeletal and Joint Diseases", "Eye", "Ear, Nose and Oropharynx", "Skin", "Immunological Products and Vaccines", "Anaesthesia", "Preparations used in Diagnosis", "Other Drugs and Preparations", "Dressings", "Appliances", "Incontinence Appliances", "Stoma Appliances"]
 
-  var y_new = d3.scaleOrdinal()
-    .domain(chapter_key)
-    .range([50, 100, 150, 200, 250, 300, 350, 400, 450, 500,550,600,650,700,750,800,850,900,950,1000,1050])
+  // var y_new = d3.scaleOrdinal()
+  //   .domain(chapter_key)
+  //   .range([50, 100, 150, 200, 250, 300, 350, 400, 450, 500,550,600,650,700,750,800,850,900,950,1000,1050])
+
+  var chapter_items_sum = function(d){
+    d3.nest()
+    .key(function(d){
+      return d.BNF_chapter;
+    })
+    .rollup(function(ch){
+          return d3.sum(ch, function(d) {return (d.items)});
+      })
+    .entries(d)}
+
 
 // Define the min and max of your input (domain), and the output(range) you want
   var radiusScale = d3.scaleSqrt()
@@ -52,10 +59,12 @@ var tooltip = d3.select("#chart")
 // This creates the function for what to do when someone moves the mouse over a circle (e.g. move the tooltip in relation to the mouse cursor).
 var mousemove = function(d) {
   tooltip
-    .html("<p>In 2018, there were <strong>" + format(d.items) + "</strong> items prescribed in the " + d.BNF_section + " BNF section.</p><p>This is part of the <strong>" + d.BNF_chapter + "</strong> BNF chapter.</p>")
+    .html("<p>In 2018, there were <strong>" +  d3.format(",")(d.items) + "</strong> items prescribed in the " + d.BNF_section + " BNF section.</p><p>This is part of the <strong>" + d.BNF_chapter + "</strong> BNF chapter.</p>")
     .style("top", (event.pageY-10)+"px")
     .style("left",(event.pageX+10)+"px")
 }
+
+
 
 // This creates functions for the force physics applied to the circles to say where to place them given certain events
 // These are the default forces
@@ -66,25 +75,42 @@ var forceY = d3.forceY(function(d){
   return 400}).strength(0.2)
 
 // This is a function which tells the circles how close or far away they need to be. If the radius of the circle matches the radius of the forceCollide then there will be no overlap between circles. Adding a + 1 with add a small gap between the circles. Adding a negative (- 1) will add some overlap.
-var forceCollide = d3.forceCollide(function(d) {
-  return radiusScale(d.items) + 1.5
-}).iterations(1)
+// var forceCollide = d3.forceCollide(function(d) {
+//   return radiusScale(d.items) + 1.5
+// }).iterations(1).strength(.5)
 
 var forceCollideApart = d3.forceCollide(function(d) {
   return radiusScale(d.items) + 3
-}).iterations(6)
-
+})
+  .iterations(6)
+  .strength(.2)
 
 // create a force simulation acting on our circles. this is the default simulation, using the forceX and forceY functions defined above.
 var simulation = d3.forceSimulation()
     .force("x", d3.forceX(width /2).strength(0.04))
     .force("y", d3.forceY(400).strength(0.04))
-    .force("collide", forceCollide)
+    .force("collide", forceCollideApart)
 
 // Load data from csv file - this data becomes globally available, not just as an object to be called
 d3.queue()
   .defer(d3.csv, "WSx_2018_prescribing.csv")
   .await(ready)
+
+  // What happens when a circle is dragged?
+     function dragstarted(d) {
+       if (!d3.event.active) simulation.alphaTarget(.03).restart();
+       d.fx = d.x;
+       d.fy = d.y;
+     }
+     function dragged(d) {
+       d.fx = d3.event.x;
+       d.fy = d3.event.y;
+     }
+     function dragended(d) {
+       if (!d3.event.active) simulation.alphaTarget(.03);
+       d.fx = null;
+       d.fy = null;
+     }
 
 // Build the things
 function ready (error, datapoints) {
@@ -102,46 +128,42 @@ var circles = svg.selectAll(".bubbles")
       })
       .on("mouseover", function(){return tooltip.style("visibility", "visible");})
 	    .on("mousemove", mousemove)
-	    .on("mouseout", function(){return tooltip.style("visibility", "hidden");}); // I think this function ammends the visibility of the tooltip object to hidden
+	    .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
+      .call(d3.drag() // call specific function when circle is dragged
+           .on("start", dragstarted)
+           .on("drag", dragged)
+           .on("end", dragended)); // I think this function ammends the visibility of the tooltip object to hidden
 
-      simulation.nodes(datapoints)
-        .on('tick', ticked)
+simulation.nodes(datapoints)
+    .on('tick', ticked)
+  function ticked () {
+    circles
+   .attr("cx", function(d) { return d.x })
+   .attr("cy", function(d) { return d.y })
+   }
 
-      function ticked () {
-          circles
-           .attr("cx", function(d) {
-             return d.x
-           })
-           .attr("cy", function(d){
-             return d.y
-           })
-        }
+  chapter_categories = create_chapter_categories(datapoints);
+  chapter_totals = create_chapter_totals(datapoints);
+  // chapter_items = get_items_by_chapter(datapoints);
 
-        chapter_categories = create_chapter_categories(datapoints);
-        chapter_totals = create_chapter_totals(datapoints);
-
-        buildMenu();
+  buildMenu();
     }
 
-// We can also use a function which is picked up when an event occurs. In particular this has an if else statement that we will use to split our circles. It currently pulls out the value of the selected_chapter (at the beginning this is null) amd then says any circles/datapoints (d) with that BNF_chapter name should be forced towards x = 100 and y = 100, whilst anything else should be pushed to x = 500 and y = the vertical middle
-
-// TODO: I wonder if I need to get the circles to come apart to allow the smaller ones to escape and then draw back in?
-
 var forceXSplit = d3.forceX(function(d){
-      if(d.BNF_chapter === selected_chapter) {
-        return width / 4
-      } else {
-        return width / 2
-      }
-    }).strength(0.25)
+  if(d.BNF_chapter === selected_chapter) {
+    return width / 4
+  } else {
+    return width / 2
+  }})
+  .strength(0.2)
 
 var forceYSplit = d3.forceY(function(d){
-      if(d.BNF_chapter === selected_chapter) {
-        return 200
-      } else {
-        return 600
-      }
-    }).strength(0.25)
+  if(d.BNF_chapter === selected_chapter) {
+    return 200
+  } else {
+    return 600
+  }})
+  .strength(0.2)
 
 // Add svg_size_key: circles
 var valuesToShow = [1000, 50000, 400000, 1000000]
@@ -150,52 +172,51 @@ var xLabel = 150
 var yCircle = 130
 
 var svg_size_key = d3.select("#chart_legend")
-      .append("svg")
-        .attr("width", 250)
-        .attr("height", 130)
+  .append("svg")
+  .attr("width", 250)
+  .attr("height", 130)
+
 svg_size_key
-      .selectAll("legend")
-      .data(valuesToShow)
-      .enter()
-      .append("circle")
-      .attr("cx", xCircle)
-      .attr("cy", function(d) {
-          return yCircle - radiusScale(d)
-        })
-      .attr("r",
-          function(d) { return radiusScale(d)
-          })
-      .style("fill", "none")
-      .attr("stroke", "black")
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("circle")
+  .attr("cx", xCircle)
+  .attr("cy", function(d) { return yCircle - radiusScale(d)
+    })
+  .attr("r", function(d) { return radiusScale(d)
+    })
+  .style("fill", "none")
+  .attr("stroke", "black")
 
 // Add svg_size_key: segments
 svg_size_key
-      .selectAll("legend")
-      .data(valuesToShow)
-      .enter()
-      .append("line")
-      .attr('x1', function(d){ return xCircle + radiusScale(d) } )
-      .attr('x2', xLabel)
-      .attr('y1', function(d){ return yCircle - radiusScale(d) } )
-      .attr('y2', function(d){ return yCircle - radiusScale(d) } )
-      .attr('stroke', 'black')
-      .style('stroke-dasharray', ('2,2'))
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("line")
+  .attr('x1', function(d){ return xCircle + radiusScale(d) } )
+  .attr('x2', xLabel)
+  .attr('y1', function(d){ return yCircle - radiusScale(d) } )
+  .attr('y2', function(d){ return yCircle - radiusScale(d) } )
+  .attr('stroke', 'black')
+  .style('stroke-dasharray', ('2,2'))
 
 // Add legend: labels
 svg_size_key
-      .selectAll("legend")
-      .data(valuesToShow)
-      .enter()
-      .append("text")
-      .attr('x', xLabel)
-      .attr('y', function(d) {
-          return yCircle - radiusScale(d)
-        })
-      .text( function(d) {
-          return format(d) + " items"
-        })
-      .attr("font-size", 11)
-      .attr('alignment-baseline', 'top')
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("text")
+  .attr('x', xLabel)
+  .attr('y', function(d) {
+      return yCircle - radiusScale(d)
+    })
+  .text( function(d) {
+      return  d3.format(",")(d) + " items"
+    })
+  .attr("font-size", 11)
+  .attr('alignment-baseline', 'top')
 
 // Loop through array to get distinct chapter names
 function create_chapter_categories (all_datapoints){
@@ -220,8 +241,7 @@ var cats = []; // Create a variable called cats
       }
     })
     return cats; // Once all datapoints have been examined, the result returned should be an array containing the number of times each chapter appears in the data
-
-}
+  }
 
 // This function builds a menu by creating a button for every value in the chapter_categories array.
 function buildMenu(){
@@ -249,6 +269,10 @@ var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter]
 var label_x_chapter_total_items_a = "The total number of items"
 var label_x_chapter_total_items_b = "prescribed in this chapter:"
 var label_x_item_value = d3.format(",")(100000)
+
+// var
+
+// console.log(chapter_items_sum(selected_chapter))
 
 // Remove any title/subtitle text elements previously rendered
     svg.select('#label_title')
@@ -286,82 +310,82 @@ var label_x_item_value = d3.format(",")(100000)
     .attr("opacity", 0)
     .remove();
 
-      svg
-      .append("text")
-      .attr('id', 'label_title')
-      .attr("x", 300)
-      .attr("y", 50)
-      .style("font-size", "1.2rem")
-      .style("font-weight", "bold")
-      .attr("alignment-baseline","left")
-      .attr("fill", "#f1f1f1")
-      .transition()
-      .duration(1000)
-      .delay(2000)
-      .text(function(d) {
+    svg
+    .append("text")
+    .attr('id', 'label_title')
+    .attr("x", 300)
+    .attr("y", 50)
+    .style("font-size", "1.2rem")
+    .style("font-weight", "bold")
+    .attr("alignment-baseline","left")
+    .attr("fill", "#f1f1f1")
+    .transition()
+    .duration(1000)
+    .delay(2000)
+    .text(function(d) {
             return label_x })
-      .attr("fill", "#151f6d");
+    .attr("fill", "#151f6d");
 
     svg
-      .append("text")
-      .attr('id', 'label_subtitle')
-      .attr("x", 375)
-      .attr("y", 75)
-      .style("font-size", ".8rem")
-      .attr("alignment-baseline","left")
-      .attr("fill", "#f1f1f1")
-      .transition()
-      .duration(1000)
-      .delay(2500)
-      .text(function(d) {
+    .append("text")
+    .attr('id', 'label_subtitle')
+    .attr("x", 375)
+    .attr("y", 75)
+    .style("font-size", ".8rem")
+    .attr("alignment-baseline","left")
+    .attr("fill", "#f1f1f1")
+    .transition()
+    .duration(1000)
+    .delay(2500)
+    .text(function(d) {
             return label_x_chapter_sum})
-      .attr("fill", "#000000");
+    .attr("fill", "#000000");
 
-      svg
-        .append("text")
-        .attr('id', 'label_subtitle_1')
-        .attr("x", 435)
-        .attr("y", 100)
-        .style("font-size", ".8rem")
-        .attr("alignment-baseline","left")
-        .attr("fill", "#f1f1f1")
-        .transition()
-        .duration(1000)
-        .delay(2750)
-        .text(function(d) {
-              return label_x_chapter_total_items_a})
-        .attr("fill", "#000000");
+    svg
+    .append("text")
+    .attr('id', 'label_subtitle_1')
+    .attr("x", 435)
+    .attr("y", 100)
+    .style("font-size", ".8rem")
+    .attr("alignment-baseline","left")
+    .attr("fill", "#f1f1f1")
+    .transition()
+    .duration(1000)
+    .delay(2750)
+    .text(function(d) {
+        return label_x_chapter_total_items_a})
+    .attr("fill", "#000000");
 
-        svg
-          .append("text")
-          .attr('id', 'label_subtitle_2')
-          .attr("x", 435)
-          .attr("y", 115)
-          .style("font-size", ".8rem")
-          .attr("alignment-baseline","left")
-          .attr("fill", "#f1f1f1")
-          .transition()
-          .duration(1000)
-          .delay(2750)
-          .text(function(d) {
-                return label_x_chapter_total_items_b})
-          .attr("fill", "#000000");
+    svg
+    .append("text")
+    .attr('id', 'label_subtitle_2')
+    .attr("x", 435)
+    .attr("y", 115)
+    .style("font-size", ".8rem")
+    .attr("alignment-baseline","left")
+    .attr("fill", "#f1f1f1")
+    .transition()
+    .duration(1000)
+    .delay(2750)
+    .text(function(d) {
+        return label_x_chapter_total_items_b})
+    .attr("fill", "#000000");
 
-        svg
-          .append("text")
-          .attr('id', 'label_subtitle_3')
-          .attr("x", 555)
-          .attr("y", 115)
-          .style("font-size", "32px")
-          .style("font-weight", "bold")
-          .attr("alignment-baseline","left")
-          .attr("fill", "#f1f1f1")
-          .transition()
-          .duration(1000)
-          .delay(2750)
-          .text(function(d) {
-                return label_x_item_value})
-          .attr("fill", "#151f6d");
+    svg
+    .append("text")
+    .attr('id', 'label_subtitle_3')
+    .attr("x", 555)
+    .attr("y", 115)
+    .style("font-size", "32px")
+    .style("font-weight", "bold")
+    .attr("alignment-baseline","left")
+    .attr("fill", "#f1f1f1")
+    .transition()
+    .duration(1000)
+    .delay(2750)
+    .text(function(d) {
+        return label_x_item_value})
+    .attr("fill", "#151f6d");
 
     })
   })
