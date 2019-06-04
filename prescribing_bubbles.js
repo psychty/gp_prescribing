@@ -5,6 +5,7 @@
 var chapter_categories = [];
 var chapter_totals = [];
 var selected_chapter = null;
+var chapter_items_sum = [];
 
 (function() {
   var width = 800,
@@ -16,19 +17,14 @@ var selected_chapter = null;
   //   .domain(chapter_key)
   //   .range([50, 100, 150, 200, 250, 300, 350, 400, 450, 500,550,600,650,700,750,800,850,900,950,1000,1050])
 
-  var chapter_items_sum = function(d){
-    d3.nest()
-    .key(function(d){
-      return d.BNF_chapter;
-    })
-    .rollup(function(ch){
-          return d3.sum(ch, function(d) {return (d.items)});
-      })
-    .entries(d)}
+// We'll use this function to tell which value should be returned from the sum of items prescribed for each chapter. It's like a vlookup. We'll be saying
+var sum_chapter_select = d3.scaleOrdinal()
+ .domain(chapter_key)
+ .range([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21])
 
 
 // Define the min and max of your input (domain), and the output(range) you want
-  var radiusScale = d3.scaleSqrt()
+var radiusScale = d3.scaleSqrt()
     .domain([1, 1010000])
     .range([3,53])
 
@@ -63,8 +59,6 @@ var mousemove = function(d) {
     .style("top", (event.pageY-10)+"px")
     .style("left",(event.pageX+10)+"px")
 }
-
-
 
 // This creates functions for the force physics applied to the circles to say where to place them given certain events
 // These are the default forces
@@ -144,7 +138,7 @@ simulation.nodes(datapoints)
 
   chapter_categories = create_chapter_categories(datapoints);
   chapter_totals = create_chapter_totals(datapoints);
-  // chapter_items = get_items_by_chapter(datapoints);
+  chapter_items = chapter_items_sum(datapoints);
 
   buildMenu();
     }
@@ -219,9 +213,9 @@ svg_size_key
   .attr('alignment-baseline', 'top')
 
 // Loop through array to get distinct chapter names
-function create_chapter_categories (all_datapoints){
+function create_chapter_categories (x){
 var cats = []; // Create a variable called cats
-    all_datapoints.forEach(function(item){ // For every datapoint
+    x.forEach(function(item){ // For every datapoint
       if(cats.indexOf(item.BNF_chapter) === -1) // This says look at the BNF_chapter names currently in the array (at the start there are none). If the current value you are looking at in the data does not appear in the array (signified by === -1) then move to push the value
       {
         cats.push(item.BNF_chapter) // push says add the value to the array
@@ -230,9 +224,9 @@ var cats = []; // Create a variable called cats
     return cats; // Once all datapoints have been examined, the result returned should be an array containing all the unique values of BNF_chapter in the data
   }
 
-function create_chapter_totals (all_datapoints){
+function create_chapter_totals (x){
 var cats = []; // Create a variable called cats
-    all_datapoints.forEach(function(item){ // For every datapoint
+    x.forEach(function(item){ // For every datapoint
       if(cats[item.BNF_chapter] !== undefined) // If the BNF_chapter is defined (e.g. not undefined)
       {
         cats[item.BNF_chapter]++; // Add one to the count every time BNF_chapter appears in the data
@@ -241,6 +235,19 @@ var cats = []; // Create a variable called cats
       }
     })
     return cats; // Once all datapoints have been examined, the result returned should be an array containing the number of times each chapter appears in the data
+  }
+
+// Function to group the rows by chapter and then sum the items column. This creates an array called chapter_items, and later we will use another function to choose which value in the array is returned based on the selected_chapter.
+function chapter_items_sum (x){
+var chapter_items = d3.nest()
+      .key(function(d){
+        return d.BNF_chapter;
+      })
+      .rollup(function(ch){
+            return d3.sum(ch, function(d) {return (d.items)});
+        })
+      .entries(x)
+    return chapter_items;
   }
 
 // This function builds a menu by creating a button for every value in the chapter_categories array.
@@ -268,11 +275,7 @@ var label_x = selected_chapter
 var label_x_chapter_sum = "This chapter has " + chapter_totals[selected_chapter] + " sections."
 var label_x_chapter_total_items_a = "The total number of items"
 var label_x_chapter_total_items_b = "prescribed in this chapter:"
-var label_x_item_value = d3.format(",")(100000)
-
-// var
-
-// console.log(chapter_items_sum(selected_chapter))
+var label_x_item_value = d3.format(",")(chapter_items[sum_chapter_select(selected_chapter)].value)
 
 // Remove any title/subtitle text elements previously rendered
     svg.select('#label_title')
@@ -374,7 +377,7 @@ var label_x_item_value = d3.format(",")(100000)
     svg
     .append("text")
     .attr('id', 'label_subtitle_3')
-    .attr("x", 555)
+    .attr("x", 565)
     .attr("y", 115)
     .style("font-size", "32px")
     .style("font-weight", "bold")
