@@ -7,6 +7,13 @@ var chapter_totals = [];
 var selected_chapter = null;
 var chapter_items_sum = [];
 
+// Add a reload page (reload graphic) function
+  d3.select("#reset")
+  	.on("click", function(e) {
+      location.reload()
+      ;}
+    );
+
 (function() {
   var width = 800,
     height = 1000;
