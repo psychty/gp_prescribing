@@ -1,8 +1,14 @@
+
+capwords = function(s, strict = FALSE) {
+  cap = function(s) paste(toupper(substring(s, 1, 1)),
+                          {s = substring(s, 2); if(strict) tolower(s) else s},sep = "", collapse = " " )
+  sapply(strsplit(s, split = " "), cap, USE.NAMES = !is.null(names(s)))}
+
+
 # Open prescribing -
 
 library(tidyverse)
 library(treemap)
-library(r2d3)
 
 # cite - "OpenPrescribing.net, EBM DataLab, University of Oxford, 2019"
 
@@ -11,7 +17,7 @@ library(r2d3)
 # BNF codes ####
 # grab the latest BNF codes datafile here https://apps.nhsbsa.nhs.uk/infosystems/data/showDataSelector.do?reportId=126
 
-BNF <- read_csv("~/gp_prescribing/20190301_1551434673212_BNF_Code_Information.csv", col_types = cols(.default = col_character()))
+BNF <- read_csv("~/Documents/Repositories/gp_prescribing/20190301_1551434673212_BNF_Code_Information.csv", col_types = cols(.default = col_character()))
 
 BNF_sub_paragraphs <- BNF %>% 
   select(-c(`BNF Presentation Code`, `BNF Presentation`, `BNF Product Code`, `BNF Product`, `BNF Chemical Substance Code`, `BNF Chemical Substance`)) %>% 
@@ -25,7 +31,7 @@ BNF_sections <- BNF_paragraphs %>%
   select(-c(`BNF Paragraph Code`, `BNF Paragraph`)) %>% 
   unique()
 
-BNF_chapters <- BNF_sections %>% 
+BNF_Chapters <- BNF_sections %>% 
   select(-c(`BNF Section Code`, `BNF Section`)) %>% 
   unique()
 
@@ -72,7 +78,6 @@ BNF_chapters <- BNF_sections %>%
 combined_df <- data.frame(actual_cost = numeric(), date = character(), items = numeric(),quantity = numeric(), row_id = character(), row_name = character(), Code = character(), `BNF Chapter` = character(), `BNF Chapter Code` = character(), `BNF Section` = character(), check.names = FALSE)
 
 orgs <- c("09G", "09H", "09X")
-
 for(j in 1:length(orgs)){
 for(i in 1:length(unique(BNF_sections$`BNF Section Code`))){
   org_x = orgs[j]
@@ -110,6 +115,7 @@ BNF_sections_with_no_data <- combined_df %>%
 paste0("There are ", nrow(BNF_sections_with_no_data), " BNF sections for which no data was returned for the ", length(orgs), " CCGs analysed.")
 
 Raw_df <- combined_df %>% 
+  filter(!(is.na(date))) %>% 
   rename(CCG_code = row_id) %>% 
   rename(CCG = row_name)%>% 
   mutate(CCG = capwords(CCG, strict = TRUE)) %>% 
@@ -117,13 +123,43 @@ Raw_df <- combined_df %>%
   mutate(CCG = gsub("Ccg", "CCG", CCG)) %>% 
   mutate(date = as.Date(date)) %>% 
   mutate(Month_Year = format(date, "%B-%Y")) %>% 
-  mutate(Year = format(date, "%Y"))
+  mutate(Year = format(date, "%Y")) %>% 
+  rename(BNF_Section_Code = Code) %>% 
+  rename(BNF_Section = `BNF Section`) %>% 
+  rename(BNF_Chapter_Code = `BNF Chapter Code`) %>%
+  rename(BNF_Chapter = `BNF Chapter`) %>% 
+  select(date, Month_Year, Year, BNF_Section, BNF_Section_Code, items,  actual_cost, BNF_Chapter, BNF_Chapter_Code, CCG) %>% 
+  mutate(BNF_Chapter = ifelse(BNF_Chapter == "Obstetrics,Gynae+Urinary Tract Disorders", "Obstetrics, Gynae and Urinary Tract Disorders", BNF_Chapter)) %>%  
+  mutate(BNF_Chapter = ifelse(BNF_Chapter == "Malignant Disease & Immunosuppression", "Malignant Disease and Immunosuppression", BNF_Chapter)) %>% 
+  mutate(BNF_Chapter = ifelse(BNF_Chapter == "Nutrition And Blood", "Nutrition and Blood", BNF_Chapter))  %>% 
+  mutate(BNF_Chapter = ifelse(BNF_Chapter == "Musculoskeletal & Joint Diseases", "Musculoskeletal and Joint Diseases", BNF_Chapter)) %>% 
+  mutate(BNF_Chapter = ifelse(BNF_Chapter == "Ear, Nose And Oropharynx", "Ear, Nose and Oropharynx", BNF_Chapter)) %>% 
+  mutate(BNF_Chapter = ifelse(BNF_Chapter == "Immunological Products & Vaccines", "Immunological Products and Vaccines", BNF_Chapter)) %>% 
+  mutate(BNF_Chapter = ifelse(BNF_Chapter == "Other Drugs And Preparations", "Other Drugs and Preparations", BNF_Chapter)) %>% 
+  rename(Area = CCG)
 
-rm(combined_df, code_x, i, j, org_x)
+WSx_df <- Raw_df %>% 
+  filter(!(is.na(Month_Year))) %>% 
+  group_by(date, Month_Year, Year, BNF_Section, BNF_Section_Code, BNF_Chapter, BNF_Chapter_Code) %>% 
+  summarise(items = sum(items, na.rm = TRUE), actual_cost = sum(actual_cost, na.rm = TRUE), Area = "West Sussex") 
 
-# CCG prescribing overview - 2018 calendar year ####
+Final_raw_df <- Raw_df %>% 
+  bind_rows(WSx_df)
 
-#View(Raw_df)
+write.csv(Final_raw_df, "~/Documents/Repositories/gp_prescribing/Raw_data_extract.csv", row.names = FALSE)
+
+library(jsonlite)
+
+Final_raw_df %>% 
+  toJSON() %>% 
+  write_lines('~/Documents/Repositories/gp_prescribing/Raw_data_extract.json')
+
+WSx_df %>% 
+  toJSON() %>% 
+  write_lines('~/Documents/Repositories/gp_prescribing/Raw_data_extract_west_sussex.json')
+
+
+# 2018 calendar year ####
 
 CCG_prescribing_2018 <- Raw_df %>% 
   filter(Year == 2018) %>% 
@@ -135,17 +171,11 @@ CCG_prescribing_2018 <- Raw_df %>%
   mutate(item_label = paste0(`BNF Section`, "\n",format(as.numeric(items), big.mark = ","))) %>% 
   mutate(Year = "2018") %>% 
   mutate(label = paste0(`BNF Chapter`, ".", `BNF Section`)) %>% 
-  rename(BNF_chapter = `BNF Chapter`) %>% 
+  rename(BNF_Chapter = `BNF Chapter`) %>% 
   rename(BNF_section = `BNF Section`)
 
 CCG_prescribing_2018 <- CCG_prescribing_2018 %>% 
-  mutate(BNF_chapter = ifelse(BNF_chapter == "Obstetrics,Gynae+Urinary Tract Disorders", "Obstetrics,Gynae and Urinary Tract Disorders", BNF_chapter)) %>%  
-  mutate(BNF_chapter = ifelse(BNF_chapter == "Malignant Disease & Immunosuppression", "Malignant Disease and Immunosuppression", BNF_chapter)) %>% 
-  mutate(BNF_chapter = ifelse(BNF_chapter == "Nutrition And Blood", "Nutrition and Blood", BNF_chapter))  %>% 
-  mutate(BNF_chapter = ifelse(BNF_chapter == "Musculoskeletal & Joint Diseases", "Musculoskeletal and Joint Diseases", BNF_chapter)) %>% 
-  mutate(BNF_chapter = ifelse(BNF_chapter == "Ear, Nose And Oropharynx", "Ear, Nose and Oropharynx", BNF_chapter)) %>% 
-  mutate(BNF_chapter = ifelse(BNF_chapter == "Immunological Products & Vaccines", "Immunological Products and Vaccines", BNF_chapter)) %>% 
-  mutate(BNF_chapter = ifelse(BNF_chapter == "Other Drugs And Preparations", "Other Drugs and Preparations", BNF_chapter))
+  
 
 write.csv(CCG_prescribing_2018, "~/gp_prescribing/CCG_prescribing_2018.csv", row.names = FALSE)
 
@@ -155,14 +185,14 @@ Coastal_2018 <- CCG_prescribing_2018 %>%
 WSx_2018 <- CCG_prescribing_2018 %>% 
   filter(CCG_code %in% c("09G", "09H", "09X")) %>% 
   group_by(Code, BNF_section) %>% 
-  summarise(items = sum(items, na.rm = TRUE), actual_cost = sum(actual_cost, na.rm = TRUE), BNF_chapter = unique(BNF_chapter), `BNF Chapter Code` = unique(`BNF Chapter Code`)) %>% 
+  summarise(items = sum(items, na.rm = TRUE), actual_cost = sum(actual_cost, na.rm = TRUE), BNF_Chapter = unique(BNF_Chapter), `BNF Chapter Code` = unique(`BNF Chapter Code`)) %>% 
   mutate(item_label = paste0(BNF_section, "\n",format(as.numeric(items), big.mark = ",")))
 
 treemap(Coastal_2018,
-        index=c("BNF_chapter","item_label"),
+        index=c("BNF_Chapter","item_label"),
         vSize="items",
         type="categorical",
-        vColor = "BNF_chapter",
+        vColor = "BNF_Chapter",
        # title = paste0(unique(Coastal_2018$CCG), " prescribing by BNF section; January 2018 to December 2018"),
         fontsize.title = 8,
         fontsize.labels = c(10,7), 
@@ -182,11 +212,11 @@ treemap(Coastal_2018,
         align.labels = list(c("left", "top"),c("centre", "centre")))      
 
 Coastal_2018_js <- Coastal_2018 %>% 
-  mutate(label = paste0(BNF_chapter, ".", BNF_section))
+  mutate(label = paste0(BNF_Chapter, ".", BNF_section))
 
 WSx_2018_js <- WSx_2018 %>% 
-  mutate(label = paste0(BNF_chapter, ".", BNF_section)) %>% 
-  group_by(BNF_chapter)%>% 
+  mutate(label = paste0(BNF_Chapter, ".", BNF_section)) %>% 
+  group_by(BNF_Chapter)%>% 
   mutate(Sections_in_chapter = n()) %>% 
   mutate(Sections_in_chapter_label = as.character(ifelse(Sections_in_chapter < 10, subset(number_names, Number == Sections_in_chapter, select = "Name"), Sections_in_chapter))) %>%   ungroup()
 
@@ -195,7 +225,7 @@ write.csv(Coastal_2018_js, "~/gp_prescribing/Coastal_2018_prescribing.csv", row.
 write.csv(WSx_2018_js, "~/gp_prescribing/WSx_2018_prescribing.csv", row.names = FALSE)
 
 Coastal_2018_js_chapter <- Coastal_2018_js %>% 
-  group_by(BNF_chapter, `BNF Chapter Code`) %>% 
+  group_by(BNF_Chapter, `BNF Chapter Code`) %>% 
   summarise(items = sum(items, na.rm = TRUE),
             actual_cost = sum(actual_cost)) %>% 
   mutate(Sections_in_chapter = n())
@@ -264,7 +294,7 @@ Drugs <- read_csv("https://openprescribing.net/api/1.0/bnf_code/?q=seratonin&for
 #. 14 & 15 show the equivalent
 # The 'equivalent' is defined as follows: If the presentation is a generic, the 14th and 15th character will be the same as the 12th and 13th character. . Where the product is a brand the 14th and 15th digit will match that of the generic equivalent, unless the brand does not have a generic equivalent in which case A0 will be used. 
 
-Prescribing_July$BNF_chapter <- substr(Prescribing_July$BNF_code, 1, 2)
+Prescribing_July$BNF_Chapter <- substr(Prescribing_July$BNF_code, 1, 2)
 Prescribing_July$BNF_section <- substr(Prescribing_July$BNF_code, 3, 4)
 Prescribing_July$BNF_paragraph <- substr(Prescribing_July$BNF_code, 5, 6)
 Prescribing_July$BNF_sub_paragraph <- substr(Prescribing_July$BNF_code, 7, 7)

@@ -14,6 +14,9 @@ var chapter_items_sum = [];
       ;}
     );
 
+
+// TODO // Why don't we create a json file with each ccg plus an overall west sussex row. then we can make a filter like with gbd 
+
 (function() {
   var width = 800,
     height = 1000;
