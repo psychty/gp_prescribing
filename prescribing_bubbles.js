@@ -1,7 +1,6 @@
-//  https://www.youtube.com/watch?v=lPr60pexvEM
-// https://archive.nytimes.com/www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html
 
 // These are some global variables, they start life either as blank arrays (e.g. the variables with [];) as these become created/filled by functions to say all the unique items in the dataframe or alternatively as null/undefined in the case of selected_chapter which will later be used to filter or select a chapter of interest. To begin with we dont want any chapter selected which is why it is null
+
 var chapter_categories = [];
 var chapter_totals = [];
 var selected_chapter = null;
@@ -15,11 +14,15 @@ var chapter_items_sum = [];
     );
 
 
-// TODO // Why don't we create a json file with each ccg plus an overall west sussex row. then we can make a filter like with gbd 
+// TODO // Why don't we create a json file with each ccg plus an overall west sussex row. then we can make a filter like with gbd
 
 (function() {
-  var width = 800,
-    height = 1000;
+
+  var width = document.getElementById("main").offsetWidth;
+
+  console.log(width)
+  // var width = 800;
+  var height = 800;
 
   var chapter_key = ["Gastro-Intestinal System", "Cardiovascular System", "Respiratory System", "Central Nervous System", "Infections", "Endocrine System", "Obstetrics,Gynae and Urinary Tract Disorders", "Malignant Disease and Immunosuppression", "Nutrition and Blood", "Musculoskeletal and Joint Diseases", "Eye", "Ear, Nose and Oropharynx", "Skin", "Immunological Products and Vaccines", "Anaesthesia", "Preparations used in Diagnosis", "Other Drugs and Preparations", "Dressings", "Appliances", "Incontinence Appliances", "Stoma Appliances"]
 
@@ -31,7 +34,6 @@ var chapter_items_sum = [];
   var sum_chapter_select = d3.scaleOrdinal()
     .domain(chapter_key)
     .range([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])
-
 
   // Define the min and max of your input (domain), and the output(range) you want
   var radiusScale = d3.scaleSqrt()
@@ -65,7 +67,7 @@ var chapter_items_sum = [];
   // This creates the function for what to do when someone moves the mouse over a circle (e.g. move the tooltip in relation to the mouse cursor).
   var mousemove = function(d) {
     tooltip
-      .html("<p>In 2018, there were <strong>" + d3.format(",")(d.items) + "</strong> items prescribed in the " + d.BNF_section + " BNF section.</p><p>This is part of the <strong>" + d.BNF_chapter + "</strong> BNF chapter.</p>")
+      .html("<p>In 2018, there were <strong>" + d3.format(",")(d.items) + "</strong> items prescribed in the " + d.BNF_section + " BNF section.</p><p>This section is part of the <strong>" + d.BNF_chapter + "</strong> BNF chapter.</p>")
       .style("top", (event.pageY - 10) + "px")
       .style("left", (event.pageX + 10) + "px")
   }
@@ -94,7 +96,7 @@ var chapter_items_sum = [];
   // create a force simulation acting on our circles. this is the default simulation, using the forceX and forceY functions defined above.
   var simulation = d3.forceSimulation()
     .force("x", d3.forceX(width / 2).strength(0.04))
-    .force("y", d3.forceY(400).strength(0.04))
+    .force("y", d3.forceY(height / 2).strength(0.04))
     .force("collide", forceCollideApart)
 
   // Load data from csv file - this data becomes globally available, not just as an object to be called
@@ -179,7 +181,7 @@ var chapter_items_sum = [];
       if (d.BNF_chapter === selected_chapter) {
         return 200
       } else {
-        return 600
+        return 500
       }
     })
     .strength(0.2)
@@ -433,7 +435,5 @@ var chapter_items_sum = [];
       })
     })
   }
-
-  // TODO: add a button that positions all the circles like the webpage using y_new
 
 })();

@@ -1,5 +1,4 @@
 
-
 function tabulate(data, columns, id) {
     var table = d3.select(id).append("table"),
         thead = table.append("thead"),
@@ -32,7 +31,6 @@ function tabulate(data, columns, id) {
           return d.value; });
     return table;
 }
-
 
 d3.csv("WSx_2018_prescribing.csv", function(error, myData) {
     if (error) {
@@ -70,7 +68,6 @@ var tablebody = table.append("tbody");
     .data(myArray)
     .enter()
     .append("tr");
-
 
 // We built the rows using the nested array - now each row has its own array.
 cells = rows.selectAll("td")

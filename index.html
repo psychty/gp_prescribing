@@ -7,45 +7,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prescribing overview</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
-
 <body>
 
 <div class="wrapper">
   <div class="header">
       <h1>GP Practice Prescribing - West Sussex</h1>
-      <p>Information on the drugs or appliances prescribed by NHS services each month are available from NHS Digital under the Open Government Licence. This visualisation shows the number of items prescribed in 2018 for the three West Sussex CCGs using categories in the British National Formulary (BNF).</p>
-      <p>Item figures tell us the <strong>number of times a medicine has been prescribed</strong> but do not provide any indication of the length of treatment or quantity of medicine prescribed. Patients with a long term condition usually get regular prescriptions and whilst many prescriptions are for one month (28 or 30 days supply), items will be for varying length of treatment and quantity.</p>
+      <p>Information on the drugs or appliances prescribed by NHS services each month are available from NHS Digital under the Open Government Licence.</p>
+      <p>Item figures tell us the <strong>number of times a medicine has been prescribed</strong> but do not provide any indication of the length of treatment or quantity of medicine prescribed. Patients with a long term condition usually get regular prescriptions and whilst many prescriptions are for one month (28 or 30 days supply), items will be for varying lengths of treatment and quantity.</p>
       <p>Furthermore, the data cannot tell us about an individual prescription and doesn't contain any patient identifiable data, but it does give an indication on the prescribing patterns among primary care organisations.</p>
       <p>Data downloaded from EBN labs OpenPrescribing tool. OpenPrescribing.net, EBM DataLab, University of Oxford, 2019</p>
-          <div id = "reset">Reload the page</div>
+  <div id = "reset">Reload the page</div>
   </div>
 
-  <article class = "main">
+  <article class = "main" id = 'main'>
 
-      <div id = "chart"> </div>
       <h2>Top 10 sections</h2>
       <p>The top 10 most common prescription sections are given in the table below. The overall cost is also given. Hypertenion and heart failure drugs were the most commonly prescribed drugs in West Sussex in 2018.</p>
       <div id = "top_10_table"> </div>
+
+      <h2>Exploring prescription items among West Sussex GP practices</h2>
+          <div id = "chart"> </div>
+
+
   </article>
 
   <aside class = "aside aside-1">
       <h2>Exploring chapters</h2>
+      <p>This visualisation shows the number of items prescribed in 2018 for the three West Sussex CCGs using categories in the British National Formulary (BNF).</p>
+      <p>The size of the circle represents the number of items prescribed for that category of items. Items are grouped by the broad section of the BNF in which they are classified.</p>
       <p>Use the buttons below to select a BNF chapter and hover over a circle to see the category of items.</p>
-      <div id="chapter_categories">
-      </div>
-      <!-- <button id = "combined_button">Reset the bubbles!</button> <!-->
+      <div id="chapter_categories"></div>
   </aside>
 
   <aside class="aside aside-2">
       <h2>Notes:</h2>
-      <p>A prescription item refers to a single supply of a medicine, dressing or appliance prescribed on a prescription form. If a prescription form includes three medicines it is counted as three prescription items.</p><p>However, it should be noted that these figures do not give any indication of the length of treatment or quantity of medicine prescribed.</p>
-      <p>The size of the circle represents the number of items prescribed for that category of items. Items are grouped by the broad section of the BNF in which they are classified.</p>
-
+      <p>The data includes prescriptions written by GPs and prescriptions written by non-medical prescribers who are attached to GP practices such as nurses, pharmacists, optometrists, chiropodists and radiographers. The data does not cover private prescriptions.</p>
+      <p>A prescription item refers to a single supply of a medicine, dressing or appliance prescribed on a prescription form. If a prescription form includes three medicines it is counted as three prescription items.</p>
+      <p>It should also be noted that these figures do not give any indication of the length of treatment or quantity of medicine prescribed and it says nothing about whether or not a prescribed medicine was taken.</p>
       <h2>Size key</h2>
-
-  <div id = "chart_legend"> </div>
+      <div id = "chart_legend"> </div>
   </aside>
 
   <footer class="footer">M4de by Dr Rich Tyler <a href = https://github.com/psychty>github/psychty</a> May 2019</footer>

@@ -1,3 +1,17 @@
+*{
+  font-family: 'Open Sans', sans-serif;
+  /* font-size: .85rem; */
+  }
+
+p {
+  font-size: .9rem;
+}
+
+* {-webkit-font-smoothing: antialiased;}
+
+div {
+    display: inline-block;
+}
 
 .main {
   max-width: 900px;
